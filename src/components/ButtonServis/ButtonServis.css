@@ -1,0 +1,82 @@
+.button-servis {
+  width: 15.414rem;
+  background: none;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  /* gap: 0.456rem; */
+
+  position: relative;
+  overflow: hidden;
+
+  cursor: pointer;
+}
+
+/* .buttonServis.hovered {
+    gap: 10rem;
+} */
+
+.buttonServis-container {
+  text-align: left;
+  width: 100%;
+  height: 3.470rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  transition: margin 0.5s ease;
+  margin-bottom: 0.456rem;
+}
+
+.buttonServis-container-inside {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center
+}
+
+.buttonServis-container.hovered {
+    margin-bottom: 9.1rem;
+}
+
+.underline {
+  z-index: 100;
+  width: 100%;
+  height: 0.1369rem;
+  position: relative;
+  background-color: #fff; /* Прозрачный фон основной линии */
+  overflow: hidden; /* Скрываем выход за границы */
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #28A745;
+  transition: width 0.5s ease; /* Анимация изменения ширины */
+}
+
+.underline.hovered::before {
+  width: 100%; /* При наведении ширина заполняет всю линию */
+}
+
+.arrow {
+  width: 2.737rem;
+}
+
+.buttonServis-img-wrapper {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: transform 0.5s ease;
+  transform: translateY(45%); 
+}
+
+
+
+.buttonServis-img-agency img {
+  width: 100%;
+  height: 40%;
+}

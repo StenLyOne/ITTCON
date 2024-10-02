@@ -1,0 +1,26 @@
+.servis-text-container {
+  width: 32.922rem;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: flex-start;
+
+  padding: 3.652rem 2.283rem;
+}
+
+.servis-text-wriper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.187rem;
+
+  margin: 1.461rem 0 1.917rem;
+}
+
+@media screen and (max-width: 480px) {
+  .servis-text-container {
+    width: 100%;
+
+    padding: 2.083rem 1.041rem;
+  }
+}

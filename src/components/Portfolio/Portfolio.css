@@ -1,0 +1,116 @@
+.portfolio-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.8s ease;
+
+  padding: 1.643rem 1.278rem;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &:hover {
+    flex: 7;
+  }
+}
+
+.portfolio-p {
+  text-align: left;
+  font-size: 0.913rem;
+  line-height: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  transition: font-size 0.8s ease, line-height 0.8s ease;
+
+  margin-bottom: 2.283rem;
+  z-index: 100;
+}
+
+.item:hover .portfolio-p {
+  font-size: 2.648rem;
+  line-height: 3.013rem;
+}
+
+.item-1 {
+  background-image: url("https://img.freepik.com/free-photo/high-tech-view-futuristic-earth_23-2151100372.jpg?t=st=1726251698~exp=1726255298~hmac=5f24435cbaeb1c4bbe9caed9da6b20cd2e23f72a24e39e198267c571f56631ab&w=1380");
+}
+
+.item-2 {
+  background-image: url("https://www.lesprom.com/assets/files/news_fs/TmrchtpDbKfaw5X7OByM.jpg");
+}
+
+.item-3 {
+  background-image: url("https://img.freepik.com/free-photo/view-futuristic-looking-city_23-2150946813.jpg?t=st=1726252160~exp=1726255760~hmac=38915095b623e702aa5d7bbfd7fdcee7e3c1b39ed709062926823937d90ec996&w=1380");
+}
+
+.item-4 {
+  background-image: url("https://img.freepik.com/free-photo/close-up-moss-nature_23-2151369147.jpg?t=st=1726252005~exp=1726255605~hmac=81c3c3bd80d2d90d507c559f892484058df2ae439d460039adbfdcb42a5bf9ab&w=1380");
+}
+
+.item-5 {
+  background-image: url("https://img.freepik.com/free-photo/person-working-wood-working-industry-factory_23-2151352580.jpg?t=st=1726252038~exp=1726255638~hmac=b44ac49637c94f6dc0866d69f8785c00ec62fcdab7cf8d3c2d215f731d032963&w=1380");
+}
+
+.item-1::before,
+.item-2::before,
+.item-3::before,
+.item-4::before,
+.item-5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+  z-index: 1; /* Поставим градиент выше фона */
+}
+
+.social {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+
+  img {
+    display: block;
+    width: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .item {
+    padding: 1.25rem 1.041rem;
+    transition: none;
+  }
+
+  .item:hover {
+    flex: 1; /* Запрещаем изменение flex при наведении */
+  }
+
+  .portfolio-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .item:hover .portfolio-p {
+    font-size: 0.913rem; /* Оставляем исходный размер текста */
+    line-height: 1.2rem;
+  }
+}

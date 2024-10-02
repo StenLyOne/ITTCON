@@ -1,0 +1,46 @@
+.numbers-item {
+  width: 15.414rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.187rem;
+
+  text-align: left;
+
+  padding: 1.643rem 1.278rem;
+  background-color: #2d2c29;
+}
+
+.numbers-name {
+  color: #f0f0f0;
+}
+
+.numbers-number {
+  font-size: 3.287rem;
+  line-height: normal;
+  color: #f0f0f0;
+}
+
+@media screen and (max-width: 480px) {
+  .numbers-item {
+    width: 100%;
+    max-width: 8.524rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.187rem;
+
+    text-align: left;
+
+    padding: 0.833rem 0.666rem;
+    background-color: #2d2c29;
+  }
+
+  .numbers-name {
+    font-size: 0.6667rem;
+  }
+
+  .numbers-number {
+    font-size: 1.583rem;
+    line-height: 2.125rem;
+    color: #f0f0f0;
+  }
+}

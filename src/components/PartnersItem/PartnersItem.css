@@ -1,0 +1,25 @@
+.partners-item {
+  position: relative;
+  width: 15.41rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.826rem;
+  padding: 1.643rem 1.278rem;
+
+  background-blend-mode: soft-light;
+  backdrop-filter: blur(35px);
+}
+
+.partners-item-p {
+  font-size: 0.913rem;
+  line-height: 1.2rem;
+  z-index: 2; /* Контент поверх всего */
+}
+
+@media screen and (max-width: 480px) {
+  .partners-item {
+    width: 100%;
+    padding: 1.041rem 1.041rem;
+  }
+}

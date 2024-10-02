@@ -1,0 +1,167 @@
+.footer {
+  width: 100%;
+
+  text-align: left;
+}
+
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 6.849rem 10.913rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.913rem;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.684rem;
+}
+
+.footer-contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.456rem;
+}
+
+.footer-location {
+  display: flex;
+  flex-direction: column;
+  gap: 0.684rem;
+}
+
+.footer-sociol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-sociol-container {
+  display: flex;
+  gap: 0.913rem;
+}
+
+.x {
+  width: 2.739rem;
+  height: 2.739rem;
+  border: 1px solid black;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.f {
+  width: 2.739rem;
+  height: 2.739rem;
+  border: 1px solid black;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.in {
+  width: 2.739rem;
+  height: 2.739rem;
+  border: 1px solid black;
+  border-radius: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container h5 {
+  text-transform: uppercase;
+}
+
+.footer-bot {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.68rem 10.913rem;
+  text-align: left;
+  background-color: black;
+  color: white;
+}
+
+.footer-bot p {
+  color: white;
+}
+
+.foter-container-mb {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    width: 100%;
+
+    text-align: center;
+    text-align: left;
+  }
+
+  .footer-nav {
+    gap: 0.833rem;
+  }
+
+  .footer-container {
+    padding: 5.416rem 1.039rem 0;
+    flex-direction: column;
+  }
+
+  .footer-contact-mob {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+  
+  .footer-contact-container-mob {
+    display: flex;
+    flex-direction: column;
+    gap: 0.416rem;
+  }
+  
+  .footer-location-mob {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .foter-container-mb {
+    display: flex;
+    justify-content: space-between;
+    padding: 3.333rem 0 2.083rem;
+  }
+
+  .footer-bot {
+    padding: 0.833rem 1.041rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-contact {
+    display: none;
+  }
+
+  .footer-sociol {
+    margin-top: 3.333rem;
+}
+
+  .footer-sociol img{
+    display: none;
+  }
+
+  .footer-location {
+    display: none;
+  }
+
+  
+}

@@ -1,0 +1,84 @@
+.aboutUs {
+  text-align: left;
+  background-color: #f8f8f8;
+  color: #2d2c29;
+  padding-left: 10.913rem;
+}
+
+.aboutUs-h2 {
+  color: #2d2c29;
+}
+
+.aboutUs-p {
+  color: #2d2c29;
+}
+
+.aboutUs-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.aboutUs-container-left {
+  max-width: 30.6rem;
+  margin: 3.652rem 2.283rem 3.652rem 0;
+}
+
+.aboutUs-container-left-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.369rem;
+  margin: 1.826rem 0 2.283rem;
+}
+
+.aboutUs-container-right {
+  width: 43.835rem;
+  height: auto;
+  background-image: url(src/assets/aboutUs.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.aboutUs-container-left-img-mob {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .aboutUs {
+    text-align: left;
+    padding-left: 0rem;
+  }
+
+  .aboutUs-h2 {
+    color: #2d2c29;
+    padding: 0 1.039rem;
+    margin-bottom: 2.083rem;
+  }
+
+  .aboutUs-container-right {
+    display: none;
+  }
+
+  .aboutUs-container-left-text {
+    padding: 0 1.039rem;
+    margin: 2.083rem 0;
+    gap: 1.6667rem;
+  }
+
+  .aboutUs-container-left {
+    max-width: 100%;
+    width: 100%;
+    margin: 5.416rem 0;
+  }
+
+  .aboutUs-container-left-img-mob {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  .aboutUs-btn {
+    padding: 0 1.039rem;
+  }
+}

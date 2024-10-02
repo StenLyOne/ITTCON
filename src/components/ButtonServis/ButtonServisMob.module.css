@@ -1,0 +1,108 @@
+/* Основной стиль кнопки */
+
+.buttonServisMob {
+  width: 100%;
+  max-width: 1.666rem;
+  background: none;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: max-width 0.5s linear; /* Плавное изменение ширины */
+}
+
+/* Активное состояние кнопки */
+.buttonServisMob.activ {
+  max-width: 100%; /* Плавное изменение до полной ширины */
+  border-color: #007bff;
+}
+
+/* Контейнер кнопки */
+.buttonServisContainer {
+  text-align: left;
+  width: 100%;
+  height: 3.47rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.456rem;
+}
+
+/* Внутренний контейнер */
+.buttonServisContainerInside {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  visibility: hidden; /* Скрываем элемент по умолчанию */
+  opacity: 0; /* Прозрачный по умолчанию */
+  transform: translateY(3rem); /* Сдвиг вверх по умолчанию */
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0s 0.5s; /* Плавное изменение с задержкой */
+  animation-delay: 0.5s;
+}
+
+.buttonServisContainerInside.activ {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  visibility: visible; /* Делаем элемент видимым при активации */
+  opacity: 1; /* Плавное появление */
+  transform: translateY(0); /* Возвращаем элемент на место */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Переход без задержки */
+  animation-delay: 0.5s;
+}
+
+.buttonServisContainerInside p {
+  white-space: nowrap;
+}
+
+/* Линия под кнопкой */
+.underline {
+  z-index: 100;
+  width: 100%;
+  height: 0.1369rem;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Активное состояние линии */
+.underline.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #28a745;
+  transition: width 5s linear; /* Плавная анимация линии */
+}
+
+/* Анимация расширения линии */
+.underline.animate::before {
+  width: 100%;
+  transition: width 5s linear; /* Плавное расширение */
+}
+
+/* Изображение стрелки */
+.arrow {
+  width: 2.083rem;
+  transition: transform 0.5s linear; /* Плавная анимация изменения */
+}
+
+/* Обертка для изображения */
+.buttonServisImgWrapper {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  transition: transform 0.5s linear; /* Плавное перемещение */
+  transform: translateY(45%); /* Сдвиг изображения по оси Y */
+}
+
+/* Изображение внутри обертки */
+.buttonServis-img-agency img {
+  width: 100%;
+  height: 40%;
+  transition: all 0.5s linear; /* Плавное изменение размера */
+}

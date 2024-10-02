@@ -1,0 +1,30 @@
+.news {
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+}
+
+.news-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-h2 {
+  text-align: left;
+  margin-bottom: 3.952rem;
+}
+
+@media screen and (max-width: 480px) {
+  .news {
+    padding: 5.416rem 1.039rem;
+  }
+  .news-container {
+    flex-direction: column;
+    gap: 1.6667rem;
+  }
+
+  .news-h2 {
+    text-align: left;
+    margin-bottom: 2.083rem;
+  }
+}

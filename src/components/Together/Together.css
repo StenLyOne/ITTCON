@@ -1,0 +1,46 @@
+.together-container {
+  position: relative;
+  text-align: left;
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+  background-image: url(src/assets/together.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.together-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0); /* Прозрачность по умолчанию */
+  z-index: 1; /* Помещаем затемнение поверх фонового изображения */
+  transition: background 0.3s ease-in-out;
+}
+
+.together-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.369rem;
+  margin-bottom: 1.826rem;
+  position: relative;
+  z-index: 2; /* Помещаем текст поверх затемнения */
+}
+
+@media screen and (max-width: 480px) {
+  .together-container {
+    padding: 3.333rem 1.039rem;
+    background-position: 60% 100%;
+  }
+
+  .together-container::before {
+    background: rgba(0, 0, 0, 0.4); /* Темное затемнение на маленьких экранах */
+  }
+
+  .br-together-pc {
+    display: none;
+  }
+}
+
