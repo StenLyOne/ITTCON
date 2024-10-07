@@ -88,9 +88,10 @@
 
 .chartsWraper {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  flex-wrap: wrap;
 }
 
 .chartsItem {
@@ -98,5 +99,58 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
   gap: 1.461rem;
 }
+
+/* .ChartPartnerships {
+  width: 40.639rem;
+  height: 21.689rem;
+} */
+
+.chartsCurrent {
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+
+/* ///////// Indicators */
+
+.indicators {
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+  background-image: radial-gradient(
+      circle at top,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    url(src/assets/indicators;.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.indicatorsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3.65296804rem;
+}
+
+.indicatorsText {
+  max-width: 65.844rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8264rem;
+}
+
+.indicatorsContainerItems {
+  display: flex;
+  justify-content: space-between;
+}
+

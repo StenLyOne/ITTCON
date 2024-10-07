@@ -3,10 +3,11 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/button/Button";
 import AboutUsNumbers from "../../components/AboutUsNumbers/AboutUsNumbers";
-import ChartPartnerships from "../../components/charts/chartsPartnerships";
-import ChartsInvestment from "../../components/charts/ChartsInvestment";
-import ChartsImpact from "../../components/charts/ChartsImpact";
-import ChartsSuccess from "../../components/charts/ChartsSuccess";
+import ChartPartnerships from "../../components/Charts/chartsPartnerships";
+import ChartsInvestment from "../../components/Charts/ChartsInvestment";
+import ChartsImpact from "../../components/Charts/ChartsImpact";
+import ChartsSuccess from "../../components/Charts/ChartsSuccess";
+import Indicators from "../../components/Indicators/Indicators";
 
 function AboutUs() {
   return (
@@ -55,22 +56,22 @@ function AboutUs() {
         <div className={`${style.chartsContainer}`}>
           <div className={style.chartsWraper}>
             <div className={style.chartsCurrent}>
-              {/* <div className={style.ChartPartnerships}>
+              <div className={style.ChartPartnerships}>
                 <ChartPartnerships />
               </div>
-              <div className={style.ChartsInvestment}>
+              {/* <div className={style.ChartsInvestment}>
                 <ChartsInvestment />
-              </div> */}
+              </div>
               <div className={style.ChartPartnerships}>
                 <ChartsImpact />
               </div>
-              {/* <div className={style.ChartPartnerships}>
+              <div className={style.ChartPartnerships}>
                 <ChartsSuccess />
               </div> */}
             </div>
             <div>
               <div className={style.chartsItem}>
-                <h3 className="black-color">Strategic Investment Focus</h3>
+                <h5 className="black-color">Strategic Investment Focus</h5>
                 <p className="black-color p20">
                   Explore our envisioned investment distribution across key
                   sectors that reflect our commitment to sustainable growth and
@@ -130,6 +131,21 @@ function AboutUs() {
             </div>
           </div>
         </div>
+      </section>
+      <section className={style.indicators}>
+        <div className={style.indicatorsContainer}>
+          <div className={style.indicatorsText}>
+            <h2>Enhancing Global Well-being Since 2018</h2>
+            <p className="p20">At the heart of our mission is a belief that our success is intertwined with the success of our clients. Partnering with us isn’t just about <br />receiving our services—it’s about joining our collaborative community where your achievements become our shared triumphs.</p>
+            
+          </div>
+          <div className={style.indicatorsContainerItems}>
+            <Indicators icon={'src/assets/indicators-icon-1.svg'} text={'We drive sustainability forward by empowering innovative startups across the wood sector.  From wood processing to bioenergy and beyond, we offer expert advice, strategic planning, and  tailored support. Our comprehensive services include market analysis, business development, and  operational guidance to ensure long-term growth and environmental responsibility'} title={'Sustainability'}/>
+            <Indicators icon={'src/assets/indicators-icon-3.svg'} text={'Integrity is at the core of ITTCON is approach. We operate with honesty and transparency,  fostering trust and long-term relationships. Our commitment to ethical practices ensures that our  business is always guided by the highest standards of accountability and respect.'} title={'Integrity'}/>
+            <Indicators icon={'src/assets/indicators-icon-2.svg'} text={'At ITTCON, collaboration is the cornerstone of our success. We build strong partnerships  with clients and stakeholders, working together to achieve shared goals. By fostering teamwork and  open communication, we create lasting value and drive sustainable growth across the wood sector'} title={'Collaboration'}/>
+          </div>
+        </div>
+        <div className={style.gradientBackground}></div>
       </section>
       <Footer />
     </div>

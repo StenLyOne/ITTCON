@@ -1,0 +1,22 @@
+.Indicators-container {
+    text-align: left;
+    width: 21.00456621rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.28310502rem;
+
+    padding: 1.71428571rem 1.27853881rem;
+    background-blend-mode: soft-light;
+    backdrop-filter: blur(35px);
+}
+
+.Indicators-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.09589041rem;
+}
+
+.Indicators-icon {
+    width: 3.65296804rem;
+    height: 3,65296804rem;
+}
