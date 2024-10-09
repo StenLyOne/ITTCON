@@ -1,0 +1,67 @@
+.reviews-container {
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.652rem;
+}
+
+.reviews-novigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.reviews-container-wraper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.reviews-container-items {
+  display: flex;
+  gap: 1.415rem;
+  transition: transform 0.5s ease-in-out; 
+}
+
+.reviews-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.reviews-buttons-left,
+.reviews-buttons-right {
+  cursor: pointer; /* Добавим курсор для кнопок */
+}
+
+.reviews-buttons-left {
+  transform: rotate(180deg);
+}
+
+/* REVIEW-CARD */
+
+.review-wraper {
+  min-width: 21.004rem;
+  padding: 1.643rem 1.278rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.095rem;
+}
+
+.review-top {
+  display: flex;
+  gap: 1.095rem;
+  align-items: center;
+}
+
+.review-img {
+  width: 5.479rem;
+  height: 5.479rem;
+  border-radius: 100px;
+}
+
+.review-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.456rem;
+}

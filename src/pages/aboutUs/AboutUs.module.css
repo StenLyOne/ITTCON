@@ -78,11 +78,10 @@
 .charts {
   width: 100%;
   text-align: left;
-  padding: 6.849rem;
+  padding: 6.849rem 10.913rem;
 }
 
 .chartsContainer {
-  width: 65.806rem;
   margin: 0 auto;
 }
 
@@ -95,12 +94,12 @@
 }
 
 .chartsItem {
-  width: 22.831rem;
+  width: 31.324rem;
   height: 100vh;
   display: flex;
   flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+  justify-content: center;
+  align-items: flex-start;
   gap: 1.461rem;
 }
 
@@ -110,15 +109,15 @@
 } */
 
 .chartsCurrent {
+  width: 32.831rem;
   flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    display: flex;
-    position: sticky;
-    top: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  position: sticky;
+  top: 0;
 }
-
 
 /* ///////// Indicators */
 
@@ -154,3 +153,38 @@
   justify-content: space-between;
 }
 
+/* ///////// EARTH */
+
+.earth {
+  text-align: left;
+  padding: 6.849rem 10.913rem;
+  background: white;
+}
+
+.earthContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.283rem;
+}
+
+.earthText {
+  width: 24.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.461rem;
+}
+
+.earthItem {
+  width: 39.36rem;
+  height: 39.36rem;
+}
+
+
+/* ///////// reviews */
+
+.reviews {
+  width: 100%;
+  text-align: left;
+}
