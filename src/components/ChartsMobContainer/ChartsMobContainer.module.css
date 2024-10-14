@@ -1,0 +1,20 @@
+.Charts {
+    width: 100%;
+    padding: 2.083rem 1.0415rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.666rem;
+}
+
+.ChartsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.083rem;
+}
+
+.ChartsText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}

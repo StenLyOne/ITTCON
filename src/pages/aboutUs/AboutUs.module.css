@@ -56,6 +56,10 @@
   position: relative;
 }
 
+.numbersItemsWraper {
+  display: flex;
+}
+
 .numbersItems {
   position: absolute;
   top: 0;
@@ -181,10 +185,113 @@
   height: 39.36rem;
 }
 
-
 /* ///////// reviews */
 
 .reviews {
   width: 100%;
   text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+  .mainContainer {
+    top: 5.416rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 5.416rem 1.039rem;
+  }
+
+  .numbers {
+    padding: 5.416rem 0 0;
+  }
+
+  .numbersContainer {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .numbersContainerItems {
+    justify-content: center;
+  }
+
+  .numbersItemsWraper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .numbersItems {
+    display: none;
+  }
+
+  .numbersContainer h2 {
+    margin-bottom: 2.083rem;
+  }
+
+
+
+  .charts {
+    padding: 5.416rem 1.041rem;
+  }
+
+  .chartsWraper {
+    display: none;
+  }
+
+
+
+  .indicators {
+    width: 100%;
+    padding: 3.333rem 1.041rem;
+    background-image: radial-gradient(
+        circle at top,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0) 50%
+      ),
+      url(src/assets/indicators;.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .indicatorsText {
+    text-align: left;
+    gap: 1.666rem;
+  }
+
+  .indicatorsBr {
+    display: none;
+  }
+
+  .indicatorsContainer {
+    gap: 3.333rem;
+  }
+
+  .indicatorsContainerItems {
+    flex-direction: column;
+    gap: 2.083rem;
+  }
+
+
+
+
+  .earth {
+    padding: 5.416rem 1.0416rem;
+  }
+
+  .earthContainer {
+    flex-direction: column;
+    gap: 3.333rem;
+  }
+
+  .earthText {
+    width: 100%;
+    gap: 1.666rem;
+  }
+
+  .earthItem {
+    width: 17.916rem;
+    height: 17.916rem;
+  }
 }

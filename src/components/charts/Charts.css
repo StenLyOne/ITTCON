@@ -2,3 +2,10 @@
   width: 32.831rem;
   height: 17.488rem;
 }
+
+@media screen and (max-width: 480px) {
+  .charts {
+    width: 15.833rem;
+    height: 15.833rem;
+  }
+}

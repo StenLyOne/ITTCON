@@ -11,7 +11,8 @@ import ChartsSuccess from "../../components/Charts/ChartsSuccess";
 import Indicators from "../../components/Indicators/Indicators";
 import Earth from "../../components/Earth/Earth";
 import Reviews from "../../components/Reviews/Reviews";
-import Together from "../../components/Together/Together"
+import Together from "../../components/Together/Together";
+import ChartsMobContainer from "../../components/ChartsMobContainer/ChartsMobContainer";
 
 function AboutUs() {
   const earthTextRef = useRef();
@@ -56,20 +57,28 @@ function AboutUs() {
           <h2 className="black-color">ITTCON by the Numbers</h2>
           <div className={style.numbersContainerItems}>
             <div className={`${style.numbersItems} ${style.numbersLeft}`}></div>
-            <AboutUsNumbers name="Forest Land" number="1,500 ha" />
-            <AboutUsNumbers name="Green investments" number="€40M" />
-            <AboutUsNumbers name="Reforestation trees" number="2.25M" />
-            <AboutUsNumbers name="40’ Containers loaded:" number="10k+ " />
+            <div className={style.numbersItemsWraper}>
+              <AboutUsNumbers name="Forest Land" number="1,500 ha" />
+              <AboutUsNumbers name="Green investments" number="€40M" />
+            </div>
+            <div className={style.numbersItemsWraper}>
+              <AboutUsNumbers name="Reforestation trees" number="2.25M" />
+              <AboutUsNumbers name="40’ Containers loaded:" number="10k+ " />
+            </div>
             <div
               className={`${style.numbersItems} ${style.numbersRight}`}
             ></div>
           </div>
           <div className={style.numbersContainerItems}>
             <div className={`${style.numbersItems} ${style.numbersLeft}`}></div>
-            <AboutUsNumbers name="Truck loads" number="12,000" />
-            <AboutUsNumbers name="Trains loaded" number="€40M" />
-            <AboutUsNumbers name="EUDR Compliance" number="95%" />
-            <AboutUsNumbers name="Continents Served" number="4" />
+            <div className={style.numbersItemsWraper}>
+              <AboutUsNumbers name="Truck loads" number="12,000" />
+              <AboutUsNumbers name="Trains loaded" number="€40M" />
+            </div>
+            <div className={style.numbersItemsWraper}>
+              <AboutUsNumbers name="EUDR Compliance" number="95%" />
+              <AboutUsNumbers name="Continents Served" number="4" />
+            </div>
             <div
               className={`${style.numbersItems} ${style.numbersRight}`}
             ></div>
@@ -83,7 +92,7 @@ function AboutUs() {
               <div className={style.ChartPartnerships}>
                 <ChartPartnerships />
               </div>
-              {/* <div className={style.ChartsInvestment}>
+              <div className={style.ChartsInvestment}>
                 <ChartsInvestment />
               </div>
               <div className={style.ChartPartnerships}>
@@ -91,7 +100,7 @@ function AboutUs() {
               </div>
               <div className={style.ChartPartnerships}>
                 <ChartsSuccess />
-              </div> */}
+              </div>
             </div>
             <div>
               <div className={style.chartsItem}>
@@ -154,6 +163,7 @@ function AboutUs() {
               </div>
             </div>
           </div>
+          <ChartsMobContainer/>
         </div>
       </section>
       <section className={style.indicators}>
@@ -163,7 +173,7 @@ function AboutUs() {
             <p className="p20">
               At the heart of our mission is a belief that our success is
               intertwined with the success of our clients. Partnering with us
-              isn’t just about <br />
+              isn’t just about <br className={style.indicatorsBr}/>
               receiving our services—it’s about joining our collaborative
               community where your achievements become our shared triumphs.
             </p>
@@ -213,7 +223,7 @@ function AboutUs() {
       <section className={`gray-bg ${style.reviews}`}>
         <Reviews/>
       </section>
-      <Together/>
+      <Together />
       <Footer />
     </div>
   );

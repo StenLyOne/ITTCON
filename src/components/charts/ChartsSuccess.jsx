@@ -88,8 +88,15 @@ const ChartsSuccess = () => {
 
     myChart.setOption(option); // Устанавливаем опции графика
 
+    const handleResize = () => {
+      myChart.resize(); // Автоматически изменяем размер при изменении окна
+    };
+
+    window.addEventListener("resize", handleResize); // Слушаем изменение размера окна
+
     // Очистка ресурса при размонтировании компонента
     return () => {
+      window.removeEventListener("resize", handleResize);
       myChart.dispose();
     };
   }, []);

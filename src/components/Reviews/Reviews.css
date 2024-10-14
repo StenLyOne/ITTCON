@@ -20,7 +20,7 @@
 .reviews-container-items {
   display: flex;
   gap: 1.415rem;
-  transition: transform 0.5s ease-in-out; 
+  transition: transform 0.5s ease-in-out;
 }
 
 .reviews-buttons {
@@ -50,8 +50,9 @@
 
 .review-top {
   display: flex;
+  flex-direction: column;
   gap: 1.095rem;
-  align-items: center;
+  align-items: left;
 }
 
 .review-img {
@@ -64,4 +65,27 @@
   display: flex;
   flex-direction: column;
   gap: 0.456rem;
+}
+
+@media screen and (max-width: 480px) {
+  .reviews-container {
+    padding: 5.416rem 1.0416rem;
+  }
+
+  .review-wraper {
+    min-width: 17.916rem;
+    padding: 1.643rem 1.278rem;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 1.095rem;
+  }
+
+  .reviews-container {
+    gap: 1.666rem;
+  }
+
+  .reviews-novigation {
+    flex-direction: column;
+}
 }

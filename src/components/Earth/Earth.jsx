@@ -56,7 +56,7 @@ const Earth = ({ width, height }) => {
 
   useEffect(() => {
     // Добавление текстур и кастомизация после рендера
-    globeEl.current.pointOfView({ lat: 0, lng: 0, altitude: 2.5 }, 1000);
+    globeEl.current.pointOfView({ lat: 50, lng: 10, altitude: 1.7 }, 1000);
     globeEl.current.controls().autoRotate = true; // Включение авто-вращения
     globeEl.current.controls().autoRotateSpeed = 0.5;
   }, []);

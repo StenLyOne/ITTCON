@@ -7,7 +7,7 @@ function Review({ img, name, job, text }) {
         <img className="review-img" src={img} alt="" />
         <div className="review-info">
             <h5 className="black-color">{name}</h5>
-            <p className="black-color">{job}</p>
+            <h5 className="black-color">{job}</h5>
         </div>
       </div>
       <div className="review-bottom">

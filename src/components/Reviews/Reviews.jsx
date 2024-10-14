@@ -66,6 +66,13 @@ function Reviews() {
     }
   };
 
+  const getWidth = () => {
+    if (window.innerWidth <= 480) {
+      return 17.916 + 1.415; // Для экранов <= 480px
+    } 
+    return 22.5; // Для экранов > 480px
+  };  
+
   return (
     <div className="reviews-container">
       <div className="reviews-novigation">
@@ -82,7 +89,7 @@ function Reviews() {
       <div className="reviews-container-wraper">
         <div
           className="reviews-container-items"
-          style={{ transform: `translateX(-${currentIndex * 22.5}rem)` }}
+          style={{ transform: `translateX(-${currentIndex * getWidth()}rem)` }}
         >
           {reviews.map((review, index) => (
             <Review
