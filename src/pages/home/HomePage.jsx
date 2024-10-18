@@ -38,7 +38,7 @@ function HomePage() {
           className={`video filter-anim ${
             hoveredIndex !== null ? "filter" : ""
           }`}
-          src="src/assets/videoplayback.webm"
+          src="src/assets/videoplayback.mp4"
           preload="meta"
           muted
           loop
@@ -50,15 +50,14 @@ function HomePage() {
             hoveredIndex !== null ? "filter" : ""
           }`}
         >
-          <h1>Pioneering sustainable innovation for a greener tomorrow</h1>
-          <p>
+          <h1 className='h1-plus'>Pioneering sustainable innovation for a greener tomorrow</h1>
+          {/* <p>
             Driving sustainable innovation to ensure a thriving planet and a
             prosperous
             <br className="br-pc-main" />
             future where business and nature grow together.
-          </p>
+          </p> */}
         </div>
-
         <div className="mainButtons">
           <div
             onMouseEnter={() => handleMouseEnter(0)}
@@ -113,7 +112,7 @@ function HomePage() {
             </ButtonServis>
           </div>
         </div>
-        <ButtonGroup/>
+        <ButtonGroup />
       </main>
       <section className="numbers">
         <div className="numbersContainer">
@@ -214,6 +213,7 @@ function HomePage() {
               text2="With global reach and deep industry knowledge, we guide you through market trends, regulatory compliance, and risk management, ensuring your business thrives in the global timber industry."
               url="src/assets/servis-agency.png"
               color="gray-bg"
+              button={true}
             />
             <ServisItem
               isImageRight={false}
@@ -222,6 +222,7 @@ function HomePage() {
               text2="Our expertise in ESG and CSR ensures that your investments yield financial returns while contributing to long-term sustainability, making a meaningful impact on the environment."
               url="src/assets/servis-green.png"
               color="cream-bg"
+              button={true}
             />
             <ServisItem
               isImageRight={true}
@@ -230,6 +231,7 @@ function HomePage() {
               text2="We guide startups through early development, providing expert advice on product development, market entry, and scaling operations. With ITTCON, your startup gains deep industry insights and mentorship, positioning you for long-term success in a competitive market"
               url="src/assets/servis-startup.png"
               color="gray-bg"
+              button={true}
             />
             <ServisItem
               isImageRight={false}
@@ -238,6 +240,7 @@ function HomePage() {
               text2="Partner with ITTCON to meet regulatory demands and enhance your reputation as a leader in sustainability and ethical business practices."
               url="src/assets/servis-EUDR.png"
               color="cream-bg"
+              button={true}
             />
           </div>
         </div>

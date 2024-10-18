@@ -97,6 +97,10 @@
   flex-wrap: wrap;
 }
 
+.chartsMob {
+  display: none;
+}
+
 .chartsItem {
   width: 31.324rem;
   height: 100vh;
@@ -238,6 +242,12 @@
   .chartsWraper {
     display: none;
   }
+
+  .chartsMob {
+    display: block;
+  }
+
+  
 
 
 

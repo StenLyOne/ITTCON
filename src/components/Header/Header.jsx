@@ -18,9 +18,9 @@ function Header() {
 
         {/* Основная навигация для десктопа */}
         <nav className={styles.headerText}>
-          <p>Home</p>
-          <p>About us</p>
-          <p>Services</p>
+          <a href="/"><p>Home</p></a>
+          <a href="/aboutus"><p>About us</p></a>
+          <a href="/servises"><p>Services</p></a>
           <p>Portfolio</p>
           <p>News</p>
         </nav>

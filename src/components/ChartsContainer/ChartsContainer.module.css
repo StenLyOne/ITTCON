@@ -1,0 +1,62 @@
+.charts {
+  width: 100%;
+  text-align: left;
+  padding: 6.849rem 10.913rem;
+}
+
+.chartsContainer {
+  margin: 0 auto;
+}
+
+.chartsWraper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+
+.chartsMob {
+  display: none;
+}
+
+.chartsItem {
+  width: 31.324rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.461rem;
+}
+
+/* .ChartPartnerships {
+    width: 40.639rem;
+    height: 21.689rem;
+  } */
+
+.chartsCurrent {
+  width: 32.831rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+@media screen and (max-width: 480px) {
+
+  .charts {
+    padding: 5.416rem 1.041rem;
+  }
+
+  .chartsWraper {
+    display: none;
+  }
+
+  .chartsMob {
+    display: block;
+  }
+}

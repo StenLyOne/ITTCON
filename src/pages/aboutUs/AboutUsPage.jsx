@@ -13,6 +13,7 @@ import Earth from "../../components/Earth/Earth";
 import Reviews from "../../components/Reviews/Reviews";
 import Together from "../../components/Together/Together";
 import ChartsMobContainer from "../../components/ChartsMobContainer/ChartsMobContainer";
+import ChartsComponent from "../../components/ChartsContainer/ChartsComponent";
 
 function AboutUs() {
   const earthTextRef = useRef();
@@ -86,85 +87,7 @@ function AboutUs() {
         </div>
       </section>
       <section className={`white-bg ${style.charts}`}>
-        <div className={`${style.chartsContainer}`}>
-          <div className={style.chartsWraper}>
-            <div className={style.chartsCurrent}>
-              <div className={style.ChartPartnerships}>
-                <ChartPartnerships />
-              </div>
-              <div className={style.ChartsInvestment}>
-                <ChartsInvestment />
-              </div>
-              <div className={style.ChartPartnerships}>
-                <ChartsImpact />
-              </div>
-              <div className={style.ChartPartnerships}>
-                <ChartsSuccess />
-              </div>
-            </div>
-            <div>
-              <div className={style.chartsItem}>
-                <h2 className="black-color">Strategic Investment Focus</h2>
-                <p className="black-color p20">
-                  Explore our envisioned investment distribution across key
-                  sectors that reflect our commitment to sustainable growth and
-                  innovation. While these projections are forward-looking, they
-                  represent the strategic directions ITTCON is dedicated to
-                  pursuing as we continue to build a sustainable future.
-                </p>
-              </div>
-              <div className={style.chartsItem}>
-                <h3 className="black-color">
-                  Client Partnerships: From Vision to Success
-                </h3>
-                <p className="black-color p20">
-                  Explore the journey of our client partnerships, where
-                  collaboration and innovation fuel sustained growth and
-                  success. This chart illustrates the upward trajectory of
-                  performance and achievements, highlighting the impact of our
-                  strategic approach.
-                </p>
-              </div>
-              <div className={style.chartsItem}>
-                <h3 className="black-color">
-                  Investment Evolution: Tracking Our Strategic Growth
-                </h3>
-                <p className="black-color p20">
-                  Discover how ITTCON's investment focus has evolved over time.
-                  This chart highlights our strategic growth and adaptability,
-                  showcasing our commitment to responding to market trends and
-                  client needs with precision and foresight.
-                </p>
-              </div>
-              <div className={style.chartsItem}>
-                <h3 className="black-color">
-                  Client Success Metrics: A Multi-Dimensional View
-                </h3>
-                <p className="black-color p20">
-                  Delve into the key performance indicators that define ITTCON's
-                  client success. This radar chart offers a comprehensive view
-                  of various success dimensions, from project completion rates
-                  to client satisfaction and return on investment, illustrating
-                  the holistic impact of our partnerships.
-                </p>
-              </div>
-              <div className={style.chartsItem}>
-                <h3 className="black-color">
-                  Global Impact: ITTCON's Expanding Footprint
-                </h3>
-                <p className="black-color p20">
-                  Visualize ITTCON's geographical reach and discover how our
-                  global and regional projects contribute to sustainable growth.
-                  This map highlights the breadth of our influence, showcasing
-                  the number of projects and investments across different
-                  regions, reflecting our commitment to international expertise
-                  and impact.
-                </p>
-              </div>
-            </div>
-          </div>
-          <ChartsMobContainer/>
-        </div>
+        <ChartsComponent />
       </section>
       <section className={style.indicators}>
         <div className={style.indicatorsContainer}>
@@ -173,7 +96,7 @@ function AboutUs() {
             <p className="p20">
               At the heart of our mission is a belief that our success is
               intertwined with the success of our clients. Partnering with us
-              isn’t just about <br className={style.indicatorsBr}/>
+              isn’t just about <br className={style.indicatorsBr} />
               receiving our services—it’s about joining our collaborative
               community where your achievements become our shared triumphs.
             </p>
@@ -221,7 +144,7 @@ function AboutUs() {
         </div>
       </section>
       <section className={`gray-bg ${style.reviews}`}>
-        <Reviews/>
+        <Reviews />
       </section>
       <Together />
       <Footer />

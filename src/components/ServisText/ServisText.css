@@ -6,7 +6,7 @@
   text-align: left;
   align-items: flex-start;
 
-  padding: 3.652rem 2.283rem;
+  padding: 2.283rem;
 }
 
 .servis-text-wriper {
@@ -14,7 +14,11 @@
   flex-direction: column;
   gap: 1.187rem;
 
-  margin: 1.461rem 0 1.917rem;
+  margin: 1.461rem 0 0;
+}
+
+.servis-button-wriper button {
+  margin-top: 1.917rem;
 }
 
 @media screen and (max-width: 480px) {

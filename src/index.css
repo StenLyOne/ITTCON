@@ -38,7 +38,7 @@ body {
 
 h1 {
   color: #ffffff;
-  font-size: 4.2rem;
+  font-size: 5.205rem;
   line-height: 5.114rem;
   font-weight: 400;
 }
@@ -131,6 +131,16 @@ p {
   flex-direction: row-reverse;
 }
 
+.none {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.h1-plus {
+}
 
 @media screen and (max-width: 480px) {
   html {
@@ -146,8 +156,8 @@ p {
 
   h2 {
     color: #ffffff;
-    font-size: 1.666rem;
-    line-height: 1.875rem;
+    font-size: 1.966rem;
+    line-height: 1.975rem;
     font-weight: 400;
   }
 
@@ -156,7 +166,7 @@ p {
     font-family: Satoshi;
     font-size: 1.333rem;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.666rem;
   }
 
