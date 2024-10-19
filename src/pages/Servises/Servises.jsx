@@ -6,9 +6,19 @@ import Button from "../../components/button/Button";
 import ServisItem from "../../components/ServisItem/ServisItem";
 import Indicators from "../../components/Indicators/Indicators";
 import Together from "../../components/Together/Together";
+import { useLocation } from "react-router-dom";
 
 function Servises() {
+  const location = useLocation();
   const [servicesIndex, setServisesIndex] = useState(0);
+
+  useEffect(() => {
+    // Восстанавливаем состояние при каждом посещении страницы
+    const state = location.state;
+    if (state && state.serviceId !== undefined) {
+      setServisesIndex(state.serviceId);
+    }
+  }, [location]);
 
   const data = [
     {
@@ -224,7 +234,7 @@ function Servises() {
   return (
     <div>
       <Header />
-      <main className={style.main}>
+      <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
             <h1>Explore Our Expertise</h1>

@@ -39,7 +39,7 @@ function AboutUs() {
   return (
     <div>
       <Header />
-      <main className={style.main}>
+      <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
             <h1>Innovating with Nature’s Blueprint</h1>

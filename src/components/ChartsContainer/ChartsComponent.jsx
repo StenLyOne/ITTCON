@@ -379,6 +379,7 @@ const ChartsComponent = () => {
       trigger: investment.current,
       start: "top center", // Точка входа при прокрутке вниз
       onEnter: () => {
+        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsInvestmentRef.current, { display: "block" });
         renderChart(chartsInvestmentRef, investmentOption);
@@ -387,8 +388,10 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: investment.current,
-      start: "center bottom", // Точка входа при прокрутке наверх
+      start: "bottom top", // Точка входа при прокрутке наверх
+      markers: true,
       onEnterBack: () => {
+        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsInvestmentRef.current, { display: "block" });
         renderChart(chartsInvestmentRef, investmentOption);
@@ -400,6 +403,7 @@ const ChartsComponent = () => {
       trigger: partnerships.current,
       start: "top center",
       onEnter: () => {
+        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartPartnershipsRef.current, { display: "block" });
         renderChart(chartPartnershipsRef, partnershipsOption);
@@ -408,8 +412,10 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: partnerships.current,
-      start: "center bottom", // Точка входа при прокрутке наверх
+      start: "bottom top", // Точка входа при прокрутке наверх
+      markers: true,
       onEnterBack: () => {
+        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartPartnershipsRef.current, { display: "block" });
         renderChart(chartPartnershipsRef, partnershipsOption);
@@ -421,6 +427,7 @@ const ChartsComponent = () => {
       trigger: impact.current,
       start: "top center",
       onEnter: () => {
+        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsImpactRef.current, { display: "block" });
         renderChart(chartsImpactRef, impactOption);
@@ -429,8 +436,10 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: impact.current,
-      start: "center bottom", // Точка входа при прокрутке наверх
+      start: "bottom top", // Точка входа при прокрутке наверх
+      markers: true,
       onEnterBack: () => {
+        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsImpactRef.current, { display: "block" });
         renderChart(chartsImpactRef, impactOption);
@@ -442,6 +451,7 @@ const ChartsComponent = () => {
       trigger: success.current,
       start: "top center",
       onEnter: () => {
+        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsSuccessRef.current, { display: "block" });
         renderChart(chartsSuccessRef, successOption);
@@ -449,9 +459,11 @@ const ChartsComponent = () => {
     });
 
     ScrollTrigger.create({
-      trigger: impact.current,
-      start: "center bottom", // Точка входа при прокрутке наверх
+      trigger: success.current,
+      start: "bottom top", // Точка входа при прокрутке наверх
+      markers: true,
       onEnterBack: () => {
+        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsSuccessRef.current, { display: "block" });
         renderChart(chartsSuccessRef, successOption);

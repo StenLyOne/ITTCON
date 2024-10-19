@@ -63,7 +63,7 @@ function HomePage() {
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
           >
-            <ButtonServis text="Agency and Brokerage">
+            <ButtonServis text="Agency and Brokerage" id={0}>
               <div className="buttonServis-img-agency">
                 <img
                   src="src/assets/agency-btn.png"
@@ -76,7 +76,7 @@ function HomePage() {
             onMouseEnter={() => handleMouseEnter(1)}
             onMouseLeave={handleMouseLeave}
           >
-            <ButtonServis text="Green Investment">
+            <ButtonServis text="Green Investment" id={1}>
               <div className="buttonServis-img-agency">
                 <img
                   src="src/assets/agency-btn.png"
@@ -89,7 +89,7 @@ function HomePage() {
             onMouseEnter={() => handleMouseEnter(2)}
             onMouseLeave={handleMouseLeave}
           >
-            <ButtonServis text="Startup Services">
+            <ButtonServis text="Startup Services" id={2}>
               <div className="buttonServis-img-agency">
                 <img
                   src="src/assets/agency-btn.png"
@@ -102,7 +102,7 @@ function HomePage() {
             onMouseEnter={() => handleMouseEnter(3)}
             onMouseLeave={handleMouseLeave}
           >
-            <ButtonServis text="EUDR and<br>Sustainable Schemes">
+            <ButtonServis text="EUDR and<br>Sustainable Schemes" id={3}>
               <div className="buttonServis-img-agency">
                 <img
                   src="src/assets/agency-btn.png"
@@ -157,7 +157,7 @@ function HomePage() {
               </p>
             </div>
             <div className="aboutUs-btn">
-              <Button text="About us" />
+              <Button text="About us" path="/aboutus" />
             </div>
           </div>
           <div className="aboutUs-container-right"></div>
@@ -214,6 +214,7 @@ function HomePage() {
               url="src/assets/servis-agency.png"
               color="gray-bg"
               button={true}
+              id={0}
             />
             <ServisItem
               isImageRight={false}
@@ -223,6 +224,7 @@ function HomePage() {
               url="src/assets/servis-green.png"
               color="cream-bg"
               button={true}
+              id={1}
             />
             <ServisItem
               isImageRight={true}
@@ -232,6 +234,7 @@ function HomePage() {
               url="src/assets/servis-startup.png"
               color="gray-bg"
               button={true}
+              id={2}
             />
             <ServisItem
               isImageRight={false}
@@ -241,6 +244,7 @@ function HomePage() {
               url="src/assets/servis-EUDR.png"
               color="cream-bg"
               button={true}
+              id={3}
             />
           </div>
         </div>
