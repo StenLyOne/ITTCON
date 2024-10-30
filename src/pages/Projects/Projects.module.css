@@ -1,0 +1,107 @@
+.main {
+  width: 100%;
+  height: 70svh;
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0) 50%
+    ),
+    url(src/assets/projects.png);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.606rem;
+  align-items: center;
+}
+
+.mainContainerText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.369rem;
+}
+
+.mainContainerText h2 {
+  max-width: 59.844rem;
+}
+
+.projects {
+  width: 100%;
+  text-align: left;
+}
+
+.projectsContainer {
+  padding: 6.849rem 10.913rem;
+}
+
+.projectsWraper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem 0rem; /* Вертикальный отступ - 1.4rem, горизонтальный - 4rem */
+  justify-content: space-between;
+}
+
+.projectsItem {
+  width: 21.014rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.141rem;
+  align-items: flex-start;
+}
+
+.projectsImg img {
+  width: 21.014rem;
+  height: 21.014rem;
+  object-fit: cover;
+}
+
+.case {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.caseContainer {
+  width: 27.716rem;
+  display: flex;
+  gap: 3.652rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  text-align: left;
+  padding: 6.849rem 0;
+}
+
+.caseItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.141rem;
+}
+
+.back {
+  width: 100%;
+  padding: 1rem 10.913rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.arrow {
+  width: 2.739rem;
+}
+
+@media screen and (max-width: 480px) {
+  .mainContainer {
+    top: 5.416rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    padding: 5.416rem 1.039rem;
+  }
+}

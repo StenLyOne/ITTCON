@@ -49,7 +49,7 @@ const ChartsComponent = () => {
     };
 
     // Опции для различных графиков
-    const investmentOption = {
+    const impactOption = {
       xAxis: {
         type: "category",
         data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
@@ -180,88 +180,7 @@ const ChartsComponent = () => {
       ],
     };
 
-    const impactOption = {
-      tooltip: {
-        trigger: "item",
-      },
-      legend: {
-        data: ["Client A", "Client B", "Client C"],
-        top: "bottom",
-      },
-      radar: {
-        indicator: [
-          { name: "Project Completion", max: 100 },
-          { name: "Client Satisfaction", max: 100 },
-          { name: "Return on Investment", max: 100 },
-          { name: "Innovation Adoption", max: 100 },
-          { name: "Sustainability Impact", max: 100 },
-          { name: "Long-Term Value", max: 100 },
-        ],
-        shape: "polygon",
-        radius: "65%",
-        splitNumber: 5,
-        name: {
-          textStyle: {
-            color: "#000",
-            backgroundColor: "#fff",
-            borderRadius: 3,
-            padding: [3, 5],
-          },
-        },
-      },
-      series: [
-        {
-          name: "Client Success Metrics",
-          type: "radar",
-          data: [
-            {
-              value: [80, 90, 70, 80, 75, 85],
-              name: "Client A",
-              areaStyle: {
-                color: "rgba(30, 144, 255, 0.4)",
-              },
-              lineStyle: {
-                color: "#1E90FF",
-              },
-              itemStyle: {
-                color: "#1E90FF",
-              },
-            },
-            {
-              value: [60, 70, 65, 80, 85, 75],
-              name: "Client B",
-              areaStyle: {
-                color: "rgba(60, 179, 113, 0.4)",
-              },
-              lineStyle: {
-                color: "#3CB371",
-              },
-              itemStyle: {
-                color: "#3CB371",
-              },
-            },
-            {
-              value: [70, 80, 90, 60, 75, 85],
-              name: "Client C",
-              areaStyle: {
-                color: "rgba(255, 215, 0, 0.4)",
-              },
-              lineStyle: {
-                color: "#FFD700",
-              },
-              itemStyle: {
-                color: "#FFD700",
-              },
-            },
-          ],
-          areaStyle: {
-            type: "default",
-          },
-        },
-      ],
-    };
-
-    const successOption = {
+    const investmentOption = {
       tooltip: {
         trigger: "axis",
         axisPointer: {
@@ -374,12 +293,93 @@ const ChartsComponent = () => {
       ],
     };
 
+    const successOption = {
+      /// +++
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        data: ["Client A", "Client B", "Client C"],
+        top: "bottom",
+      },
+      radar: {
+        indicator: [
+          { name: "Project Completion", max: 100 },
+          { name: "Client Satisfaction", max: 100 },
+          { name: "Return on Investment", max: 100 },
+          { name: "Innovation Adoption", max: 100 },
+          { name: "Sustainability Impact", max: 100 },
+          { name: "Long-Term Value", max: 100 },
+        ],
+        shape: "polygon",
+        radius: "65%",
+        splitNumber: 5,
+        name: {
+          textStyle: {
+            color: "#000",
+            backgroundColor: "#fff",
+            borderRadius: 3,
+            padding: [3, 5],
+          },
+        },
+      },
+      series: [
+        {
+          name: "Client Success Metrics",
+          type: "radar",
+          data: [
+            {
+              value: [80, 90, 70, 80, 75, 85],
+              name: "Client A",
+              areaStyle: {
+                color: "rgba(30, 144, 255, 0.4)",
+              },
+              lineStyle: {
+                color: "#1E90FF",
+              },
+              itemStyle: {
+                color: "#1E90FF",
+              },
+            },
+            {
+              value: [60, 70, 65, 80, 85, 75],
+              name: "Client B",
+              areaStyle: {
+                color: "rgba(60, 179, 113, 0.4)",
+              },
+              lineStyle: {
+                color: "#3CB371",
+              },
+              itemStyle: {
+                color: "#3CB371",
+              },
+            },
+            {
+              value: [70, 80, 90, 60, 75, 85],
+              name: "Client C",
+              areaStyle: {
+                color: "rgba(255, 215, 0, 0.4)",
+              },
+              lineStyle: {
+                color: "#FFD700",
+              },
+              itemStyle: {
+                color: "#FFD700",
+              },
+            },
+          ],
+          areaStyle: {
+            type: "default",
+          },
+        },
+      ],
+    };
+
     // GSAP анимация для Investments
     ScrollTrigger.create({
       trigger: investment.current,
       start: "top center", // Точка входа при прокрутке вниз
       onEnter: () => {
-        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsInvestmentRef.current, { display: "block" });
         renderChart(chartsInvestmentRef, investmentOption);
@@ -388,10 +388,9 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: investment.current,
-      start: "bottom top", // Точка входа при прокрутке наверх
-      markers: true,
+      start: "center top", // Точка входа при прокрутке наверх
+
       onEnterBack: () => {
-        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsInvestmentRef.current, { display: "block" });
         renderChart(chartsInvestmentRef, investmentOption);
@@ -403,7 +402,6 @@ const ChartsComponent = () => {
       trigger: partnerships.current,
       start: "top center",
       onEnter: () => {
-        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartPartnershipsRef.current, { display: "block" });
         renderChart(chartPartnershipsRef, partnershipsOption);
@@ -412,10 +410,9 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: partnerships.current,
-      start: "bottom top", // Точка входа при прокрутке наверх
-      markers: true,
+      start: "center top", // Точка входа при прокрутке наверх
+
       onEnterBack: () => {
-        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartPartnershipsRef.current, { display: "block" });
         renderChart(chartPartnershipsRef, partnershipsOption);
@@ -427,7 +424,6 @@ const ChartsComponent = () => {
       trigger: impact.current,
       start: "top center",
       onEnter: () => {
-        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsImpactRef.current, { display: "block" });
         renderChart(chartsImpactRef, impactOption);
@@ -436,10 +432,9 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: impact.current,
-      start: "bottom top", // Точка входа при прокрутке наверх
-      markers: true,
+      start: "center top", // Точка входа при прокрутке наверх
+
       onEnterBack: () => {
-        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsImpactRef.current, { display: "block" });
         renderChart(chartsImpactRef, impactOption);
@@ -451,7 +446,6 @@ const ChartsComponent = () => {
       trigger: success.current,
       start: "top center",
       onEnter: () => {
-        console.log("Entering Investment Chart");
         hideAllCharts();
         gsap.set(chartsSuccessRef.current, { display: "block" });
         renderChart(chartsSuccessRef, successOption);
@@ -460,10 +454,9 @@ const ChartsComponent = () => {
 
     ScrollTrigger.create({
       trigger: success.current,
-      start: "bottom top", // Точка входа при прокрутке наверх
-      markers: true,
+      start: "center top", // Точка входа при прокрутке наверх
+
       onEnterBack: () => {
-        console.log("Entering Investment Chart Back");
         hideAllCharts();
         gsap.set(chartsSuccessRef.current, { display: "block" });
         renderChart(chartsSuccessRef, successOption);
@@ -475,38 +468,40 @@ const ChartsComponent = () => {
     <div className={style.chartsWraper}>
       <div className={style.chartsCurrent} ref={chartsWraper}>
         <div
-          className={style.ChartPartnerships}
-          ref={chartPartnershipsRef}
-          style={{ display: "none", width: "32.831rem", height: "50vh" }}
+          className={style.ChartsImpact}
+          ref={chartsImpactRef}
+          style={{ display: "none", width: "100%", height: "70vh" }}
         >
           {/* График Partnerships будет рендериться здесь */}
         </div>
         <div
-          className={style.ChartsInvestment}
-          ref={chartsInvestmentRef}
-          style={{ display: "none", width: "32.831rem", height: "50vh" }}
+          className={style.ChartPartnerships}
+          ref={chartPartnershipsRef}
+          style={{ display: "none", width: "100%", height: "70vh" }}
         >
           {/* График Investments будет рендериться здесь */}
         </div>
         <div
-          className={style.ChartsImpact}
-          ref={chartsImpactRef}
-          style={{ display: "none", width: "32.831rem", height: "70vh" }}
+          className={style.ChartsInvestment}
+          ref={chartsInvestmentRef}
+          style={{ display: "none", width: "100%", height: "70vh" }}
         >
           {/* График Impact будет рендериться здесь */}
         </div>
         <div
           className={style.ChartsSuccess}
           ref={chartsSuccessRef}
-          style={{ display: "none", width: "32.831rem", height: "50vh" }}
+          style={{ display: "none", width: "100%", height: "70vh" }}
         >
           {/* График Success будет рендериться здесь */}
         </div>
       </div>
 
       <div>
-        <div className={style.chartsItem} ref={investment}>
-          <h3 className="black-color">Strategic Investment Focus</h3>
+        <div className={style.chartsItem}>
+          <h3 className="black-color" ref={impact}>
+            Strategic Investment Focus
+          </h3>
           <p className="black-color p20">
             Explore our envisioned investment distribution across key sectors
             that reflect our commitment to sustainable growth and innovation.
@@ -515,9 +510,10 @@ const ChartsComponent = () => {
             to build a sustainable future.
           </p>
         </div>
-        <div className={style.chartsItem} ref={partnerships}>
-          <h3 className="black-color">
-            Client Partnerships: <br />From Vision to Success
+        <div className={style.chartsItem}>
+          <h3 className="black-color" ref={partnerships}>
+            Client Partnerships: <br />
+            From Vision to Success
           </h3>
           <p className="black-color p20">
             Explore the journey of our client partnerships, where collaboration
@@ -526,8 +522,8 @@ const ChartsComponent = () => {
             highlighting the impact of our strategic approach.
           </p>
         </div>
-        <div className={style.chartsItem} ref={success}>
-          <h3 className="black-color">
+        <div className={style.chartsItem}>
+          <h3 className="black-color" ref={investment}>
             Investment Evolution: Tracking Our Strategic Growth
           </h3>
           <p className="black-color p20">
@@ -537,8 +533,8 @@ const ChartsComponent = () => {
             precision and foresight.
           </p>
         </div>
-        <div className={style.chartsItem} ref={impact}>
-          <h3 className="black-color">
+        <div className={style.chartsItem}>
+          <h3 className="black-color" ref={success}>
             Client Success Metrics: <br />A Multi-Dimensional View
           </h3>
           <p className="black-color p20">

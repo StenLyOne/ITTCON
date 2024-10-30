@@ -5,6 +5,7 @@
   background-blend-mode: soft-light;
   backdrop-filter: blur(40px);
   position: fixed;
+  transition: 0.3s ease background-color;
 }
 
 .headerContainer {
@@ -66,6 +67,9 @@
 
 .headerNav {
   display: none;
+}
+.activ {
+  background-color: #2d2c29;
 }
 
 /* Скрываем навигацию в мобильной версии */

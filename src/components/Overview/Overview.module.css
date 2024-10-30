@@ -1,0 +1,42 @@
+.overviewContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 10.913rem;
+}
+
+.overviewItem {
+  text-align: left;
+  width: 100%;
+  max-width: 26.073rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.369rem;
+  justify-content: center;
+}
+
+.overviewImg {
+  width: 43.835rem;
+  height: 100vh;
+  object-fit: cover;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: sticky;
+  top: 0;
+}
+
+.overviewImg img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0%;
+}
+
+.overviewItemImg img{
+  width: 3.652rem;
+  height: 3.652rem;
+}

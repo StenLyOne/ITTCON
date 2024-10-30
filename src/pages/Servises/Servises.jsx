@@ -6,7 +6,10 @@ import Button from "../../components/button/Button";
 import ServisItem from "../../components/ServisItem/ServisItem";
 import Indicators from "../../components/Indicators/Indicators";
 import Together from "../../components/Together/Together";
+import Overview from "../../components/Overview/Overview";
 import { useLocation } from "react-router-dom";
+import Portfolio from "../../components/Portfolio/Portfolio";
+import { name } from "echarts-extension-gmap";
 
 function Servises() {
   const location = useLocation();
@@ -22,6 +25,7 @@ function Servises() {
 
   const data = [
     {
+      name: "Agency and Brokerage",
       title: "Strategic Agency and Brokerage for Sustainable Trade",
       description:
         "At ITTCON, we excel in facilitating seamless international trade in forestry and bioenergy products. Our Agency and Brokerage services are tailored to simplify the complexities of global markets, ensuring your operations are efficient, reliable, and aligned with sustainable growth.",
@@ -54,26 +58,9 @@ function Servises() {
           "Track and evaluate your trading performance with precision. ITTCON delivers regular reports and actionable insights, enabling you to assess results, identify opportunities for improvement, and fine-tune your trading strategies for optimal success.",
         icon6: "src/assets/Performance tracking.svg",
       },
-      solution: {
-        solution1: {
-          title: "Comprehensive market expansion support",
-          description:
-            "At ITTCON, we offer tailored solutions designed to expand your market reach and optimize your trading operations.",
-          description2:
-            "From expert negotiation of trade agreements to meticulous logistics management, our team ensures that every transaction is not only smooth but also strategically aligned with your profitability goals.F",
-          url: "src/assets/servisesDescription-1.png",
-        },
-        solution2: {
-          title: "Our Proven Process",
-          description:
-            "We start with an in-depth market analysis to uncover new opportunities. Next, we connect you with trusted partners and expertly guide you through every stage of negotiation and transaction.",
-          description2:
-            "With ITTCON, you can expect transparency and efficiency at every step, ensuring a smooth and successful process.",
-          url: "src/assets/servisesDescription-2.png",
-        },
-      },
     },
     {
+      name: "Green Investment",
       title: "Driving Sustainable Innovation through Green Investments",
       description:
         "We connect investors with diverse opportunities in the green economy, spanning renewable energy, environmental restoration, and sustainable technology projects.",
@@ -126,6 +113,7 @@ function Servises() {
       },
     },
     {
+      name: "Startup Services",
       title: "Driving Sustainable Innovation through Green Investments",
       description:
         "We connect investors with diverse opportunities in the green economy, spanning renewable energy, environmental restoration, and sustainable technology projects.",
@@ -178,6 +166,7 @@ function Servises() {
       },
     },
     {
+      name: "EUDR and Sustainable Schemes",
       title: "Mastering EUDR Compliance and Sustainable Practices",
       description:
         "We provide a comprehensive approach to navigating the complexities of European Union Deforestation Regulation (EUDR) and implementing sustainable schemes. Our services are designed to ensure your business not only complies with regulatory requirements but also strengthens its commitment to sustainability.",
@@ -246,7 +235,7 @@ function Servises() {
               sustainable growth.
             </p>
           </div>
-          <Button text="Contact us" color="white-color" />
+          <Button text="Contact us" color="white-color" path="/contact"/>
         </div>
       </main>
       <section className={`white-bg ${style.servises}`}>
@@ -255,7 +244,7 @@ function Servises() {
             <h2 className="black-color">Services</h2>
           </div>
           <div className={style.servisesItems}>
-            <button className="white-bg" onClick={() => setServisesIndex(0)}>
+            <button className={`white-bg`} onClick={() => setServisesIndex(0)}>
               <h5
                 className={`${style.servisesh5} ${
                   servicesIndex === 0 ? style.activ : ""
@@ -333,59 +322,35 @@ function Servises() {
         <div className={style.solutionsContainer}>
           <h2>Tailored solutions for your needs</h2>
           <div className={style.solutionsItemsWraper}>
-            <Indicators
-              icon={data[servicesIndex].indicators.icon1}
-              text={data[servicesIndex].indicators.description1}
-              title={data[servicesIndex].indicators.title1}
-            />
-            <Indicators
-              icon={data[servicesIndex].indicators.icon2}
-              text={data[servicesIndex].indicators.description2}
-              title={data[servicesIndex].indicators.title2}
-            />
-            <Indicators
-              icon={data[servicesIndex].indicators.icon3}
-              text={data[servicesIndex].indicators.description3}
-              title={data[servicesIndex].indicators.title3}
-            />
-            <Indicators
-              icon={data[servicesIndex].indicators.icon4}
-              text={data[servicesIndex].indicators.description4}
-              title={data[servicesIndex].indicators.title4}
-            />
-            <Indicators
-              icon={data[servicesIndex].indicators.icon5}
-              text={data[servicesIndex].indicators.description5}
-              title={data[servicesIndex].indicators.title5}
-            />
-            <Indicators
-              icon={data[servicesIndex].indicators.icon6}
-              text={data[servicesIndex].indicators.description5}
-              title={data[servicesIndex].indicators.title5}
-            />
+            <div className={style.solutionsItemsWraper1}>
+              <Indicators
+                icon="src/assets/Collaborating-img1.svg"
+                text="ITTCON adapts to your business goals, offering customized solutions for each client. We understand that every project is unique and requires a tailored approach that takes market specifics into account."
+                title="Flexibility in Partnership"
+              />
+              <Indicators
+                icon="src/assets/Collaborating-img2.svg"
+                text="With ITTCON, you’ll get more than just advice – you’ll receive concrete steps. We create clear, executable plans so your company can achieve desired outcomes faster."
+                title="Actionable Solutions"
+              />
+              <Indicators
+                icon="src/assets/Collaborating-img3.svg"
+                text="ITTCON supports even the most ambitious projects. The higher the goal, the more we strive to achieve it, offering innovative strategies and tools for success"
+                title="Ambitious Goals"
+              />
+            </div>
           </div>
         </div>
       </section>
-      <section className={`white-bg ${style.description}`}>
-        <div className={style.descriptionContainer}>
-          <ServisItem
-            isImageRight={false}
-            title={data[servicesIndex].solution.solution1.title}
-            text1={data[servicesIndex].solution.solution1.description}
-            text2={data[servicesIndex].solution.solution1.description2}
-            url={data[servicesIndex].solution.solution1.url}
-            color="cream-bg"
-            button={false}
-          />
-          <ServisItem
-            isImageRight={true}
-            title={data[servicesIndex].solution.solution2.title}
-            text1={data[servicesIndex].solution.solution2.description}
-            text2={data[servicesIndex].solution.solution2.description2}
-            url={data[servicesIndex].solution.solution2.url}
-            color="gray-bg"
-            button={false}
-          />
+      <section className={style.overview}>
+        <Overview />
+      </section>
+      <section className={`gray-bg ${style.action}`}>
+        <div className={style.actionContainer}>
+          <h2 className="black-color">Our Work in Action</h2>
+          <div className={style.actionWraper}>
+            <Portfolio selectedCategory={data[servicesIndex].name}/>
+          </div>
         </div>
       </section>
       <Together />

@@ -13,7 +13,7 @@ function Together({}) {
             progress thrive in harmony.
           </p>
         </div>
-        <Button text="contact us" color="white-color" />
+        <Button text="contact us" color="white-color" path="/contact"/>
       </div>
     </div>
   );

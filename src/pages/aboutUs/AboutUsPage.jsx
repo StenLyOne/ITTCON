@@ -4,10 +4,6 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/button/Button";
 import AboutUsNumbers from "../../components/AboutUsNumbers/AboutUsNumbers";
-import ChartPartnerships from "../../components/Charts/chartsPartnerships";
-import ChartsInvestment from "../../components/Charts/ChartsInvestment";
-import ChartsImpact from "../../components/Charts/ChartsImpact";
-import ChartsSuccess from "../../components/Charts/ChartsSuccess";
 import Indicators from "../../components/Indicators/Indicators";
 import Earth from "../../components/Earth/Earth";
 import Reviews from "../../components/Reviews/Reviews";
@@ -50,7 +46,7 @@ function AboutUs() {
               thrive together.
             </p>
           </div>
-          <Button text="Contact us" color="white-color" />
+          <Button text="Contact us" color="white-color" path="/contact"/>
         </div>
       </main>
       <section className={style.numbers}>
@@ -88,6 +84,7 @@ function AboutUs() {
       </section>
       <section className={`white-bg ${style.charts}`}>
         <ChartsComponent />
+        <ChartsMobContainer/>
       </section>
       <section className={style.indicators}>
         <div className={style.indicatorsContainer}>

@@ -42,26 +42,6 @@
   line-height: 3.013rem;
 }
 
-.item-1 {
-  background-image: url("https://img.freepik.com/free-photo/high-tech-view-futuristic-earth_23-2151100372.jpg?t=st=1726251698~exp=1726255298~hmac=5f24435cbaeb1c4bbe9caed9da6b20cd2e23f72a24e39e198267c571f56631ab&w=1380");
-}
-
-.item-2 {
-  background-image: url("https://www.lesprom.com/assets/files/news_fs/TmrchtpDbKfaw5X7OByM.jpg");
-}
-
-.item-3 {
-  background-image: url("https://img.freepik.com/free-photo/view-futuristic-looking-city_23-2150946813.jpg?t=st=1726252160~exp=1726255760~hmac=38915095b623e702aa5d7bbfd7fdcee7e3c1b39ed709062926823937d90ec996&w=1380");
-}
-
-.item-4 {
-  background-image: url("https://img.freepik.com/free-photo/close-up-moss-nature_23-2151369147.jpg?t=st=1726252005~exp=1726255605~hmac=81c3c3bd80d2d90d507c559f892484058df2ae439d460039adbfdcb42a5bf9ab&w=1380");
-}
-
-.item-5 {
-  background-image: url("https://img.freepik.com/free-photo/person-working-wood-working-industry-factory_23-2151352580.jpg?t=st=1726252038~exp=1726255638~hmac=b44ac49637c94f6dc0866d69f8785c00ec62fcdab7cf8d3c2d215f731d032963&w=1380");
-}
-
 .item-1::before,
 .item-2::before,
 .item-3::before,

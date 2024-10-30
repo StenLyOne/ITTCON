@@ -51,6 +51,36 @@
   gap: 0.684rem;
   justify-content: flex-end;
   border: 0;
+  cursor: pointer;
+}
+
+.servisesItems button span {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 1; /* Прозрачность текста */
+}
+
+.servisesItems button span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #28a745;
+  opacity: 1; /* Полная непрозрачность фона */
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.servisesItems button:hover span::before {
+  width: 100%;
+}
+
+.servisesItems button:hover span {
+  color: white; /* Меняем цвет текста при наведении */
 }
 
 .servisesH5 {
@@ -97,16 +127,41 @@
 
 .solutionsItemsWraper {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   gap: 1rem;
+  flex-direction: column;
 }
 
 /* description */
 
-.description {
+.action {
   width: 100%;
   padding: 6.849rem 10.913rem;
+  text-align: left;
+}
+
+.actionContainer {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3.652rem;
+}
+
+.actionWraper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* solutions */
+
+.solutionsItemsWraper1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.solutionsItemsWraper2 {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media screen and (max-width: 480px) {
