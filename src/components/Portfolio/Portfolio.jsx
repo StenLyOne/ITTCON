@@ -1,5 +1,5 @@
 import "./Portfolio.css";
-import Button from "../button/Button";
+import Button from "../Button/Button";
 import { useEffect, useState } from "react";
 import { useProject } from "../../context/ProjectContext";
 import { useNavigate } from "react-router-dom";
@@ -14,7 +14,7 @@ function Portfolio({ selectedCategory }) {
   }, [selectedProjectIndex]);
 
   useEffect(() => {
-    fetch("src/json/works.json")
+    fetch("/src/json/works.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -39,13 +39,13 @@ function Portfolio({ selectedCategory }) {
   const matchingCategory = jsonData[selectedCategory];
 
   if (matchingCategory) {
-    const firstTwoProjects = matchingCategory.slice(0, 2);
+    const firstTwoProjects = matchingCategory.slice(0, 4);
     const otherProjects = Object.keys(jsonData)
       .filter((key) => key !== selectedCategory)
       .map((key) => jsonData[key])
       .flat();
     const randomProjects = getRandomProjects(otherProjects, 2);
-    selectedProjects = [...firstTwoProjects, ...randomProjects];
+    selectedProjects = [...firstTwoProjects];
   }
 
   // Если категория не передана или не найдена, показываем 4 случайных проекта

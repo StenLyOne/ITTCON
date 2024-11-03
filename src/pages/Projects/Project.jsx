@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import style from "./Projects.module.css";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -8,6 +9,20 @@ import { useProject } from "../../context/ProjectContext";
 function Project() {
   const { selectedProjectIndex } = useProject(0); // Получите выбранный индекс
   const [jsonData, setJsonData] = useState([]);
+  const navigate = useNavigate(); // Инициализируем хук
+
+  const handleClick = (path) => {
+    if (path) {
+      navigate(path); // Переключаемся на указанный путь
+      // Убедитесь, что ваш элемент с id "main" присутствует на странице
+      setTimeout(() => {
+        const element = document.getElementById("main");
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" }); // Прокрутка к элементу
+        }
+      }, 0);
+    }
+  };
 
   useEffect(() => {
     fetch("src/json/works.json")
@@ -46,6 +61,7 @@ function Project() {
           backgroundImage: currentProject.img
             ? `url(${currentProject.img})`
             : "none",
+          backgroundPosition: "50% 50%",
           backgroundSize: "cover",
         }}
       >
@@ -55,10 +71,11 @@ function Project() {
           </div>
         </div>
       </main>
-      <section className={`white-bg ${style.back}`}>
-        <a href="/projects">
+      <section className={`gray-bg ${style.back}`}>
+        <div className={`${style.backContainer}`} onClick={() => handleClick('/projects')}>
           <img className={style.arrow} src="src/assets/back.svg" alt="" />
-        </a>
+          <p className="black-color">All projects</p>
+        </div>
       </section>
       <section className={`white-bg ${style.case}`}>
         <div className={style.caseContainer}>

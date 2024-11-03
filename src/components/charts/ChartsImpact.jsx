@@ -2,7 +2,7 @@ import "./charts.css";
 
 const EChartsMap = () => {
   return (
-      <img src="src/assets/mappng.png" alt="" className="charts"/>
+      <img src="/src/assets/mappng.png" alt="" className="charts"/>
   )
 };
 

@@ -1,11 +1,20 @@
 .header {
-  width: 100%;
-  padding: 0.5479rem 0;
-  z-index: 100000;
-  background-blend-mode: soft-light;
-  backdrop-filter: blur(40px);
-  position: fixed;
-  transition: 0.3s ease background-color;
+  width: 100%; /* Раскомментируйте это */
+    margin: 0 auto; /* Центрирование */
+    /* max-width: 65.844rem;  */
+    padding: 0.5479rem 0;
+    z-index: 100000;
+    background-blend-mode: soft-light;
+    backdrop-filter: blur(40px);
+    position: fixed;
+    transition: all 0.3s ease;
+    left: 0; /* Совместно с width: 100% позволяет занять всю ширину */
+    right: 0; /* Выровнять по центру */
+    top: 0;
+}
+
+.hidden {
+  transform: translateY(-100%); /* Поднимает хедер вверх при скрытии */
 }
 
 .headerContainer {
@@ -28,7 +37,7 @@
   gap: 3.196rem;
 }
 
-.headerText p {
+.headerP {
   cursor: pointer;
   color: white; /* Цвет текста */
 }
@@ -68,12 +77,23 @@
 .headerNav {
   display: none;
 }
+
 .activ {
-  background-color: #2d2c29;
+  --tw-backdrop-blur: blur(2px);
+  background-color: rgba(247, 245, 230, .7);
+  color: black;
+}
+
+.activP {
+  color: black;
 }
 
 /* Скрываем навигацию в мобильной версии */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 0.5479rem 1.039rem;
+  }
+
   .headerText {
     display: none;
   }
@@ -114,8 +134,3 @@
   }
 }
 
-@media screen and (max-width: 480px) {
-  .header {
-    padding: 0.5479rem 1.039rem;
-  }
-}

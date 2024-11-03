@@ -69,13 +69,16 @@ h5 {
 }
 
 p {
+  font-family: sans-serif;
   color: #ffffff;
   font-size: 1.141rem;
   line-height: 1.712rem;
   font-weight: 400;
+  text-wrap: balance;
 }
 
 .p20 {
+  font-family: sans-serif;
   color: #ffffff;
   font-size: 0.913rem;
   line-height: 1.369rem;

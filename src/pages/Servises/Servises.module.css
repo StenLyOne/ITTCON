@@ -6,7 +6,7 @@
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0) 50%
     ),
-    url(src/assets/servises-main.png);
+    url(/src/assets/servises-main.png);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -114,7 +114,7 @@
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0) 50%
     ),
-    url(src/assets/solution.png);
+    url(/src/assets/solution.png);
   background-size: cover;
   background-position: center;
 }
@@ -164,6 +164,37 @@
   justify-content: space-between;
 }
 
+.seo {
+  width: 100%;
+}
+
+.seoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+  padding: 6.849rem 10.913rem;
+}
+
+.seoInf {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.seoImg {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100px;
+  background-color: #2d2c29;
+}
+
+.seoName {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 @media screen and (max-width: 480px) {
   .mainContainer {
     top: 5.416rem;
@@ -177,6 +208,19 @@
 
   .servisesContainer {
     padding: 5.416rem 1.041rem;
+  }
+
+  .solutionsItemsWraper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .solutionsItemsWraper1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 1.826rem;
   }
 
   .servisesItems {
@@ -196,6 +240,23 @@
   }
 
   .description {
+    padding: 5.416rem 1.041rem;
+  }
+
+  .action {
+    width: 100%;
+    padding: 5.416rem 0rem;
+    text-align: left;
+  }
+
+  .actionContainer h2{
+    margin-left: 1.041rem;
+  }
+
+  .seoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
     padding: 5.416rem 1.041rem;
   }
 }

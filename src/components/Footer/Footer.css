@@ -1,6 +1,5 @@
 .footer {
   width: 100%;
-
   text-align: left;
 }
 
@@ -15,6 +14,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.913rem;
+}
+
+.footer-nav h5:hover {
+  color: #28a745;
+  cursor: pointer;
 }
 
 .footer-contact {
@@ -35,45 +39,23 @@
   gap: 0.684rem;
 }
 
-.footer-sociol {
+.footer-social {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
-.footer-sociol-container {
+.footer-social-container {
   display: flex;
   gap: 0.913rem;
 }
 
-.x {
+.x, .f, .in {
   width: 2.739rem;
   height: 2.739rem;
   border: 1px solid black;
   border-radius: 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.f {
-  width: 2.739rem;
-  height: 2.739rem;
-  border: 1px solid black;
-  border-radius: 100px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.in {
-  width: 2.739rem;
-  height: 2.739rem;
-  border: 1px solid black;
-  border-radius: 100px;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +70,6 @@
   justify-content: space-between;
   width: 100%;
   padding: 0.68rem 10.913rem;
-  text-align: left;
   background-color: black;
   color: white;
 }
@@ -97,20 +78,19 @@
   color: white;
 }
 
-.foter-container-mb {
+.footer-container-mob {
   display: none;
 }
 
 @media screen and (max-width: 480px) {
   .footer {
     width: 100%;
-
-    text-align: center;
     text-align: left;
   }
 
   .footer-nav {
     gap: 0.833rem;
+    align-items: center;
   }
 
   .footer-container {
@@ -118,7 +98,8 @@
     flex-direction: column;
   }
 
-  .footer-contact-mob {
+  .footer-contact-mob,
+  .footer-location-mob {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
@@ -130,13 +111,7 @@
     gap: 0.416rem;
   }
   
-  .footer-location-mob {
-    display: flex;
-    flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  .foter-container-mb {
+  .footer-container-mob {
     display: flex;
     justify-content: space-between;
     padding: 3.333rem 0 2.083rem;
@@ -147,21 +122,17 @@
     flex-wrap: wrap;
   }
 
-  .footer-contact {
-    display: none;
-  }
-
-  .footer-sociol {
-    margin-top: 3.333rem;
-}
-
-  .footer-sociol img{
-    display: none;
-  }
-
+  .footer-contact,
   .footer-location {
     display: none;
   }
 
-  
+  .footer-social {
+    margin-top: 3.333rem;
+    align-items: center;
+  }
+
+  .footer-social img {
+    display: none;
+  }
 }

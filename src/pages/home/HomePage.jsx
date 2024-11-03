@@ -33,19 +33,23 @@ function HomePage() {
   return (
     <div>
       <Header />
-      <main className="main">
-        <video
+      <main className="main" >
+        <video style={{
+          zIndex: "1"
+        }}
           className={`video filter-anim ${
             hoveredIndex !== null ? "filter" : ""
           }`}
-          src="src/assets/videoplayback.mp4"
+          src="/src/assets/videoplayback.mp4"
           preload="meta"
           muted
           loop
           playsInline
           autoPlay
         ></video>
-        <div
+        <div style={{
+          zIndex: "1"
+        }}
           className={`mainContainer filter-anim ${
             hoveredIndex !== null ? "filter" : ""
           }`}
@@ -58,7 +62,9 @@ function HomePage() {
             future where business and nature grow together.
           </p> */}
         </div>
-        <div className="mainButtons">
+        <div style={{
+          zIndex: "1"
+        }} className="mainButtons">
           <div
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
@@ -66,7 +72,7 @@ function HomePage() {
             <ButtonServis text="Agency and Brokerage" id={0}>
               <div className="buttonServis-img-agency">
                 <img
-                  src="src/assets/agency-btn.png"
+                  src="/src/assets/agency-btn.png"
                   alt="Agency and Brokerage"
                 />
               </div>
@@ -79,7 +85,7 @@ function HomePage() {
             <ButtonServis text="Green Investment" id={1}>
               <div className="buttonServis-img-agency">
                 <img
-                  src="src/assets/agency-btn.png"
+                  src="/src/assets/agency-btn.png"
                   alt="Agency and Brokerage"
                 />
               </div>
@@ -92,7 +98,7 @@ function HomePage() {
             <ButtonServis text="Startup Services" id={2}>
               <div className="buttonServis-img-agency">
                 <img
-                  src="src/assets/agency-btn.png"
+                  src="/src/assets/agency-btn.png"
                   alt="Agency and Brokerage"
                 />
               </div>
@@ -105,14 +111,18 @@ function HomePage() {
             <ButtonServis text="EUDR and<br>Sustainable Schemes" id={3}>
               <div className="buttonServis-img-agency">
                 <img
-                  src="src/assets/agency-btn.png"
+                  src="/src/assets/agency-btn.png"
                   alt="Agency and Brokerage"
                 />
               </div>
             </ButtonServis>
           </div>
         </div>
-        <ButtonGroup />
+        <div style={{
+          zIndex: "1"
+        }} >
+          <ButtonGroup />
+        </div>
       </main>
       <section className="numbers">
         <div className="numbersContainer">
@@ -136,7 +146,7 @@ function HomePage() {
             <div>
               <img
                 className="aboutUs-container-left-img-mob"
-                src="src/assets/aboutUs.png"
+                src="/src/assets/aboutUs.png"
                 alt=""
               />
             </div>
@@ -170,28 +180,28 @@ function HomePage() {
             <PartnersItem text="Renewable materials solutions">
               <img
                 className="partners-item-logo"
-                src="src/assets/logo-partners1.svg"
+                src="/src/assets/logo-partners1.svg"
                 alt=""
               />
             </PartnersItem>
             <PartnersItem text="Blockchain-driven logistics">
               <img
                 className="partners-item-logo"
-                src="src/assets/logo-partners2.svg"
+                src="/src/assets/logo-partners2.svg"
                 alt=""
               />
             </PartnersItem>
             <PartnersItem text="Global wildlife conservation">
               <img
                 className="partners-item-logo"
-                src="src/assets/logo-partners3.svg"
+                src="/src/assets/logo-partners3.svg"
                 alt=""
               />
             </PartnersItem>
             <PartnersItem text="Environmental policy leadership">
               <img
                 className="partners-item-logo"
-                src="src/assets/logo-partners4.svg"
+                src="/src/assets/logo-partners4.svg"
                 alt=""
               />
             </PartnersItem>
@@ -211,7 +221,7 @@ function HomePage() {
               title="Leading global agency and brokerage services in timber trade"
               text1="Leading in global timber trade, ITTCON specializes in roundwood, lumber, biomass, and biofuels. Our agency and brokerage services connect you with reliable partners, optimizing transactions for success."
               text2="With global reach and deep industry knowledge, we guide you through market trends, regulatory compliance, and risk management, ensuring your business thrives in the global timber industry."
-              url="src/assets/servis-agency.png"
+              url="/src/assets/servis-agency.png"
               color="gray-bg"
               button={true}
               id={0}
@@ -221,7 +231,7 @@ function HomePage() {
               title="Green investment and venture capital for sustainable growth"
               text1="ITTCON’s green investment services connect investors with high-potential opportunities in forestry, bioenergy, and environmental projects. We provide comprehensive support, from identifying opportunities to managing your portfolio. "
               text2="Our expertise in ESG and CSR ensures that your investments yield financial returns while contributing to long-term sustainability, making a meaningful impact on the environment."
-              url="src/assets/servis-green.png"
+              url="/src/assets/servis-green.png"
               color="cream-bg"
               button={true}
               id={1}
@@ -231,7 +241,7 @@ function HomePage() {
               title="Startup and innovation services in timber and bioenergy"
               text1="ITTCON supports startups in wood processing, bioenergy, and environmental sectors with comprehensive market analysis, strategic business planning, and securing venture capital."
               text2="We guide startups through early development, providing expert advice on product development, market entry, and scaling operations. With ITTCON, your startup gains deep industry insights and mentorship, positioning you for long-term success in a competitive market"
-              url="src/assets/servis-startup.png"
+              url="/src/assets/servis-startup.png"
               color="gray-bg"
               button={true}
               id={2}
@@ -241,7 +251,7 @@ function HomePage() {
               title="EUDR, CSR, and ESG Compliance for Sustainable Business Practices"
               text1="In today’s regulatory landscape, compliance with EU regulations, CSR, and ESG standards is vital for sustainability and competitiveness. ITTCON guides you through these complex requirements, helping integrate sustainable practices, achieve certifications, and align with global standards."
               text2="Partner with ITTCON to meet regulatory demands and enhance your reputation as a leader in sustainability and ethical business practices."
-              url="src/assets/servis-EUDR.png"
+              url="/src/assets/servis-EUDR.png"
               color="cream-bg"
               button={true}
               id={3}
@@ -261,7 +271,7 @@ function HomePage() {
         </div>
         <div className="news-container">
           <News
-            img="src/assets/servis-agency.png"
+            img="/src/assets/servis-agency.png"
             title="Recent changes in European forestry regulations"
             text="Key updates to European forestry regulations and their effects on global trade."
             date="22.07.2024"
@@ -269,14 +279,14 @@ function HomePage() {
           <div className="cream-bg">
             <News
               bg="true"
-              img="src/assets/servis-agency.png"
+              img="/src/assets/servis-agency.png"
               title="Recent changes in European forestry regulations"
               text="Key updates to European forestry regulations and their effects on global trade."
               date="22.07.2024"
             />
           </div>
           <News
-            img="src/assets/servis-agency.png"
+            img="/src/assets/servis-agency.png"
             title="Recent changes in European forestry regulations"
             text="Key updates to European forestry regulations and their effects on global trade."
             date="22.07.2024"

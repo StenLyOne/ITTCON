@@ -34,7 +34,7 @@ function ButtonServisMob({ text, isActive }) {
           <p dangerouslySetInnerHTML={{ __html: text }} />
           <img
             className={styles.arrow}
-            src="src/assets/arrow.svg"
+            src="/src/assets/arrow.svg"
             alt="arrow"
           />
         </div>

@@ -75,6 +75,9 @@ function Contact() {
 
   return (
     <div>
+      <section className={style.damper}>
+        <div></div>
+      </section>
       <Header />
       <div className={`white-bg ${style.contactContainer}`}>
         <div className={style.contactText}>

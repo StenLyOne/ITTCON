@@ -8,42 +8,42 @@ function Reviews() {
 
   const reviews = [
     {
-      img: "src/assets/Sarah.png",
+      img: "/src/assets/Sarah.png",
       name: "Sarah M.",
       job: "Forestry Manager",
       text:
         '"The expertise provided by ITTCON transformed our sustainable timber production approach. Their guidance was crucial in navigating regulations and securing long-term trade agreements—a partner we deeply trust."',
     },
     {
-      img: "src/assets/Michael.png",
+      img: "/src/assets/Michael.png",
       name: "Michael T.",
       job: "CEO of Energy Corp",
       text:
         '"Securing our first round of green investments was pivotal, and ITTCON played a critical role. Their strategic insights and commitment to sustainability put us on the path to success."',
     },
     {
-      img: "src/assets/Emma.png",
+      img: "/src/assets/Emma.png",
       name: "Emma L.",
       job: "Startup Founder",
       text:
         '"We couldn’t have scaled so quickly without their support. From market analysis to venture capital acquisition, ITTCON was instrumental in our startup’s rapid growth."',
     },
     {
-      img: "src/assets/John.png",
+      img: "/src/assets/John.png",
       name: "John D.",
       job: "Trade Director",
       text:
         '"Expanding our market presence globally was made possible by ITTCON’s deep industry knowledge and global reach. Their tailored solutions led to a 25% increase in our export volume."',
     },
     {
-      img: "src/assets/John.png",
+      img: "/src/assets/John.png",
       name: "John D.",
       job: "Trade Director",
       text:
         '"Expanding our market presence globally was made possible by ITTCON’s deep industry knowledge and global reach. Their tailored solutions led to a 25% increase in our export volume."',
     },
     {
-      img: "src/assets/John.png",
+      img: "/src/assets/John.png",
       name: "John D.",
       job: "Trade Director",
       text:

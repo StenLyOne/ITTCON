@@ -5,149 +5,157 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Overview() {
+function Overview({ data }) {
   const market = useRef(null);
   const partner = useRef(null);
   const trade = useRef(null);
   const logistics = useRef(null);
-  const img = useRef(null);
   const img1 = useRef(null);
   const img2 = useRef(null);
   const img3 = useRef(null);
   const img4 = useRef(null);
+  const [activeImage, setActiveImage] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 480);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    // Инициализация изображений
+    gsap.set([img1.current, img2.current, img3.current, img4.current], { opacity: 0 });
+    gsap.set(img1.current, { opacity: 1 });
+
     const hideAllCharts = () => {
       gsap.to([img1.current, img2.current, img3.current, img4.current], {
         opacity: 0,
-        duration: 0.5,
-        ease: "power1.inOut",
+        duration: 0.8,
+        ease: "power2.inOut",
       });
     };
 
-    ScrollTrigger.create({
-      trigger: market.current,
-      start: "top bottom",
-      markers: true,
-      onEnter: () => {
-        gsap.to(img1.current, {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power1.inOut",
-        });
-      },
-    });
+    const showImage = (index) => {
+      hideAllCharts();
+      gsap.to([img1.current, img2.current, img3.current, img4.current][index], {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.inOut",
+      });
+      setActiveImage(index);
+    };
 
-    ScrollTrigger.create({
-      trigger: partner.current,
-      start: "top bottom",
-      markers: true,
-      onEnter: () => {
-        hideAllCharts();
-        gsap.to(img2.current, {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power1.inOut",
-        });
-      },
-    });
+    // Убедитесь, что ссылки существуют перед использованием
+    if (market.current) {
+      ScrollTrigger.create({
+        trigger: market.current,
+        start: "top bottom",
+        onEnter: () => showImage(0),
+      });
+    }
+    
+    if (partner.current) {
+      ScrollTrigger.create({
+        trigger: partner.current,
+        start: "top bottom",
+        onEnter: () => showImage(1),
+      });
+    }
+    
+    if (trade.current) {
+      ScrollTrigger.create({
+        trigger: trade.current,
+        start: "top bottom",
+        onEnter: () => showImage(2),
+      });
+    }
 
-    ScrollTrigger.create({
-      trigger: trade.current,
-      start: "top bottom",
-      markers: true,
-      onEnter: () => {
-        hideAllCharts();
-        gsap.to(img3.current, {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power1.inOut",
-        });
-      },
-    });
+    if (logistics.current) {
+      ScrollTrigger.create({
+        trigger: logistics.current,
+        start: "top bottom",
+        onEnter: () => showImage(3),
+      });
+    }
 
-    ScrollTrigger.create({
-      trigger: logistics.current,
-      start: "top bottom",
-      markers: true,
-      onEnter: () => {
-        hideAllCharts();
-        gsap.to(img4.current, {
-          opacity: 1,
-          duration: 0.8,
-          ease: "power1.inOut",
-        });
-      },
-    });
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
     <div className={`white-bg ${style.overviewContainer}`}>
-      <div className={style.overviewDescription}>
-        <div className={style.overviewItem}>
-          <div className={style.overviewItemImg}>
-            <img src="src\assets\Market.svg" alt="" />
-          </div>
-          <h3 className="black-color" ref={market}>
-            Market research & analysis
-          </h3>
-          <p className="black-color p20">
-            Our in-depth market research uncovers new opportunities and
-            evaluates current market conditions, ensuring you have the insights
-            needed to stay ahead. We analyze industry trends, competitive
-            landscapes, and potential demand, empowering you to make informed,
-            strategic decisions that drive your business forward.
-          </p>
+      {isMobile ? (
+        <div className={style.overviewContainerMob}>
+          {/** Выводим все карточки для мобильной версии */}
+          {Array.from({ length: 4 }).map((_, index) => (
+            <div key={index} className={style.overviewMob}>
+              <div className={style.overviewCard}>
+                <div>
+                  <img className={style.overviewCardIcon} src={data.indicators[`icon${index + 1}`]} alt="" />
+                </div>
+                <div className={style.overviewCardText}>
+                  <h5>{data.indicators[`title${index + 1}`]}</h5>
+                  <p className='black-color'>{data.indicators[`description${index + 1}`]}</p>
+                </div>
+                <div className={style.overviewCardImg}>
+                  <img src={data.indicators[`img${index + 1}`]} alt="" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className={style.overviewItem}>
-          <div className={style.overviewItemImg}>
-            <img src="src/assets/Partner.svg" alt="" />
+      ) : (
+        <>
+          <div className={style.overviewDescription}>
+            <div className={style.overviewItem}>
+              <div className={style.overviewItemImg}>
+                <img src={data.indicators.img1} alt="" />
+              </div>
+              <h3 className="black-color" ref={market}>
+                {data.indicators.title1}
+              </h3>
+              <p className="black-color p20">{data.indicators.description1}</p>
+            </div>
+            <div className={style.overviewItem}>
+              <div className={style.overviewItemImg}>
+                <img src={data.indicators.img2} alt="" />
+              </div>
+              <h3 className="black-color" ref={partner}>
+                {data.indicators.title2}
+              </h3>
+              <p className="black-color p20">{data.indicators.description2}</p>
+            </div>
+            <div className={style.overviewItem}>
+              <div className={style.overviewItemImg}>
+                <img src={data.indicators.img3} alt="" />
+              </div>
+              <h3 className="black-color" ref={trade}>
+                {data.indicators.title3}
+              </h3>
+              <p className="black-color p20">{data.indicators.description3}</p>
+            </div>
+            <div className={style.overviewItem}>
+              <div className={style.overviewItemImg}>
+                <img src={data.indicators.img4} alt="" />
+              </div>
+              <h3 className="black-color" ref={logistics}>
+                {data.indicators.title4}
+              </h3>
+              <p className="black-color p20">{data.indicators.description4}</p>
+            </div>
           </div>
-          <h3 className="black-color" ref={partner}>
-            Partner Identification & networking
-          </h3>
-          <p className="black-color p20">
-            Leverage our extensive network to connect with reliable partners who
-            align with your strategic goals. We assist you in identifying key
-            players, negotiating favorable terms, and fostering long-term,
-            trustworthy relationships that drive sustainable success.
-          </p>
-        </div>
-        <div className={style.overviewItem}>
-          <div className={style.overviewItemImg}>
-            <img src="src\assets\Trade.svg" alt="" />
+          <div className={style.overviewImg}>
+            <img src={data.indicators.img1} alt="" ref={img1} />
+            <img src={data.indicators.img2} alt="" ref={img2} />
+            <img src={data.indicators.img3} alt="" ref={img3} />
+            <img src={data.indicators.img4} alt="" ref={img4} />
           </div>
-          <h3 className="black-color" ref={trade}>
-            Trade negotiation & contract management
-          </h3>
-          <p className="black-color p20">
-            Leverage our expertise to secure favorable trade agreements that
-            align with your strategic goals. We manage every aspect of contract
-            negotiations, ensuring advantageous terms and mitigating risks to
-            protect your business interests.
-          </p>
-        </div>
-        <div className={style.overviewItem}>
-          <div className={style.overviewItemImg}>
-            <img src="src\assets\Logistics.svg" alt="" />
-          </div>
-          <h3 className="black-color" ref={logistics}>
-            Logistics & supply chain coordination
-          </h3>
-          <p className="black-color p20">
-            Streamline your logistics and supply chain operations with ITTCON.
-            We manage the movement of goods, handle shipping and documentation,
-            and ensure full compliance with international trade regulations,
-            making your operations efficient and reliable.
-          </p>
-        </div>
-      </div>
-      <div className={style.overviewImg} ref={img}>
-        <img src="src/assets/indicators;.png" alt="" ref={img1} />
-        <img src="src\assets\servisesDescription-1.png" alt="" ref={img2} />
-        <img src="src\assets\servisesDescription-2.png" alt="" ref={img3} />
-        <img src="src\assets\aboutUs-main.png" alt="" ref={img4} />
-      </div>
+        </>
+      )}
     </div>
   );
 }

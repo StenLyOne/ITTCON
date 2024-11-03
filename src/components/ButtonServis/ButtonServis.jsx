@@ -15,7 +15,7 @@ function ButtonServis({ text, children, id }) {
   };
 
   const handleClick = () => {
-    navigate("/servises", { state: { serviceId: id } }); // Передаем serviceId через state
+    navigate("/services", { state: { serviceId: id } }); // Передаем serviceId через state
   };
 
   return (
@@ -28,7 +28,7 @@ function ButtonServis({ text, children, id }) {
       <span className={`buttonServis-container ${isHovered ? "hovered" : ""}`}>
         <div className="buttonServis-container-inside">
           <p dangerouslySetInnerHTML={{ __html: text }} />
-          <img className="arrow" src="src/assets/arrow.svg" alt="arrow" />
+          <img className="arrow" src="/src/assets/arrow.svg" alt="arrow" />
         </div>
       </span>
       <div className={`underline ${isHovered ? "hovered" : ""}`}></div>

@@ -1,54 +1,42 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import Button from "../button/Button";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 function Header() {
   const [menuActive, setMenuActive] = useState(false);
-  const [headerColor, setHeaderColor] = useState(false);
-  const header = useRef(null);
-  const triggerElement = useRef(null); // Новый элемент ниже заголовка
-  const lastScrollY = useRef(0); // Для отслеживания последней позиции прокрутки
-  const [headerVisible, setHeaderVisible] = useState(true); // Для отслеживания видимости заголовка
+  const [headerActive, setHeaderActive] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(true); // Состояние для направления прокрутки
+  const lastScrollY = useRef(0); // Последняя позиция прокрутки
+  const markerRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const markerPosition = markerRef.current.getBoundingClientRect().top;
 
-      if (currentScrollY > lastScrollY.current && headerVisible) {
-        // Прокрутка вниз и заголовок видим
-        gsap.to(header.current, { y: "-100%", duration: 0.3 });
-        setHeaderVisible(false);
-      } else if (currentScrollY < lastScrollY.current && !headerVisible) {
-        // Прокрутка вверх и заголовок не виден
-        gsap.to(header.current, { y: "0%", duration: 0.3 });
-        setHeaderVisible(true);
+      // Проверяем, прокручивается ли вниз или вверх
+      if (currentScrollY > lastScrollY.current) {
+        setIsScrollingUp(false); // Скролл вниз
+      } else {
+        setIsScrollingUp(true); // Скролл вверх
       }
 
-      lastScrollY.current = currentScrollY; // Обновляем последнюю позицию прокрутки
+      // Обновляем последнее положение прокрутки
+      lastScrollY.current = currentScrollY;
+
+      // Логика добавления активного класса для смены цвета
+      if (markerPosition < 0) {
+        setHeaderActive(true);
+      } else {
+        setHeaderActive(false);
+      }
     };
 
-    // Добавляем слушатель события прокрутки
     window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // Удаляем слушатель при размонтировании
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [headerVisible]);
-
-  useEffect(() => {
-    ScrollTrigger.create({
-      trigger: triggerElement.current, // Изменённый триггер
-      start: "top top",
-      end: "+=100", // Задайте нужное значение для конца триггера
-      markers: true,
-      onEnter: () => setHeaderColor(true),
-      onLeaveBack: () => setHeaderColor(false),
-    });
   }, []);
 
   const toggleMenu = () => {
@@ -57,9 +45,12 @@ function Header() {
 
   return (
     <>
+      {/* Вспомогательный div для отслеживания прокрутки */}
+      <div ref={markerRef} style={{ height: "1px" }} />
+
+      {/* Хедер, которому добавляется класс актив и скрывается при скролле вниз */}
       <header
-        className={`${styles.header} ${headerColor ? styles.activ : ""}`}
-        ref={header}
+        className={`${styles.header} ${headerActive ? styles.activ : ""} ${!isScrollingUp ? styles.hidden : ""}`}
       >
         <div className={styles.headerContainer}>
           <div className={styles.logo}>
@@ -69,25 +60,25 @@ function Header() {
           {/* Основная навигация для десктопа */}
           <nav className={styles.headerText}>
             <a href="/">
-              <p>Home</p>
+              <p className={`${styles.headerP} ${headerActive ? styles.activP : ""}`}>Home</p>
             </a>
             <a href="/aboutus">
-              <p>About us</p>
+              <p className={`${styles.headerP} ${headerActive ? styles.activP : ""}`}>About us</p>
             </a>
             <a href="/services">
-              <p>Services</p>
+              <p className={`${styles.headerP} ${headerActive ? styles.activP : ""}`}>Services</p>
             </a>
             <a href="/projects">
-              <p>Projects</p>
+              <p className={`${styles.headerP} ${headerActive ? styles.activP : ""}`}>Projects</p>
             </a>
             <a href="/news">
-              <p>News</p>
+              <p className={`${styles.headerP} ${headerActive ? styles.activP : ""}`}>News</p>
             </a>
           </nav>
 
           {/* Бургер-меню */}
           <div
-            className={`${styles.burgerMenu} ${menuActive ? styles.activ : ""}`}
+            className={`${styles.burgerMenu} ${menuActive ? styles.active : ""}`}
             onClick={toggleMenu}
           >
             <div></div>
@@ -97,12 +88,12 @@ function Header() {
 
           {/* Кнопка для десктопа */}
           <div className={styles.headerButton}>
-            <Button text="Contact us" color="white-color" path="/contact" />
+            <Button text="Contact us" color={headerActive ? "black-color" : "white-color"} path="/contact" />
           </div>
 
           {/* Мобильная навигация */}
           <nav
-            className={`${styles.headerNav} ${menuActive ? styles.activ : ""}`}
+            className={`${styles.headerNav} ${menuActive ? styles.active : ""}`}
           >
             <h5 onClick={toggleMenu}>Home</h5>
             <h5 onClick={toggleMenu}>About us</h5>
@@ -112,7 +103,6 @@ function Header() {
           </nav>
         </div>
       </header>
-      <div ref={triggerElement} style={{ height: "1px" }}></div>
     </>
   );
 }

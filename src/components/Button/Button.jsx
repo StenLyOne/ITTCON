@@ -21,7 +21,7 @@ function Button({ text, color, path, id }) {
     <button className={`${styles.learnMore} ${styles.button}`} onClick={handleClick}>
       <span className={styles.circle} aria-hidden="true">
         <span className={`${styles.icon}`}></span>
-        <img src="src/assets/Vector.svg" className={`${styles.arrow}`} alt="arrow"/>
+        <img src="/src/assets/Vector.svg" className={`${styles.arrow}`} alt="arrow"/>
       </span>
       <span className={`${styles.buttonText} ${color}`}>{text}</span>
     </button>

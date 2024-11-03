@@ -95,3 +95,9 @@
   right: 0;
   background-color: white;
 }
+
+.damper {
+  width: 100%;
+  height: 3.287rem;
+  background-color: #2d2c29;
+}

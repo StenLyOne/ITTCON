@@ -1,5 +1,5 @@
 import styles from "./News.module.css";
-import Button from "../button/Button";
+import Button from "../Button/Button";
 
 function News({ img, title, text, date, bg }) {
   return (
@@ -15,7 +15,7 @@ function News({ img, title, text, date, bg }) {
           <p className="p20 black-color">{text}</p>
         </div>
         <div className={styles.newsContentBottom}>
-          <Button text="Read More" />
+          <Button text="" />
           <p className="p20 black-color">{date}</p>
         </div>
       </div>
