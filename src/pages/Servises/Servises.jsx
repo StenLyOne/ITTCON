@@ -45,23 +45,23 @@ function Servises() {
         title1: "Market research & analysis",
         description1:
           "Our in-depth market research uncovers new opportunities and evaluates current market conditions, ensuring you have the insights needed to stay ahead. We analyze industry trends, competitive landscapes, and potential demand, empowering you to make informed, strategic decisions that drive your business forward.",
-        icon1: "/src/assets/Market research.svg",
-        img1: "https://source.unsplash.com/1600x900/?market-research",
+        icon1: "src/assets/analysis.svg",
+        img1: "src/assets/Partner Identification.png",
         title2: "Partner Identification & networking",
         description2:
           "Leverage our extensive network to connect with reliable partners who align with your strategic goals. We assist you in identifying key players, negotiating favorable terms, and fostering long-term, trustworthy relationships that drive sustainable success.",
-        icon2: "/src/assets/Partner Identification.svg",
-        img2: "https://source.unsplash.com/1600x900/?networking",
+        icon2: "/src/assets/Nodes.svg",
+        img2: "/src/assets/handshake.png",
         title3: "Trade negotiation & contract management",
         description3:
           "Leverage our expertise to secure favorable trade agreements that align with your strategic goals. We manage every aspect of contract negotiations, ensuring advantageous terms and mitigating risks to protect your business interests.",
-        icon3: "/src/assets/Trade negotiation.svg",
-        img3: "https://source.unsplash.com/1600x900/?negotiation",
+        icon3: "/src/assets/contract-sign.svg",
+        img3: "/src/assets/contract management.png",
         title4: "Logistics & supply chain coordination",
         description4:
           "Streamline your logistics and supply chain operations with ITTCON. We manage the movement of goods, handle shipping and documentation, and ensure full compliance with international trade regulations, making your operations efficient and reliable.",
         icon4: "/src/assets/Logistics.svg",
-        img4: "https://source.unsplash.com/1600x900/?logistics",
+        img4: "/src/assets/supply-chain.png",
         title5: "Regulatory compliance & risk management",
         description5:
           "Navigate complex regulatory landscapes with confidence. ITTCON provides expert guidance on international trade laws and standards, implementing robust risk management strategies to safeguard your business and ensure compliance.",
@@ -86,23 +86,23 @@ function Servises() {
         title1: "Targeted Green Investment Opportunities",
         description1:
           "ITTCON identifies and connects you with strategic investment opportunities across a range of green sectors. Whether focusing on renewable energy, waste management, or sustainable innovation, we ensure your investments are strategically positioned for long-term success.",
-        icon1: "/src/assets/Market research.svg",
-        img1: "https://source.unsplash.com/1600x900/?green-investment",
+        icon1: "/src/assets/Targeted-Green.svg",
+        img1: "/src/assets/Targeted-Green.png",
         title2: "Navigating Regulatory Landscapes",
         description2:
           "Stay compliant with global sustainability standards with ITTCON's expert regulatory support. We help you navigate complex international regulations, ensuring that your green investments meet all necessary criteria while minimizing risks.",
-        icon2: "/src/assets/Partner Identification.svg",
-        img2: "https://source.unsplash.com/1600x900/?regulatory-landscapes",
+        icon2: "/src/assets/Navigating-Regulatory.svg",
+        img2: "/src/assets/Navigating-Regulatory.png",
         title3: "Environmental and Social Impact Assessments",
         description3:
           "Enhance your decision-making with our comprehensive impact assessments. We evaluate the environmental and social outcomes of potential investments, helping you choose projects that deliver measurable benefits and align with your sustainability goals.",
-        icon3: "/src/assets/Trade negotiation.svg",
-        img3: "https://source.unsplash.com/1600x900/?impact-assessment",
+        icon3: "/src/assets/Environmental.svg",
+        img3: "/src/assets/Environmental.png",
         title4: "Stakeholder Engagement and Reporting",
         description4:
           "Effective communication is key to building trust. ITTCON helps you engage stakeholders through transparent sustainability reporting, demonstrating your commitment to environmental, social, and governance (ESG) standards.",
-        icon4: "/src/assets/Logistics.svg",
-        img4: "https://source.unsplash.com/1600x900/?stakeholder-engagement",
+        icon4: "/src/assets/Stakeholder-Engagement.svg",
+        img4: "/src/assets/Stakeholder-Engagement.png",
         title5: "Integrating ESG into Investment Strategies",
         description5:
           "Strengthen your portfolio with ESG-focused strategies. ITTCON assists in integrating Environmental, Social, and Governance criteria into your investment approach, enhancing both financial returns and corporate responsibility.",
@@ -169,7 +169,7 @@ function Servises() {
         description1:
           "Receive step-by-step instructions and comprehensive templates to navigate the EUDR compliance process seamlessly. Our guidance ensures your business meets all regulatory requirements while maintaining operational efficiency.",
         icon1: "/src/assets/Market research.svg",
-        img1: "https://source.unsplash.com/1600x900/?EUDR-compliance",
+        img1: "src/assets/Partner Identification.png",
         title2: "Risk Assessment and Management",
         description2:
           "Identify potential risks associated with EUDR compliance and develop mitigation strategies. We provide tools and resources to effectively manage these risks and maintain compliance.",
@@ -198,26 +198,33 @@ function Servises() {
       },
     },
   ];
-  
 
   return (
     <div>
       <Header />
+      <section className="damper">
+        <div></div>
+      </section>
       <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
-            <h1>Explore Our Expertise</h1>
-            <p>
-              Discover how ITTCON's tailored solutions can propel your business
-              forward. From strategic guidance to hands-on support, we offer a
-              comprehensive range of services designed to address the unique
-              challenges of your industry and unlock new opportunities for
-              sustainable growth.
+            <h1 className="black-color">
+              Your Growth, <br />
+              Our Mission
+            </h1>
+            <p className="black-color">
+              With ITTCON, you’re not just getting support – you’re gaining a
+              partner dedicated to your success. We craft solutions that adapt
+              to your business’s unique rhythm and unlock its fullest potential,
+              guiding you toward growth that lasts.
             </p>
           </div>
-          <Button text="Contact us" color="white-color" path="/contact"/>
+          <Button text="Contact us" color=" " path="/contact" />
         </div>
       </main>
+      <section className={style.imgAfterMain}>
+        <div className={style.imgAfterMainContainer}></div>
+      </section>
       <section className={`white-bg ${style.servises}`}>
         <div className={style.servisesContainer}>
           <div>
@@ -323,13 +330,13 @@ function Servises() {
         </div>
       </section>
       <section className={style.overview}>
-        <Overview data={data[servicesIndex]} i={servicesIndex}/>
+        <Overview data={data[servicesIndex]} i={servicesIndex} />
       </section>
       <section className={`gray-bg ${style.action}`}>
         <div className={style.actionContainer}>
           <h2 className="black-color">Our Work in Action</h2>
           <div className={style.actionWraper}>
-            <Portfolio selectedCategory={data[servicesIndex].name}/>
+            <Portfolio selectedCategory={data[servicesIndex].name} />
           </div>
         </div>
       </section>
@@ -337,20 +344,30 @@ function Servises() {
         <div className={style.seoContainer}>
           {isMobile ? (
             <div>
-              <h3 className="black-color">"We are delighted to collaborate with Regrow to identify scalable ways to support credible Scope 3 action…Regrow’s customers will benefit from a seamless verification process – providing more accurate project impact results, faster."</h3>
+              <h3 className="black-color">
+                "We are delighted to collaborate with Regrow to identify
+                scalable ways to support credible Scope 3 action…Regrow’s
+                customers will benefit from a seamless verification process –
+                providing more accurate project impact results, faster."
+              </h3>
             </div>
           ) : (
             <div>
-              <h2 className="black-color">"We are delighted to collaborate with Regrow to identify scalable ways to support credible Scope 3 action…Regrow’s customers will benefit from a seamless verification process – providing more accurate project impact results, faster."</h2>
+              <h2 className="black-color">
+                "We are delighted to collaborate with Regrow to identify
+                scalable ways to support credible Scope 3 action…Regrow’s
+                customers will benefit from a seamless verification process –
+                providing more accurate project impact results, faster."
+              </h2>
             </div>
           )}
           <div className={style.seoInf}>
-            <div className={style.seoImg}></div> 
+            <div className={style.seoImg}></div>
             <div className={style.seoName}>
               <h5 className="black-color">Stefan Julius</h5>
               <p className="black-color p20">CEO, ITTCON</p>
             </div>
-        </div>
+          </div>
         </div>
       </section>
       <Together />

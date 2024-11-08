@@ -29,7 +29,7 @@ function Overview({ data }) {
     // Инициализация изображений
     gsap.set([img1.current, img2.current, img3.current, img4.current], { opacity: 0 });
     gsap.set(img1.current, { opacity: 1 });
-
+  
     const hideAllCharts = () => {
       gsap.to([img1.current, img2.current, img3.current, img4.current], {
         opacity: 0,
@@ -37,7 +37,7 @@ function Overview({ data }) {
         ease: "power2.inOut",
       });
     };
-
+  
     const showImage = (index) => {
       hideAllCharts();
       gsap.to([img1.current, img2.current, img3.current, img4.current][index], {
@@ -47,40 +47,44 @@ function Overview({ data }) {
       });
       setActiveImage(index);
     };
-
+  
     // Убедитесь, что ссылки существуют перед использованием
     if (market.current) {
       ScrollTrigger.create({
         trigger: market.current,
         start: "top bottom",
         onEnter: () => showImage(0),
+        onEnterBack: () => showImage(0), // Добавляем обработку для скролла вверх
       });
     }
-    
+  
     if (partner.current) {
       ScrollTrigger.create({
         trigger: partner.current,
         start: "top bottom",
         onEnter: () => showImage(1),
+        onEnterBack: () => showImage(1), // Добавляем обработку для скролла вверх
       });
     }
-    
+  
     if (trade.current) {
       ScrollTrigger.create({
         trigger: trade.current,
         start: "top bottom",
         onEnter: () => showImage(2),
+        onEnterBack: () => showImage(2), // Добавляем обработку для скролла вверх
       });
     }
-
+  
     if (logistics.current) {
       ScrollTrigger.create({
         trigger: logistics.current,
         start: "top bottom",
         onEnter: () => showImage(3),
+        onEnterBack: () => showImage(3), // Добавляем обработку для скролла вверх
       });
     }
-
+  
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -113,7 +117,7 @@ function Overview({ data }) {
           <div className={style.overviewDescription}>
             <div className={style.overviewItem}>
               <div className={style.overviewItemImg}>
-                <img src={data.indicators.img1} alt="" />
+                <img src={data.indicators.icon1} alt="" />
               </div>
               <h3 className="black-color" ref={market}>
                 {data.indicators.title1}
@@ -122,7 +126,7 @@ function Overview({ data }) {
             </div>
             <div className={style.overviewItem}>
               <div className={style.overviewItemImg}>
-                <img src={data.indicators.img2} alt="" />
+                <img src={data.indicators.icon2} alt="" />
               </div>
               <h3 className="black-color" ref={partner}>
                 {data.indicators.title2}
@@ -131,7 +135,7 @@ function Overview({ data }) {
             </div>
             <div className={style.overviewItem}>
               <div className={style.overviewItemImg}>
-                <img src={data.indicators.img3} alt="" />
+                <img src={data.indicators.icon3} alt="" />
               </div>
               <h3 className="black-color" ref={trade}>
                 {data.indicators.title3}
@@ -140,7 +144,7 @@ function Overview({ data }) {
             </div>
             <div className={style.overviewItem}>
               <div className={style.overviewItemImg}>
-                <img src={data.indicators.img4} alt="" />
+                <img src={data.indicators.icon4} alt="" />
               </div>
               <h3 className="black-color" ref={logistics}>
                 {data.indicators.title4}

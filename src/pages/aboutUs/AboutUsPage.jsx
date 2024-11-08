@@ -10,7 +10,7 @@ import Reviews from "../../components/Reviews/Reviews";
 import Together from "../../components/Together/Together";
 import ChartsMobContainer from "../../components/ChartsMobContainer/ChartsMobContainer";
 import ChartsComponent from "../../components/ChartsContainer/ChartsComponent";
-import aboutUs from '../../assets/aboutUs.png';
+import aboutUs from "../../assets/aboutUs.png";
 
 function AboutUs() {
   const earthTextRef = useRef();
@@ -36,18 +36,24 @@ function AboutUs() {
   return (
     <div>
       <Header />
+      <section className="damper">
+        <div></div>
+      </section>
       <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
-            <h1>Innovating with Nature’s Blueprint</h1>
-            <p>
+            <h1 className="black-color">
+              Innovating with <br />
+              Nature’s Blueprint
+            </h1>
+            <p className="black-color">
               By blending nature’s time-tested wisdom with modern expertise, we
               create eco-friendly solutions that drive sustainable growth. At
               ITTCON, our mission is to ensure both your business and the planet
               thrive together.
             </p>
           </div>
-          <Button text="Contact us" color="white-color" path="/contact"/>
+          <Button text="Contact us" color="" path="/contact" />
         </div>
       </main>
       <section className={style.numbers}>
@@ -85,9 +91,9 @@ function AboutUs() {
       </section>
       <section className={`white-bg ${style.charts}`}>
         <ChartsComponent />
-        <ChartsMobContainer/>
+        <ChartsMobContainer />
       </section>
-      <section className={style.indicators}>
+      {/* <section className={style.indicators}>
         <div className={style.indicatorsContainer}>
           <div className={style.indicatorsText}>
             <h2>Enhancing Global Well-being Since 2018</h2>
@@ -124,13 +130,17 @@ function AboutUs() {
           </div>
         </div>
         <div className={style.gradientBackground}></div>
-      </section>
-      <section className={style.earth}>
+      </section> */}
+      <section className={`gray-bg ${style.earth}`}>
         <div className={style.earthContainer}>
           <div className={style.earthText}>
-            <h3 className="black-color">Connecting the World</h3>
+            <h2 className="black-color">
+              Connecting <br />
+              the World
+            </h2>
             <p className="black-color p20">
-              ITTCON’s presence spans the globe, creating impactful partnerships that drive sustainable progress across key regions.
+              ITTCON’s presence spans the globe, creating impactful partnerships
+              that drive sustainable progress across key regions.
             </p>
           </div>
           <div className={style.earthItem} ref={earthTextRef}>
@@ -138,8 +148,155 @@ function AboutUs() {
           </div>
         </div>
       </section>
-      <section className={`gray-bg ${style.reviews}`}>
-        <Reviews />
+      <section className={style.we}>
+        <div className={style.weContainer}>
+          <div className={style.weText}>
+            <h2 className="black-color">Who we are?</h2>
+            <p className="black-color">
+              We are a team of enthusiasts and innovators striving to change the
+              world through sustainable business solutions. Founded in 2018 with
+              the mission of building an environmentally responsible business,
+              our company today supports numerous projects aimed at improving
+              the environment and enhancing the quality of life worldwide.
+              <br />
+              <br />
+              Our unique approaches in green technology and partnerships within
+              the "green zone" empower us to create a sustainable future.
+              <br />
+              <br />
+              Our goal is not just to conduct business, but to drive meaningful
+              change. We believe that each project is a step toward a cleaner
+              planet. Join us, and together we can achieve more!
+            </p>
+            <Button text="contact us" path="/contact" color="black-color" />
+          </div>
+          <div>
+            <img
+              className={style.weImg}
+              src="src\assets\who we are.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section className={style.values}>
+        <div className={style.valuesContainer}>
+          <h2 className={`black-color ${style.valuesH2}`}>
+            Our values ​​helping to improve global <br />
+            well-being since 2018
+          </h2>
+          <div className={style.valuesItemWraper}>
+            <div className={style.valuesItem}>
+              <div className={style.valuesItemText}>
+                <h3 className="black-color">Quality and Responsibility</h3>
+                <p className="black-color">
+                  We believe every product and solution should meet the highest
+                  standards, and we take responsibility at every stage of our
+                  process.
+                </p>
+              </div>
+              <div>
+                <img
+                  className={style.valuesItemSvg}
+                  src="src\assets\Projections.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className={style.valuesItem}>
+              <div className={style.valuesItemText}>
+                <h3 className="black-color">
+                  Innovation and <br />
+                  Continuous Growth
+                </h3>
+                <p className="black-color">
+                  We’re always moving forward, incorporating innovations and
+                  searching for new ways to enhance our services and products.
+                </p>
+              </div>
+              <div>
+                <img
+                  className={style.valuesItemSvg}
+                  src="src\assets\Good team.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className={style.valuesItem}>
+              <div className={style.valuesItemText}>
+                <h3 className="black-color">Openness and Trust</h3>
+                <p className="black-color">
+                  Transparency is one of our core principles. We are always
+                  honest with our clients and partners, ready for open dialogue.
+                </p>
+              </div>
+              <div>
+                <img
+                  className={style.valuesItemSvg}
+                  src="src\assets\Business deal.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className={style.valuesItem}>
+              <div className={style.valuesItemText}>
+                <h3 className="black-color">
+                  Sustainability and <br />
+                  Environmental Care
+                </h3>
+                <p className="black-color">
+                  We strive to minimize our environmental impact by adopting
+                  eco-friendly processes and technologies.
+                </p>
+              </div>
+              <div>
+                <img
+                  className={style.valuesItemSvg}
+                  src="src\assets\Growing.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className={style.valuesItem}>
+              <div className={style.valuesItemText}>
+                <h3 className="black-color">Client-Centered Approach</h3>
+                <p className="black-color">
+                  Our clients are our main partners. We work to understand and
+                  exceed their expectations, making their needs our top
+                  priority.
+                </p>
+              </div>
+              <div>
+                <img
+                  className={style.valuesItemSvg}
+                  src="src\assets\Marketing consulting.gif"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={`cream-bg ${style.seo}`}>
+        <div className={style.seoContainer}>
+          <div>
+            <img
+              className={style.seoImg}
+              src="src\assets\unsplash_C7FB7H-sXJs.png"
+              alt=""
+            />
+          </div>
+          <div className={style.seoText}>
+            <h3>
+              “The trajectory of agriculture in the coming years is in our
+              hands, and it will be shaped by the decisions we make today.”
+            </h3>
+            <div>
+              <h5>Stefan Julius</h5>
+              <p className="p20 black-color">CEO of ITTCON</p>
+            </div>
+          </div>
+        </div>
       </section>
       <Together />
       <Footer />

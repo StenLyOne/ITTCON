@@ -142,7 +142,10 @@ a {
   text-decoration: none;
 }
 
-.h1-plus {
+.damper {
+  width: 100%;
+  height: 3.287rem;
+  background-color: #2d2c29;
 }
 
 @media screen and (max-width: 480px) {
@@ -197,6 +200,10 @@ a {
 
   .servis-item.reverse {
     flex-direction: column;
+  }
+
+  .damper {
+    height: 2.6rem;
   }
 }
 

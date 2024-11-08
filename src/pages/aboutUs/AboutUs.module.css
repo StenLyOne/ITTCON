@@ -1,14 +1,15 @@
 .main {
   width: 100%;
-  height: 100svh;
-  background-image: radial-gradient(
+  /* height: 100svh; */
+  /* background-image: radial-gradient(
       circle,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 0) 50%
     ),
     url(/src/assets/aboutUs-main.png);
   background-size: cover;
-  background-position: center;
+  background-position: center; */
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,15 +18,16 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.606rem;
+  gap: 2.283rem;
   align-items: center;
+  padding: 6.849rem 0;
 }
 
 .mainContainerText {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1.369rem;
+  gap: 2.283rem;
 }
 
 .mainContainerText p {
@@ -189,20 +191,112 @@
   height: 39.36rem;
 }
 
-/* ///////// reviews */
+/* ///////// we */
 
-.reviews {
+.we {
   width: 100%;
+  background-color: white;
+  display: flex; /* Обеспечивает работу с margin-left: auto */
+}
+
+.weContainer {
+  padding: 6.849rem 0 3.652rem;
+  display: flex;
+  margin-left: auto; /* Прижимаем к правому краю */
+  gap: 3.196rem;
+}
+
+.weText {
+  max-width: 31.324rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.283rem;
   text-align: left;
+}
+
+.weImg {
+  width: 42.237rem;
+}
+
+/* ///////// values */
+
+.values {
+  width: 100%;
+  background-color: white;
+  padding: 6.849rem 10.913rem;
+}
+
+.valuesItemWraper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.283rem;
+}
+
+.valuesH2 {
+  margin-bottom: 3.652rem;
+}
+
+.valuesItem {
+  display: flex;
+  align-items: center;
+  gap: 3.196rem;
+  text-align: left;
+  justify-content: center;
+}
+
+.valuesItem:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.valuesItem p {
+  max-width: fit-content;
+}
+
+.valuesItemText {
+  display: flex; /* Или inline-flex если нужно */
+  flex-direction: column;
+  gap: 1.333rem;
+  max-width: 31.278rem;
+}
+
+.valuesItemSvg {
+  width: 22.831rem;
+}
+
+/* ///////// ceo */
+
+.seo {
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+}
+
+.seoContainer {
+  display: flex;
+  gap: 6.118rem;
+  text-align: left;
+}
+
+.seoText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.seoImg {
+  width: 25.205rem;
+}
+
+.seoText h5 {
+  margin-bottom: 0.456rem;
 }
 
 @media screen and (max-width: 480px) {
   .mainContainer {
     top: 5.416rem;
-    text-align: left;
+    text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: start;
     width: 100%;
     padding: 5.416rem 1.039rem;
   }
@@ -233,8 +327,6 @@
     margin-bottom: 2.083rem;
   }
 
-
-
   .charts {
     padding: 5.416rem 1.041rem;
   }
@@ -246,10 +338,6 @@
   .chartsMob {
     display: block;
   }
-
-  
-
-
 
   .indicators {
     width: 100%;
@@ -283,9 +371,6 @@
     gap: 2.083rem;
   }
 
-
-
-
   .earth {
     padding: 5.416rem 1.0416rem;
   }
@@ -303,5 +388,55 @@
   .earthItem {
     width: 17.916rem;
     height: 17.916rem;
+  }
+
+  .weContainer {
+    padding: 5.416rem 1.041rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto; /* Прижимаем к правому краю */
+    gap: 3.196rem;
+  }
+
+  .weImg {
+    width: 100%;
+  }
+
+  .values {
+    padding: 5.416rem 1.041rem;
+  }
+
+  .valuesItem {
+    flex-direction: column;
+  }
+
+  .valuesItem:nth-child(even) {
+    flex-direction: inherit;
+  }
+
+  .valuesItemSvg {
+    width: 100%;
+  }
+
+  .seo {
+    width: 100%;
+    padding: 5.416rem 1.041rem;
+  }
+
+  .seoContainer {
+    flex-direction: column;
+    gap: 1.666rem;
+  }
+
+  .seoText {
+    gap: 1.666rem;
+  }
+
+  .seoImg {
+    width: 100%;
+  }
+
+  .seoText h5 {
+    margin-bottom: 0.456rem;
   }
 }
