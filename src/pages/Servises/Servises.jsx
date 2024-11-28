@@ -9,12 +9,40 @@ import Together from "../../components/Together/Together";
 import Overview from "../../components/Overview/Overview";
 import { useLocation } from "react-router-dom";
 import Portfolio from "../../components/Portfolio/Portfolio";
-import { name } from "echarts-extension-gmap";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Servises() {
   const location = useLocation();
   const [servicesIndex, setServisesIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+  const imgContainer = useRef(null); // Ссылка на контейнер изображения
+
+  useEffect(() => {
+    // Устанавливаем начальную ширину элемента на 70%
+    gsap.set(imgContainer.current, { width: "70%" });
+
+    // Создаем ScrollTrigger
+    ScrollTrigger.create({
+      trigger: imgContainer.current, // Триггер - это сам элемент
+      start: "top bottom", // Начало анимации, когда верхняя часть элемента касается нижней части экрана
+      end: "top 30%", // Конец анимации, когда нижняя часть элемента касается верхней части экрана
+      scrub: true, // Включаем синхронизацию анимации с прокруткой
+      onUpdate: (self) => {
+        const progress = self.progress; // Получаем прогресс прокрутки
+        const width = 70 + progress * 30; // Расчет ширины от 70% до 100%
+        gsap.to(imgContainer.current, { width: `${width}%` });
+      },
+    });
+
+    // Очистка при удалении компонента
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -127,23 +155,23 @@ function Servises() {
         title1: "Market Entry Strategies",
         description1:
           "Gain insights into effective market entry strategies to position your startup for success. We analyze your target market, competition, and potential risks to develop a tailored approach.",
-        icon1: "/src/assets/Market research.svg",
-        img1: "https://source.unsplash.com/1600x900/?startup-strategy",
+        icon1: "/src/assets/Market-Entry.svg",
+        img1: "/src/assets/Market-Entry.png",
         title2: "Funding and Investment Solutions",
         description2:
           "Navigate the funding landscape with our guidance. We assist in identifying suitable funding options, preparing investment pitches, and connecting with potential investors.",
-        icon2: "/src/assets/Partner Identification.svg",
-        img2: "https://source.unsplash.com/1600x900/?funding-solutions",
+        icon2: "/src/assets/Funding.svg",
+        img2: "/src/assets/Funding.png",
         title3: "Business Model Development",
         description3:
           "Refine your business model with expert advice. We help you identify key revenue streams, cost structures, and value propositions to ensure your startup is sustainable.",
-        icon3: "/src/assets/Trade negotiation.svg",
-        img3: "https://source.unsplash.com/1600x900/?business-model",
+        icon3: "/src/assets/Business-Model.svg",
+        img3: "/src/assets/Business-Model.png",
         title4: "Market Research and Analysis",
         description4:
           "Conduct thorough market research to understand customer needs and industry trends. We provide insights that inform your product development and marketing strategies.",
-        icon4: "/src/assets/Logistics.svg",
-        img4: "https://source.unsplash.com/1600x900/?market-research",
+        icon4: "/src/assets/Market-Research.svg",
+        img4: "/src/assets/Market-Research.png",
         title5: "Networking Opportunities",
         description5:
           "Connect with industry leaders and potential partners through our extensive network. We facilitate introductions that can lead to valuable collaborations.",
@@ -223,7 +251,7 @@ function Servises() {
         </div>
       </main>
       <section className={style.imgAfterMain}>
-        <div className={style.imgAfterMainContainer}></div>
+        <div ref={imgContainer} className={style.imgAfterMainContainer}></div>
       </section>
       <section className={`white-bg ${style.servises}`}>
         <div className={style.servisesContainer}>

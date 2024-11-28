@@ -18,6 +18,7 @@ import Together from "../../components/Together/Together";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import ButtonGroup from "../../components/ButtonServis/ButtonServisMob";
+import ScrollAnimation from "../../components/ScrollAnimation/ScrollAnimation";
 
 function HomePage() {
   const [hoveredIndex, setIsHovered] = useState(null);
@@ -33,10 +34,11 @@ function HomePage() {
   return (
     <div>
       <Header />
-      <main className="main" >
-        <video style={{
-          zIndex: "1"
-        }}
+      <main className="main">
+        <video
+          style={{
+            zIndex: "1",
+          }}
           className={`video filter-anim ${
             hoveredIndex !== null ? "filter" : ""
           }`}
@@ -47,14 +49,17 @@ function HomePage() {
           playsInline
           autoPlay
         ></video>
-        <div style={{
-          zIndex: "1"
-        }}
+        <div
+          style={{
+            zIndex: "1",
+          }}
           className={`mainContainer filter-anim ${
             hoveredIndex !== null ? "filter" : ""
           }`}
         >
-          <h1 className='h1-plus'>Pioneering sustainable innovation for a greener tomorrow</h1>
+          <h1 className="h1-plus">
+            Pioneering sustainable innovation for a greener tomorrow
+          </h1>
           {/* <p>
             Driving sustainable innovation to ensure a thriving planet and a
             prosperous
@@ -62,9 +67,12 @@ function HomePage() {
             future where business and nature grow together.
           </p> */}
         </div>
-        <div style={{
-          zIndex: "1"
-        }} className="mainButtons">
+        <div
+          style={{
+            zIndex: "1",
+          }}
+          className="mainButtons"
+        >
           <div
             onMouseEnter={() => handleMouseEnter(0)}
             onMouseLeave={handleMouseLeave}
@@ -118,9 +126,11 @@ function HomePage() {
             </ButtonServis>
           </div>
         </div>
-        <div style={{
-          zIndex: "1"
-        }} >
+        <div
+          style={{
+            zIndex: "1",
+          }}
+        >
           <ButtonGroup />
         </div>
       </main>
@@ -129,20 +139,17 @@ function HomePage() {
           <div className="numbers-h2">
             <h2>The results of our work in numbers</h2>
           </div>
-          <div className="numbers-container-items">
-            <Number name="Wood Sold" number="360k M³" />
-            <Number name="Partners" number="47+" />
-            <Number name="Countries" number="20+" />
-            <Number name="Years of Experience" number="10+" />
-          </div>
+          <Number />
         </div>
       </section>
       <section className="aboutUs">
         <div className="aboutUs-container">
           <div className="aboutUs-container-left">
-            <h2 className="aboutUs-h2">
-              Our Commitment: Leading the Future of Sustainable Solutions
-            </h2>
+            <ScrollAnimation animationProps={{ delay: 0.1 }}>
+              <h2 className="aboutUs-h2">
+                Our Commitment: Leading the Future of Sustainable Solutions
+              </h2>
+            </ScrollAnimation>
             <div>
               <img
                 className="aboutUs-container-left-img-mob"
@@ -151,20 +158,24 @@ function HomePage() {
               />
             </div>
             <div className="aboutUs-container-left-text">
-              <p className="aboutUs-p">
-                Pioneering sustainable innovation, ITTCON transforms the timber
-                industry by merging nature’s wisdom with cutting-edge
-                technology. We develop solutions as enduring as the forests we
-                protect, aligning business success with environmental
-                stewardship.
-              </p>
-              <p className="aboutUs-p">
-                Each initiative reflects our commitment to sustainability, from
-                channeling investments into green technologies to ensuring our
-                work meets today’s needs while safeguarding tomorrow’s legacy.
-                ITTCON leads the way in creating a future where business and
-                nature thrive together.
-              </p>
+              <ScrollAnimation animationProps={{ delay: 0.1 }}>
+                <p className="aboutUs-p">
+                  Pioneering sustainable innovation, ITTCON transforms the
+                  timber industry by merging nature’s wisdom with cutting-edge
+                  technology. We develop solutions as enduring as the forests we
+                  protect, aligning business success with environmental
+                  stewardship.
+                </p>
+              </ScrollAnimation>
+              <ScrollAnimation animationProps={{ delay: 0.2 }}>
+                <p className="aboutUs-p">
+                  Each initiative reflects our commitment to sustainability,
+                  from channeling investments into green technologies to
+                  ensuring our work meets today’s needs while safeguarding
+                  tomorrow’s legacy. ITTCON leads the way in creating a future
+                  where business and nature thrive together.
+                </p>
+              </ScrollAnimation>
             </div>
             <div className="aboutUs-btn">
               <Button text="About us" path="/aboutus" />
@@ -177,34 +188,42 @@ function HomePage() {
         <div className="partners-container">
           <h2>Some of our Partners</h2>
           <div className="partners-container-items">
-            <PartnersItem text="Renewable materials solutions">
-              <img
-                className="partners-item-logo"
-                src="/src/assets/logo-partners1.svg"
-                alt=""
-              />
-            </PartnersItem>
-            <PartnersItem text="Blockchain-driven logistics">
-              <img
-                className="partners-item-logo"
-                src="/src/assets/logo-partners2.svg"
-                alt=""
-              />
-            </PartnersItem>
-            <PartnersItem text="Global wildlife conservation">
-              <img
-                className="partners-item-logo"
-                src="/src/assets/logo-partners3.svg"
-                alt=""
-              />
-            </PartnersItem>
-            <PartnersItem text="Environmental policy leadership">
-              <img
-                className="partners-item-logo"
-                src="/src/assets/logo-partners4.svg"
-                alt=""
-              />
-            </PartnersItem>
+            <ScrollAnimation animationProps={{ delay: 0.1, }}>
+              <PartnersItem text="Renewable materials solutions">
+                <img
+                  className="partners-item-logo"
+                  src="/src/assets/logo-partners1.svg"
+                  alt=""
+                />
+              </PartnersItem>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.4 }}>
+              <PartnersItem text="Blockchain-driven logistics">
+                <img
+                  className="partners-item-logo"
+                  src="/src/assets/logo-partners2.svg"
+                  alt=""
+                />
+              </PartnersItem>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.7 }}>
+              <PartnersItem text="Global wildlife conservation">
+                <img
+                  className="partners-item-logo"
+                  src="/src/assets/logo-partners3.svg"
+                  alt=""
+                />
+              </PartnersItem>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 1 }}>
+              <PartnersItem text="Environmental policy leadership">
+                <img
+                  className="partners-item-logo"
+                  src="/src/assets/logo-partners4.svg"
+                  alt=""
+                />
+              </PartnersItem>
+            </ScrollAnimation>
           </div>
         </div>
       </section>
@@ -261,7 +280,9 @@ function HomePage() {
       </section>
       <section className="portfolio gray-bg">
         <div className="portfolio-container">
-          <h2 className="portfolio-h2 black-color">Our Impactful Journeys</h2>
+          <ScrollAnimation>
+            <h2 className="portfolio-h2 black-color">Our Impactful Journeys</h2>
+          </ScrollAnimation>
           <Portfolio />
         </div>
       </section>

@@ -18,6 +18,36 @@
   color: #ffffff;
 }
 
+.numbersContainerItems {
+  display: flex;
+  position: relative;
+}
+
+.numbersItemsWrapper {
+  display: flex;
+}
+
+.numbersItems {
+  display: flex;
+}
+
+.numbersItems {
+  position: absolute;
+  top: 0;
+
+  width: 16.438rem;
+  height: 10.864rem;
+  border: 1px solid white;
+}
+
+.numbersLeft {
+  left: -25%;
+}
+
+.numbersRight {
+  right: -24.8%;
+}
+
 @media screen and (max-width: 480px) {
   .numbersName {
     font-size: 0.6667rem;

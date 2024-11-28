@@ -4,15 +4,18 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
 import AboutUsNumbers from "../../components/AboutUsNumbers/AboutUsNumbers";
-import Indicators from "../../components/Indicators/Indicators";
 import Earth from "../../components/Earth/Earth";
-import Reviews from "../../components/Reviews/Reviews";
 import Together from "../../components/Together/Together";
 import ChartsMobContainer from "../../components/ChartsMobContainer/ChartsMobContainer";
 import ChartsComponent from "../../components/ChartsContainer/ChartsComponent";
-import aboutUs from "../../assets/aboutUs.png";
+import ScrollAnimation from "../../components/ScrollAnimation/ScrollAnimation";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function AboutUs() {
+  const valuesItems = useRef(null); // Ссылка на контейнер всех элементов
   const earthTextRef = useRef();
   const [earthTextSize, setEarthTextSize] = useState({ width: 0, height: 0 });
 
@@ -33,6 +36,29 @@ function AboutUs() {
     };
   }, []);
 
+  useEffect(() => {
+    // Находим все изображения внутри valuesItem
+    const images = valuesItems.current.querySelectorAll("img");
+
+    // Для каждого изображения создаем ScrollTrigger
+    images.forEach((image) => {
+      ScrollTrigger.create({
+        trigger: image, // Триггером является само изображение
+        start: "top 50%", // Старт анимации, когда верхняя часть изображения достигает середины экрана
+        end: "bottom 50%", // Конец анимации, когда нижняя часть изображения достигает середины экрана
+        onEnter: () =>
+          gsap.to(image, { display: "block", opacity: 1, duration: 1 }), // Показать изображение
+        onLeaveBack: () =>
+          gsap.to(image, { display: "block", opacity: 1, duration: 1 }), // Скрыть изображение при возврате назад
+      });
+    });
+
+    // Очистка ScrollTrigger
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
     <div>
       <Header />
@@ -42,51 +68,30 @@ function AboutUs() {
       <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
-            <h1 className="black-color">
-              Innovating with <br />
-              Nature’s Blueprint
-            </h1>
-            <p className="black-color">
-              By blending nature’s time-tested wisdom with modern expertise, we
-              create eco-friendly solutions that drive sustainable growth. At
-              ITTCON, our mission is to ensure both your business and the planet
-              thrive together.
-            </p>
+            <ScrollAnimation animationProps={{ delay: 0.1 }}>
+              <h1 className="black-color">
+                Innovating with <br />
+                Nature’s Blueprint
+              </h1>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.25 }}>
+              <p className="black-color">
+                By blending nature’s time-tested wisdom with modern expertise,
+                we create eco-friendly solutions that drive sustainable growth.
+                At ITTCON, our mission is to ensure both your business and the
+                planet thrive together.
+              </p>
+            </ScrollAnimation>
           </div>
-          <Button text="Contact us" color="" path="/contact" />
+          <ScrollAnimation animationProps={{ delay: 0.5 }}>
+            <Button text="Contact us" color="" path="/contact" />
+          </ScrollAnimation>
         </div>
       </main>
       <section className={style.numbers}>
         <div className={style.numbersContainer}>
           <h2 className="black-color">ITTCON by the Numbers</h2>
-          <div className={style.numbersContainerItems}>
-            <div className={`${style.numbersItems} ${style.numbersLeft}`}></div>
-            <div className={style.numbersItemsWraper}>
-              <AboutUsNumbers name="Forest Land" number="1,500 ha" />
-              <AboutUsNumbers name="Green investments" number="€40M" />
-            </div>
-            <div className={style.numbersItemsWraper}>
-              <AboutUsNumbers name="Reforestation trees" number="2.25M" />
-              <AboutUsNumbers name="40’ Containers loaded:" number="10k+ " />
-            </div>
-            <div
-              className={`${style.numbersItems} ${style.numbersRight}`}
-            ></div>
-          </div>
-          <div className={style.numbersContainerItems}>
-            <div className={`${style.numbersItems} ${style.numbersLeft}`}></div>
-            <div className={style.numbersItemsWraper}>
-              <AboutUsNumbers name="Truck loads" number="12,000" />
-              <AboutUsNumbers name="Trains loaded" number="€40M" />
-            </div>
-            <div className={style.numbersItemsWraper}>
-              <AboutUsNumbers name="EUDR Compliance" number="95%" />
-              <AboutUsNumbers name="Continents Served" number="4" />
-            </div>
-            <div
-              className={`${style.numbersItems} ${style.numbersRight}`}
-            ></div>
-          </div>
+          <AboutUsNumbers></AboutUsNumbers>
         </div>
       </section>
       <section className={`white-bg ${style.charts}`}>
@@ -134,58 +139,90 @@ function AboutUs() {
       <section className={`gray-bg ${style.earth}`}>
         <div className={style.earthContainer}>
           <div className={style.earthText}>
-            <h2 className="black-color">
-              Connecting <br />
-              the World
-            </h2>
-            <p className="black-color p20">
-              ITTCON’s presence spans the globe, creating impactful partnerships
-              that drive sustainable progress across key regions.
-            </p>
+            <ScrollAnimation animationProps={{ delay: 0.1 }}>
+              <h2 className="black-color">
+                Connecting <br />
+                the World
+              </h2>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.2 }}>
+              <p className="black-color p20">
+                ITTCON’s presence spans the globe, creating impactful
+                partnerships that drive sustainable progress across key regions.
+              </p>
+            </ScrollAnimation>
           </div>
-          <div className={style.earthItem} ref={earthTextRef}>
-            <Earth width={earthTextSize.width} height={earthTextSize.height} />
-          </div>
+          <ScrollAnimation animationProps={{ delay: 0.3 }}>
+            <div className={style.earthItem} ref={earthTextRef}>
+              <Earth
+                width={earthTextSize.width}
+                height={earthTextSize.height}
+              />
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
       <section className={style.we}>
         <div className={style.weContainer}>
           <div className={style.weText}>
-            <h2 className="black-color">Who we are?</h2>
+            <ScrollAnimation animationProps={{ delay: 0.1 }}>
+              <h2 className="black-color">Who we are?</h2>
+            </ScrollAnimation>
             <p className="black-color">
-              We are a team of enthusiasts and innovators striving to change the
-              world through sustainable business solutions. Founded in 2018 with
-              the mission of building an environmentally responsible business,
-              our company today supports numerous projects aimed at improving
-              the environment and enhancing the quality of life worldwide.
+              <ScrollAnimation animationProps={{ delay: 0.2 }}>
+                <span>
+                  We are a team of enthusiasts and innovators striving to change
+                  the world through sustainable business solutions. Founded in
+                  2018 with the mission of building an environmentally
+                  responsible business, our company today supports numerous
+                  projects aimed at improving the environment and enhancing the
+                  quality of life worldwide.
+                </span>
+              </ScrollAnimation>
               <br />
+
+              <ScrollAnimation animationProps={{ delay: 0.3 }}>
+                <span>
+                  Our unique approaches in green technology and partnerships
+                  within the "green zone" empower us to create a sustainable
+                  future.
+                </span>
+              </ScrollAnimation>
+
               <br />
-              Our unique approaches in green technology and partnerships within
-              the "green zone" empower us to create a sustainable future.
-              <br />
-              <br />
-              Our goal is not just to conduct business, but to drive meaningful
-              change. We believe that each project is a step toward a cleaner
-              planet. Join us, and together we can achieve more!
+              <ScrollAnimation animationProps={{ delay: 0.4 }}>
+                <span>
+                  Our goal is not just to conduct business, but to drive
+                  meaningful change. We believe that each project is a step
+                  toward a cleaner planet. Join us, and together we can achieve
+                  more!
+                </span>
+              </ScrollAnimation>
             </p>
-            <Button text="contact us" path="/contact" color="black-color" />
+            <ScrollAnimation animationProps={{ delay: 0.5 }}>
+              <Button text="contact us" path="/contact" color="black-color" />
+            </ScrollAnimation>
           </div>
-          <div>
-            <img
-              className={style.weImg}
-              src="src\assets\who we are.png"
-              alt=""
-            />
-          </div>
+          <ScrollAnimation animationProps={{ delay: 0.5 }} y={0}>
+            <div>
+              <img
+                className={style.weImg}
+                src="src\assets\who we are.png"
+                alt=""
+              />
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
       <section className={style.values}>
         <div className={style.valuesContainer}>
-          <h2 className={`black-color ${style.valuesH2}`}>
-            Our values ​​helping to improve global <br />
-            well-being since 2018
-          </h2>
-          <div className={style.valuesItemWraper}>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <h2 className={`black-color ${style.valuesH2}`}>
+              Our values ​​helping to improve global <br />
+              well-being since 2018
+            </h2>
+          </ScrollAnimation>
+          <div ref={valuesItems} className={style.valuesItemWraper}>
             <div className={style.valuesItem}>
               <div className={style.valuesItemText}>
                 <h3 className="black-color">Quality and Responsibility</h3>
@@ -198,7 +235,7 @@ function AboutUs() {
               <div>
                 <img
                   className={style.valuesItemSvg}
-                  src="src\assets\Projections.gif"
+                  src="src/assets/Projections.gif"
                   alt=""
                 />
               </div>
@@ -217,7 +254,7 @@ function AboutUs() {
               <div>
                 <img
                   className={style.valuesItemSvg}
-                  src="src\assets\Good team.gif"
+                  src="src/assets/Good team.gif"
                   alt=""
                 />
               </div>
@@ -233,7 +270,7 @@ function AboutUs() {
               <div>
                 <img
                   className={style.valuesItemSvg}
-                  src="src\assets\Business deal.gif"
+                  src="src/assets/Business deal.gif"
                   alt=""
                 />
               </div>
@@ -252,7 +289,7 @@ function AboutUs() {
               <div>
                 <img
                   className={style.valuesItemSvg}
-                  src="src\assets\Growing.gif"
+                  src="src/assets/Growing.gif"
                   alt=""
                 />
               </div>
@@ -269,7 +306,7 @@ function AboutUs() {
               <div>
                 <img
                   className={style.valuesItemSvg}
-                  src="src\assets\Marketing consulting.gif"
+                  src="src/assets/Marketing consulting.gif"
                   alt=""
                 />
               </div>

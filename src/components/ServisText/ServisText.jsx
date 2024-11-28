@@ -1,17 +1,28 @@
 import Button from "../button/Button";
 import "./ServisText.css";
+import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
 
 function ServisText({ title, text1, text2, button, id }) {
   return (
     <div className="servis-text-container">
-      <h3>{title}</h3>
+      <ScrollAnimation animationProps={{ delay: 0.1 }}>
+        <h3>{title}</h3>
+      </ScrollAnimation>
       <div className="servis-text-wriper">
-        <p className="black-color">{text1}</p>
-        <p className="black-color">{text2}</p>
+        <ScrollAnimation animationProps={{ delay: 0.15 }}>
+          <p className="black-color">{text1}</p>
+        </ScrollAnimation>
+        <ScrollAnimation animationProps={{ delay: 0.2 }}>
+          <p className="black-color">{text2}</p>
+        </ScrollAnimation>
       </div>
-      <div className="servis-button-wriper">
-        {button && <Button text="Explore Our Services" path="/services" id={id} />} {/* Передаем onClick */}
-      </div>
+      <ScrollAnimation animationProps={{ delay: 0.25 }}>
+        <div className="servis-button-wriper">
+          {button && (
+            <Button text="Explore Our Services" path="/services" id={id} />
+          )}{" "}
+        </div>
+      </ScrollAnimation>
     </div>
   );
 }

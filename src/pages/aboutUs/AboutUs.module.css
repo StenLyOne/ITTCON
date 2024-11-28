@@ -18,16 +18,16 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.283rem;
+  gap: 1.826rem;
   align-items: center;
-  padding: 6.849rem 0;
+  padding: 6.849rem 0 3.424rem;
 }
 
 .mainContainerText {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2.283rem;
+  gap: 1.826rem;
 }
 
 .mainContainerText p {
@@ -53,31 +53,7 @@
   margin-bottom: 2.283rem;
 }
 
-.numbersContainerItems {
-  display: flex;
-  position: relative;
-}
 
-.numbersItemsWraper {
-  display: flex;
-}
-
-.numbersItems {
-  position: absolute;
-  top: 0;
-
-  width: 16.438rem;
-  height: 10.864rem;
-  border: 1px solid white;
-}
-
-.numbersLeft {
-  left: -25%;
-}
-
-.numbersRight {
-  right: -24.8%;
-}
 
 /* ///////// CHARTS*/
 

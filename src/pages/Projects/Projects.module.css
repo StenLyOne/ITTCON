@@ -71,7 +71,6 @@
 
 .projectsItem:hover {
   transform: scale(1.02);
-  filter: drop-shadow(0px 0px 100px #f7f5e6);
 }
 
 .projectsItem:hover .arrow img{

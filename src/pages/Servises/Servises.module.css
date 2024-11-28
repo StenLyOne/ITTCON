@@ -10,20 +10,20 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  gap: 2.283rem;
+  gap: 1.826rem;
   align-items: center;
-  padding: 6.849rem 0 ;
+  padding: 6.849rem 0 3.424rem;
 }
 
 .mainContainerText {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 2.283rem;
+  gap: 1.826rem;
 }
 
 .mainContainerText p {
-  max-width: 40rem;
+  max-width: 41rem;
 }
 
 .imgAfterMain {
@@ -32,8 +32,8 @@
 }
 
 .imgAfterMainContainer {
-  width: 75%;
-  height: 70vh;
+  width: 100%;
+  height: 100vh;
   background-image: radial-gradient(
       circle,
       rgba(0, 0, 0, 0.5) 0%,
