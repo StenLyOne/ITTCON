@@ -1,11 +1,20 @@
 import "./HomePage.css";
 import "./Numbers.css";
 import "./AboutUs.css";
-import "./AboutUs.css";
 import "./Partners.css";
 import "./Servis.css";
 import "./Portfolio.css";
 import "./News.css";
+import Main from "../../components/Main/Main";
+import AboutUsImg from "../../assets/aboutUs.png";
+import logoPartners1 from "../../assets/logo-partners1.png";
+import logoPartners2 from "../../assets/logo-partners2.svg";
+import logoPartners3 from "../../assets/logo-partners3.svg";
+import logoPartners4 from "../../assets/logo-partners4.svg";
+import servisAgency from "../../assets/servis-agency.png";
+import servisGreen from "../../assets/servis-green.png";
+import servisStartup from "../../assets/servis-startup.png";
+import servisEUDR from "../../assets/servis-EUDR.png";
 import React, { useState } from "react";
 import ButtonServis from "../../components/ButtonServis/ButtonServis";
 import Number from "../../components/Numbers/Numbers";
@@ -17,123 +26,14 @@ import News from "../../components/news/News";
 import Together from "../../components/Together/Together";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import ButtonGroup from "../../components/ButtonServis/ButtonServisMob";
 import ScrollAnimation from "../../components/ScrollAnimation/ScrollAnimation";
 
+
 function HomePage() {
-  const [hoveredIndex, setIsHovered] = useState(null);
-
-  const handleMouseEnter = (index) => {
-    setIsHovered(index);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(null);
-  };
-
   return (
     <div>
       <Header />
-      <main className="main">
-        <video
-          style={{
-            zIndex: "1",
-          }}
-          className={`video filter-anim ${
-            hoveredIndex !== null ? "filter" : ""
-          }`}
-          src="/src/assets/videoplayback.mp4"
-          preload="meta"
-          muted
-          loop
-          playsInline
-          autoPlay
-        ></video>
-        <div
-          style={{
-            zIndex: "1",
-          }}
-          className={`mainContainer filter-anim ${
-            hoveredIndex !== null ? "filter" : ""
-          }`}
-        >
-          <h1 className="h1-plus">
-            Pioneering sustainable innovation for a greener tomorrow
-          </h1>
-          {/* <p>
-            Driving sustainable innovation to ensure a thriving planet and a
-            prosperous
-            <br className="br-pc-main" />
-            future where business and nature grow together.
-          </p> */}
-        </div>
-        <div
-          style={{
-            zIndex: "1",
-          }}
-          className="mainButtons"
-        >
-          <div
-            onMouseEnter={() => handleMouseEnter(0)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ButtonServis text="Agency and Brokerage" id={0}>
-              <div className="buttonServis-img-agency">
-                <img
-                  src="/src/assets/agency-btn.png"
-                  alt="Agency and Brokerage"
-                />
-              </div>
-            </ButtonServis>
-          </div>
-          <div
-            onMouseEnter={() => handleMouseEnter(1)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ButtonServis text="Green Investment" id={1}>
-              <div className="buttonServis-img-agency">
-                <img
-                  src="/src/assets/agency-btn.png"
-                  alt="Agency and Brokerage"
-                />
-              </div>
-            </ButtonServis>
-          </div>
-          <div
-            onMouseEnter={() => handleMouseEnter(2)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ButtonServis text="Startup Services" id={2}>
-              <div className="buttonServis-img-agency">
-                <img
-                  src="/src/assets/agency-btn.png"
-                  alt="Agency and Brokerage"
-                />
-              </div>
-            </ButtonServis>
-          </div>
-          <div
-            onMouseEnter={() => handleMouseEnter(3)}
-            onMouseLeave={handleMouseLeave}
-          >
-            <ButtonServis text="EUDR and<br>Sustainable Schemes" id={3}>
-              <div className="buttonServis-img-agency">
-                <img
-                  src="/src/assets/agency-btn.png"
-                  alt="Agency and Brokerage"
-                />
-              </div>
-            </ButtonServis>
-          </div>
-        </div>
-        <div
-          style={{
-            zIndex: "1",
-          }}
-        >
-          <ButtonGroup />
-        </div>
-      </main>
+      <Main />
       <section className="numbers">
         <div className="numbersContainer">
           <div className="numbers-h2">
@@ -153,7 +53,7 @@ function HomePage() {
             <div>
               <img
                 className="aboutUs-container-left-img-mob"
-                src="/src/assets/aboutUs.png"
+                src={AboutUsImg}
                 alt=""
               />
             </div>
@@ -177,9 +77,11 @@ function HomePage() {
                 </p>
               </ScrollAnimation>
             </div>
-            <div className="aboutUs-btn">
-              <Button text="About us" path="/aboutus" />
-            </div>
+            <ScrollAnimation animationProps={{ delay: 0.3 }}>
+              <div className="aboutUs-btn">
+                <Button text="About us" path="/aboutus" />
+              </div>
+            </ScrollAnimation>
           </div>
           <div className="aboutUs-container-right"></div>
         </div>
@@ -188,41 +90,49 @@ function HomePage() {
         <div className="partners-container">
           <h2>Some of our Partners</h2>
           <div className="partners-container-items">
-            <ScrollAnimation animationProps={{ delay: 0.1, }}>
-              <PartnersItem text="Renewable materials solutions">
-                <img
-                  className="partners-item-logo"
-                  src="/src/assets/logo-partners1.svg"
-                  alt=""
-                />
-              </PartnersItem>
+            <ScrollAnimation animationProps={{ delay: 0.1 }} blur={35}>
+              <div className="partners-item-wraper">
+                <PartnersItem text="Renewable materials solutions">
+                  <img
+                    className="partners-item-logo"
+                    src={logoPartners1}
+                    alt=""
+                  />
+                </PartnersItem>
+              </div>
             </ScrollAnimation>
-            <ScrollAnimation animationProps={{ delay: 0.4 }}>
-              <PartnersItem text="Blockchain-driven logistics">
-                <img
-                  className="partners-item-logo"
-                  src="/src/assets/logo-partners2.svg"
-                  alt=""
-                />
-              </PartnersItem>
+            <ScrollAnimation animationProps={{ delay: 0.2 }} blur={35}>
+              <div className="partners-item-wraper">
+                <PartnersItem text="Blockchain-driven logistics">
+                  <img
+                    className="partners-item-logo"
+                    src={logoPartners2}
+                    alt=""
+                  />
+                </PartnersItem>
+              </div>
             </ScrollAnimation>
-            <ScrollAnimation animationProps={{ delay: 0.7 }}>
-              <PartnersItem text="Global wildlife conservation">
-                <img
-                  className="partners-item-logo"
-                  src="/src/assets/logo-partners3.svg"
-                  alt=""
-                />
-              </PartnersItem>
+            <ScrollAnimation animationProps={{ delay: 0.3 }} blur={35}>
+              <div className="partners-item-wraper">
+                <PartnersItem text="Global wildlife conservation">
+                  <img
+                    className="partners-item-logo"
+                    src={logoPartners3}
+                    alt=""
+                  />
+                </PartnersItem>
+              </div>
             </ScrollAnimation>
-            <ScrollAnimation animationProps={{ delay: 1 }}>
-              <PartnersItem text="Environmental policy leadership">
-                <img
-                  className="partners-item-logo"
-                  src="/src/assets/logo-partners4.svg"
-                  alt=""
-                />
-              </PartnersItem>
+            <ScrollAnimation animationProps={{ delay: 0.4 }} blur={35}>
+              <div className="partners-item-wraper">
+                <PartnersItem text="Environmental policy leadership">
+                  <img
+                    className="partners-item-logo"
+                    src={logoPartners4}
+                    alt=""
+                  />
+                </PartnersItem>
+              </div>
             </ScrollAnimation>
           </div>
         </div>
@@ -240,7 +150,7 @@ function HomePage() {
               title="Leading global agency and brokerage services in timber trade"
               text1="Leading in global timber trade, ITTCON specializes in roundwood, lumber, biomass, and biofuels. Our agency and brokerage services connect you with reliable partners, optimizing transactions for success."
               text2="With global reach and deep industry knowledge, we guide you through market trends, regulatory compliance, and risk management, ensuring your business thrives in the global timber industry."
-              url="/src/assets/servis-agency.png"
+              url={servisAgency}
               color="gray-bg"
               button={true}
               id={0}
@@ -250,7 +160,7 @@ function HomePage() {
               title="Green investment and venture capital for sustainable growth"
               text1="ITTCON’s green investment services connect investors with high-potential opportunities in forestry, bioenergy, and environmental projects. We provide comprehensive support, from identifying opportunities to managing your portfolio. "
               text2="Our expertise in ESG and CSR ensures that your investments yield financial returns while contributing to long-term sustainability, making a meaningful impact on the environment."
-              url="/src/assets/servis-green.png"
+              url={servisGreen}
               color="cream-bg"
               button={true}
               id={1}
@@ -260,7 +170,7 @@ function HomePage() {
               title="Startup and innovation services in timber and bioenergy"
               text1="ITTCON supports startups in wood processing, bioenergy, and environmental sectors with comprehensive market analysis, strategic business planning, and securing venture capital."
               text2="We guide startups through early development, providing expert advice on product development, market entry, and scaling operations. With ITTCON, your startup gains deep industry insights and mentorship, positioning you for long-term success in a competitive market"
-              url="/src/assets/servis-startup.png"
+              url={servisStartup}
               color="gray-bg"
               button={true}
               id={2}
@@ -270,7 +180,7 @@ function HomePage() {
               title="EUDR, CSR, and ESG Compliance for Sustainable Business Practices"
               text1="In today’s regulatory landscape, compliance with EU regulations, CSR, and ESG standards is vital for sustainability and competitiveness. ITTCON guides you through these complex requirements, helping integrate sustainable practices, achieve certifications, and align with global standards."
               text2="Partner with ITTCON to meet regulatory demands and enhance your reputation as a leader in sustainability and ethical business practices."
-              url="/src/assets/servis-EUDR.png"
+              url={servisEUDR}
               color="cream-bg"
               button={true}
               id={3}
@@ -281,12 +191,12 @@ function HomePage() {
       <section className="portfolio gray-bg">
         <div className="portfolio-container">
           <ScrollAnimation>
-            <h2 className="portfolio-h2 black-color">Our Impactful Journeys</h2>
+            <h2 className="portfolio-h2 black-color">Our Work in Action</h2>
           </ScrollAnimation>
           <Portfolio />
         </div>
       </section>
-      <section className="news white-bg">
+      {/* <section className="news white-bg">
         <div>
           <h2 className="black-color news-h2">Articles & News</h2>
         </div>
@@ -313,7 +223,7 @@ function HomePage() {
             date="22.07.2024"
           />
         </div>
-      </section>
+      </section> */}
       <section className="together">
         <Together />
       </section>

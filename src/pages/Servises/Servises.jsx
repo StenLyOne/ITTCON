@@ -11,6 +11,8 @@ import { useLocation } from "react-router-dom";
 import Portfolio from "../../components/Portfolio/Portfolio";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollAnimation from "../../components/ScrollAnimation/ScrollAnimation";
+import Review from "../../components/Review/Review";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,27 +24,31 @@ function Servises() {
   const imgContainer = useRef(null); // Ссылка на контейнер изображения
 
   useEffect(() => {
+    if (isMobile) return; // Пропускаем выполнение, если это мобильное устройство
+
+    if (!imgContainer.current) return; // Проверяем, существует ли ссылка
+
     // Устанавливаем начальную ширину элемента на 70%
     gsap.set(imgContainer.current, { width: "70%" });
 
     // Создаем ScrollTrigger
-    ScrollTrigger.create({
+    const scrollTrigger = ScrollTrigger.create({
       trigger: imgContainer.current, // Триггер - это сам элемент
-      start: "top bottom", // Начало анимации, когда верхняя часть элемента касается нижней части экрана
-      end: "top 30%", // Конец анимации, когда нижняя часть элемента касается верхней части экрана
-      scrub: true, // Включаем синхронизацию анимации с прокруткой
+      start: "top bottom", // Начало анимации
+      end: "top 30%", // Конец анимации
+      scrub: true, // Синхронизация анимации с прокруткой
       onUpdate: (self) => {
-        const progress = self.progress; // Получаем прогресс прокрутки
-        const width = 70 + progress * 30; // Расчет ширины от 70% до 100%
+        const progress = self.progress; // Прогресс прокрутки
+        const width = 70 + progress * 30; // Ширина от 70% до 100%
         gsap.to(imgContainer.current, { width: `${width}%` });
       },
     });
 
     // Очистка при удалении компонента
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      scrollTrigger.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -196,23 +202,23 @@ function Servises() {
         title1: "Detailed Guidance on EUDR Compliance",
         description1:
           "Receive step-by-step instructions and comprehensive templates to navigate the EUDR compliance process seamlessly. Our guidance ensures your business meets all regulatory requirements while maintaining operational efficiency.",
-        icon1: "/src/assets/Market research.svg",
-        img1: "src/assets/Partner Identification.png",
+        icon1: "/src/assets/Detailed.svg",
+        img1: "src/assets/Detailed.png",
         title2: "Risk Assessment and Management",
         description2:
           "Identify potential risks associated with EUDR compliance and develop mitigation strategies. We provide tools and resources to effectively manage these risks and maintain compliance.",
-        icon2: "/src/assets/Partner Identification.svg",
-        img2: "https://source.unsplash.com/1600x900/?risk-assessment",
+        icon2: "/src/assets/Risk.svg",
+        img2: "src/assets/Risk.png",
         title3: "Training and Capacity Building",
         description3:
           "Enhance your team's understanding of EUDR requirements through targeted training sessions. Our capacity-building initiatives empower your employees to implement sustainable practices effectively.",
-        icon3: "/src/assets/Trade negotiation.svg",
-        img3: "https://source.unsplash.com/1600x900/?training",
+        icon3: "/src/assets/Training.svg",
+        img3: "src/assets/Training.png",
         title4: "Sustainable Supply Chain Solutions",
         description4:
           "Optimize your supply chain for sustainability. We help you identify and implement best practices that align with EUDR requirements and promote sustainable sourcing.",
-        icon4: "/src/assets/Logistics.svg",
-        img4: "https://source.unsplash.com/1600x900/?sustainable-supply-chain",
+        icon4: "/src/assets/Sustainable.svg",
+        img4: "src/assets/Sustainable.png",
         title5: "Performance Monitoring and Reporting",
         description5:
           "Track your sustainability initiatives with our performance monitoring tools. We provide insights and reports that demonstrate your commitment to EUDR compliance and sustainable practices.",
@@ -236,89 +242,114 @@ function Servises() {
       <main className={style.main} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
-            <h1 className="black-color">
-              Your Growth, <br />
-              Our Mission
-            </h1>
-            <p className="black-color">
-              With ITTCON, you’re not just getting support – you’re gaining a
-              partner dedicated to your success. We craft solutions that adapt
-              to your business’s unique rhythm and unlock its fullest potential,
-              guiding you toward growth that lasts.
-            </p>
+            <ScrollAnimation animationProps={{ delay: 0.3 }}>
+              <h1 className="black-color">
+                Your Growth, <br />
+                Our Mission
+              </h1>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.4 }}>
+              <p className="black-color">
+                With ITTCON, you’re not just getting support – you’re gaining a
+                partner dedicated to your success. We craft solutions that adapt
+                to your business’s unique rhythm and unlock its fullest
+                potential, guiding you toward growth that lasts.
+              </p>
+            </ScrollAnimation>
           </div>
-          <Button text="Contact us" color=" " path="/contact" />
+          <ScrollAnimation animationProps={{ delay: 0.5 }}>
+            <div>
+              <Button text="Contact us" color=" " path="/contact" />
+            </div>
+          </ScrollAnimation>
         </div>
       </main>
       <section className={style.imgAfterMain}>
-        <div ref={imgContainer} className={style.imgAfterMainContainer}></div>
+        <ScrollAnimation animationProps={{ delay: 0.3 }} y={0}>
+          <div>
+            <div
+              ref={imgContainer}
+              className={style.imgAfterMainContainer}
+            ></div>
+          </div>
+        </ScrollAnimation>
       </section>
       <section className={`white-bg ${style.servises}`}>
         <div className={style.servisesContainer}>
-          <div>
-            <h2 className="black-color">Services</h2>
-          </div>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <div>
+              <h2 className="black-color">Services</h2>
+            </div>
+          </ScrollAnimation>
           <div className={style.servisesItems}>
-            <button className={`white-bg`} onClick={() => setServisesIndex(0)}>
-              <h5
-                className={`${style.servisesh5} ${
-                  servicesIndex === 0 ? style.activ : ""
-                }`}
+            <ScrollAnimation animationProps={{ delay: 0.2 }}>
+              <button
+                className={`white-bg`}
+                onClick={() => setServisesIndex(0)}
               >
-                Agency and Brokerage
-              </h5>
-              <span
-                className={`${style.servisesSpan} ${
-                  servicesIndex === 0 ? style.activSpan : ""
-                }`}
-              ></span>
-            </button>
-
-            <button className="white-bg" onClick={() => setServisesIndex(1)}>
-              <h5
-                className={`${style.servisesh5} ${
-                  servicesIndex === 1 ? style.activ : ""
-                }`}
-              >
-                Green Investment
-              </h5>
-              <span
-                className={`${style.servisesSpan} ${
-                  servicesIndex === 1 ? style.activSpan : ""
-                }`}
-              ></span>
-            </button>
-
-            <button className="white-bg" onClick={() => setServisesIndex(2)}>
-              <h5
-                className={`${style.servisesh5} ${
-                  servicesIndex === 2 ? style.activ : ""
-                }`}
-              >
-                Startup Services
-              </h5>
-              <span
-                className={`${style.servisesSpan} ${
-                  servicesIndex === 2 ? style.activSpan : ""
-                }`}
-              ></span>
-            </button>
-
-            <button className="white-bg" onClick={() => setServisesIndex(3)}>
-              <h5
-                className={`${style.servisesh5} ${
-                  servicesIndex === 3 ? style.activ : ""
-                }`}
-              >
-                EUDR and <br />
-                Sustainable Schemes
-              </h5>
-              <span
-                className={`${style.servisesSpan} ${
-                  servicesIndex === 3 ? style.activSpan : ""
-                }`}
-              ></span>
-            </button>
+                <h5
+                  className={`${style.servisesH5} ${
+                    servicesIndex === 0 ? style.activ : ""
+                  }`}
+                >
+                  Agency and Brokerage
+                </h5>
+                <span
+                  className={`${style.servisesSpan} ${
+                    servicesIndex === 0 ? style.activSpan : ""
+                  }`}
+                ></span>
+              </button>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.3 }}>
+              <button className="white-bg" onClick={() => setServisesIndex(1)}>
+                <h5
+                  className={`${style.servisesH5} ${
+                    servicesIndex === 1 ? style.activ : ""
+                  }`}
+                >
+                  Green Investment
+                </h5>
+                <span
+                  className={`${style.servisesSpan} ${
+                    servicesIndex === 1 ? style.activSpan : ""
+                  }`}
+                ></span>
+              </button>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.4 }}>
+              <button className="white-bg" onClick={() => setServisesIndex(2)}>
+                <h5
+                  className={`${style.servisesH5} ${
+                    servicesIndex === 2 ? style.activ : ""
+                  }`}
+                >
+                  Startup Services
+                </h5>
+                <span
+                  className={`${style.servisesSpan} ${
+                    servicesIndex === 2 ? style.activSpan : ""
+                  }`}
+                ></span>
+              </button>
+            </ScrollAnimation>
+            <ScrollAnimation animationProps={{ delay: 0.5 }}>
+              <button className="white-bg" onClick={() => setServisesIndex(3)}>
+                <h5
+                  className={`${style.servisesH5} ${
+                    servicesIndex === 3 ? style.activ : ""
+                  }`}
+                >
+                  EUDR and <br />
+                  Sustainable Schemes
+                </h5>
+                <span
+                  className={`${style.servisesSpan} ${
+                    servicesIndex === 3 ? style.activSpan : ""
+                  }`}
+                ></span>
+              </button>
+            </ScrollAnimation>
           </div>
           <div className={style.servisesDescription}>
             <ServisItem
@@ -338,21 +369,33 @@ function Servises() {
           <h2>Tailored solutions for your needs</h2>
           <div className={style.solutionsItemsWraper}>
             <div className={style.solutionsItemsWraper1}>
-              <Indicators
-                icon="/src/assets/Collaborating-img1.svg"
-                text="ITTCON adapts to your business goals, offering customized solutions for each client. We understand that every project is unique and requires a tailored approach that takes market specifics into account."
-                title="Flexibility in Partnership"
-              />
-              <Indicators
-                icon="/src/assets/Collaborating-img2.svg"
-                text="With ITTCON, you’ll get more than just advice – you’ll receive concrete steps. We create clear, executable plans so your company can achieve desired outcomes faster."
-                title="Actionable Solutions"
-              />
-              <Indicators
-                icon="/src/assets/Collaborating-img3.svg"
-                text="ITTCON supports even the most ambitious projects. The higher the goal, the more we strive to achieve it, offering innovative strategies and tools for success"
-                title="Ambitious Goals"
-              />
+              <ScrollAnimation animationProps={{ delay: 0.1 }}>
+                <div>
+                  <Indicators
+                    icon="/src/assets/Collaborating-img1.svg"
+                    text="ITTCON adapts to your business goals, offering customized solutions for each client. We understand that every project is unique and requires a tailored approach that takes market specifics into account."
+                    title="Flexibility in Partnership"
+                  />
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation animationProps={{ delay: 0.2 }}>
+                <div>
+                  <Indicators
+                    icon="/src/assets/Collaborating-img2.svg"
+                    text="With ITTCON, you’ll get more than just advice – you’ll receive concrete steps. We create clear, executable plans so your company can achieve desired outcomes faster."
+                    title="Actionable Solutions"
+                  />
+                </div>
+              </ScrollAnimation>
+              <ScrollAnimation animationProps={{ delay: 0.3 }}>
+                <div>
+                  <Indicators
+                    icon="/src/assets/Collaborating-img3.svg"
+                    text="ITTCON supports even the most ambitious projects. The higher the goal, the more we strive to achieve it, offering innovative strategies and tools for success"
+                    title="Ambitious Goals"
+                  />
+                </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>
@@ -369,34 +412,7 @@ function Servises() {
         </div>
       </section>
       <section className={`cream-bg ${style.seo}`}>
-        <div className={style.seoContainer}>
-          {isMobile ? (
-            <div>
-              <h3 className="black-color">
-                "We are delighted to collaborate with Regrow to identify
-                scalable ways to support credible Scope 3 action…Regrow’s
-                customers will benefit from a seamless verification process –
-                providing more accurate project impact results, faster."
-              </h3>
-            </div>
-          ) : (
-            <div>
-              <h2 className="black-color">
-                "We are delighted to collaborate with Regrow to identify
-                scalable ways to support credible Scope 3 action…Regrow’s
-                customers will benefit from a seamless verification process –
-                providing more accurate project impact results, faster."
-              </h2>
-            </div>
-          )}
-          <div className={style.seoInf}>
-            <div className={style.seoImg}></div>
-            <div className={style.seoName}>
-              <h5 className="black-color">Stefan Julius</h5>
-              <p className="black-color p20">CEO, ITTCON</p>
-            </div>
-          </div>
-        </div>
+        <Review />
       </section>
       <Together />
       <Footer />

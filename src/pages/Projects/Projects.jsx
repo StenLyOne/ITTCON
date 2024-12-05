@@ -53,6 +53,8 @@ function Projects() {
       ? jsonData
       : jsonData.filter((project) => project.category === selectedCategory);
   let i = 1;
+
+  console.log(i);
   return (
     <div>
       <section className={style.damper}>
@@ -62,15 +64,19 @@ function Projects() {
       <main className={` ${style.main}`} id="main">
         <div className={style.mainContainer}>
           <div className={style.mainContainerText}>
-            <ScrollAnimation animationProps={{ delay: 0.1 }}>
-              <h2 className={`black-color ${style.mainProjectsTitle}`}>
-                ITTCON delivers innovative solutions for the world’s leading
-                organizations every day. Find out how we've helped companies
-                meet their goals.
-              </h2>
+            <ScrollAnimation animationProps={{ delay: 0.3 }}>
+              <div>
+                <h2 className={`black-color ${style.mainProjectsTitle}`}>
+                  ITTCON delivers innovative solutions for the world’s leading
+                  organizations every day. Find out how we've helped companies
+                  meet their goals.
+                </h2>
+              </div>
             </ScrollAnimation>
-            <ScrollAnimation animationProps={{ delay: 0.2 }}>
-              <Button text="CONTACT US" path="/contact" />
+            <ScrollAnimation animationProps={{ delay: 0.4 }}>
+              <div>
+                <Button text="CONTACT US" path="/contact" />
+              </div>
             </ScrollAnimation>
           </div>
         </div>
@@ -79,103 +85,122 @@ function Projects() {
         <div className={style.projectsContainer}>
           {isMobile ? (
             <ScrollAnimation>
-              <select
-                className={style.dropdownSelect}
-                value={selectedCategory}
-                onChange={(e) => handleCategoryChange(e.target.value)}
-              >
-                <option value="all">All</option>
-                <option value="Agency and Brokerage">
-                  Agency and Brokerage
-                </option>
-                <option value="Green Investment">Green Investment</option>
-                <option value="Startup Services">Startup Services</option>
-                <option value="EUDR and Sustainable Schemes">
-                  EUDR and Sustainable Schemes
-                </option>
-              </select>
+              <div>
+                <select
+                  className={style.dropdownSelect}
+                  value={selectedCategory}
+                  onChange={(e) => handleCategoryChange(e.target.value)}
+                >
+                  <option value="all">All</option>
+                  <option value="Agency and Brokerage">
+                    Agency and Brokerage
+                  </option>
+                  <option value="Green Investment">Green Investment</option>
+                  <option value="Startup Services">Startup Services</option>
+                  <option value="EUDR and Sustainable Schemes">
+                    EUDR and Sustainable Schemes
+                  </option>
+                </select>
+              </div>
             </ScrollAnimation>
           ) : (
             <div className={style.projectsButtons}>
               <ScrollAnimation animationProps={{ delay: 0.1 }}>
-                <p
-                  className={`${style.projectsButtonsItem} ${
-                    selectedCategory === "all" ? style.activ : ""
-                  }`}
-                  onClick={() => handleCategoryChange("all")}
-                >
-                  All
-                </p>
+                <div>
+                  <p
+                    className={`${style.projectsButtonsItem} ${
+                      selectedCategory === "all" ? style.activ : ""
+                    }`}
+                    onClick={() => handleCategoryChange("all")}
+                  >
+                    All
+                  </p>
+                </div>
               </ScrollAnimation>
               <ScrollAnimation animationProps={{ delay: 0.2 }}>
-                <p
-                  className={`${style.projectsButtonsItem} ${
-                    selectedCategory === "Agency and Brokerage"
-                      ? style.activ
-                      : ""
-                  }`}
-                  onClick={() => handleCategoryChange("Agency and Brokerage")}
-                >
-                  Agency and Brokerage
-                </p>
+                <div>
+                  <p
+                    className={`${style.projectsButtonsItem} ${
+                      selectedCategory === "Agency and Brokerage"
+                        ? style.activ
+                        : ""
+                    }`}
+                    onClick={() => handleCategoryChange("Agency and Brokerage")}
+                  >
+                    Agency and Brokerage
+                  </p>
+                </div>
               </ScrollAnimation>
               <ScrollAnimation animationProps={{ delay: 0.3 }}>
-                <p
-                  className={`${style.projectsButtonsItem} ${
-                    selectedCategory === "Green Investment" ? style.activ : ""
-                  }`}
-                  onClick={() => handleCategoryChange("Green Investment")}
-                >
-                  Green Investment
-                </p>
+                <div>
+                  <p
+                    className={`${style.projectsButtonsItem} ${
+                      selectedCategory === "Green Investment" ? style.activ : ""
+                    }`}
+                    onClick={() => handleCategoryChange("Green Investment")}
+                  >
+                    Green Investment
+                  </p>
+                </div>
               </ScrollAnimation>
               <ScrollAnimation animationProps={{ delay: 0.4 }}>
-                <p
-                  className={`${style.projectsButtonsItem} ${
-                    selectedCategory === "Startup Services" ? style.activ : ""
-                  }`}
-                  onClick={() => handleCategoryChange("Startup Services")}
-                >
-                  Startup Services
-                </p>
+                <div>
+                  <p
+                    className={`${style.projectsButtonsItem} ${
+                      selectedCategory === "Startup Services" ? style.activ : ""
+                    }`}
+                    onClick={() => handleCategoryChange("Startup Services")}
+                  >
+                    Startup Services
+                  </p>
+                </div>
               </ScrollAnimation>
               <ScrollAnimation animationProps={{ delay: 0.5 }}>
-                <p
-                  className={`${style.projectsButtonsItem} ${
-                    selectedCategory === "EUDR and Sustainable Schemes"
-                      ? style.activ
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handleCategoryChange("EUDR and Sustainable Schemes")
-                  }
-                >
-                  EUDR and Sustainable Schemes
-                </p>
+                <div>
+                  <p
+                    className={`${style.projectsButtonsItem} ${
+                      selectedCategory === "EUDR and Sustainable Schemes"
+                        ? style.activ
+                        : ""
+                    }`}
+                    onClick={() =>
+                      handleCategoryChange("EUDR and Sustainable Schemes")
+                    }
+                  >
+                    EUDR and Sustainable Schemes
+                  </p>
+                </div>
               </ScrollAnimation>
             </div>
           )}
           <div className={style.projectsWraper}>
-            {filteredProjects.map((project, index) => (
-              <ScrollAnimation animationProps={{ delay: `0.${i}` }}>
-                {i++}
-                <div
-                  key={index}
-                  className={style.projectsItem}
-                  onClick={() => handleButtonClick(index)}
+            {filteredProjects.map((project, index) => {
+              const delay = `0.${i}`; // Рассчитываем задержку
+              i++;
+              if (i > 3) i = 1; // Сбрасываем счетчик
+
+              return (
+                <ScrollAnimation
+                  key={project.id || index} // Используйте уникальный `key`, если есть уникальный идентификатор
+                  animationProps={{ delay }}
                 >
-                  <div className={style.projectsImg}>
-                    <img src={project.img} alt={project.case_study} />
-                  </div>
-                  <div className={style.projectsItemBot}>
-                    <h5>{project.case_study}</h5>
-                    <div className={style.arrow}>
-                      <img src="/src/assets/arrowG.svg" alt="" />
+                  <div
+                    className={style.projectsItem}
+                    onClick={() => handleButtonClick(index)}
+                  >
+                    <div className={style.projectsImg}>
+                      <img src={project.img} alt={project.case_study} />
+                    </div>
+                    <div className={style.projectsItemBot}>
+                      <h5>{project.case_study}</h5>
+                      <div className={style.arrow}>
+                        <img src="/src/assets/arrowG.svg" alt="" />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </ScrollAnimation>
-            ))}
+                </ScrollAnimation>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -1,14 +1,5 @@
 .main {
   width: 100%;
-  /* height: 100svh; */
-  /* background-image: radial-gradient(
-      circle,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0) 50%
-    ),
-    url(/src/assets/aboutUs-main.png);
-  background-size: cover;
-  background-position: center; */
   background-color: white;
   display: flex;
   justify-content: center;
@@ -20,7 +11,7 @@
   flex-direction: column;
   gap: 1.826rem;
   align-items: center;
-  padding: 6.849rem 0 3.424rem;
+  padding: 10.4rem 0 3.424rem;
 }
 
 .mainContainerText {
@@ -52,8 +43,6 @@
 .numbersContainer h2 {
   margin-bottom: 2.283rem;
 }
-
-
 
 /* ///////// CHARTS*/
 
@@ -165,6 +154,7 @@
 .earthItem {
   width: 39.36rem;
   height: 39.36rem;
+  margin-left: auto;
 }
 
 /* ///////// we */
@@ -274,7 +264,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 5.416rem 1.039rem;
+    padding: 7.416rem 1.039rem 2.2rem;
   }
 
   .numbers {
@@ -382,8 +372,13 @@
     padding: 5.416rem 1.041rem;
   }
 
+  .valuesItemWraper {
+    gap: 3.283rem;
+  }
+
   .valuesItem {
     flex-direction: column;
+    gap: 2.2rem;
   }
 
   .valuesItem:nth-child(even) {

@@ -50,7 +50,7 @@
   .overviewContainerMob {
     display: flex;
     flex-direction: column;
-    gap: 2.083rem;
+    gap: 5.083rem;
   }
 
   .overviewCardIcon {
@@ -68,5 +68,6 @@
   .overviewCardImg img {
     width: 100%;
     height: 50vh;
+    object-fit: cover;
   }
 }

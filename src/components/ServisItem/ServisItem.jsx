@@ -13,9 +13,9 @@ function ServisItem({
   id,
 }) {
   return (
-    <ScrollAnimation animationProps={{ delay: 0.25 }} y={0}>
+    <ScrollAnimation animationProps={{ delay: 0 }} y={0}>
       <div className={`servis-item ${isImageRight ? "reverse" : ""} ${color}`}>
-        <ScrollAnimation animationProps={{ delay: 0.25 }} y={0}>
+        <ScrollAnimation animationProps={{ delay: 0 }} y={0}>
           <div className="servis-item-img-container">
             <img className="servis-item-img" src={url} alt="" />
           </div>

@@ -5,6 +5,8 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Together from "../../components/Together/Together";
 import { useProject } from "../../context/ProjectContext";
+import Loading from "../../components/Loading/Loading";
+import ScrollAnimation from "../../components/ScrollAnimation/ScrollAnimation";
 
 function Project() {
   const { selectedProjectIndex } = useProject(0); // Получите выбранный индекс
@@ -45,14 +47,18 @@ function Project() {
     selectedProjectIndex < 0 ||
     selectedProjectIndex >= jsonData.length
   ) {
-    console.log(selectedProjectIndex)
-    return <div>Project not found</div>;
+    console.log(selectedProjectIndex);
+    return (
+      <div>
+        <Loading />
+      </div>
+    );
   }
 
   const currentProject = jsonData[selectedProjectIndex];
 
   return (
-    <div>
+    <div className={style.projectWrap}>
       <Header />
       <main
         className={style.main}
@@ -66,39 +72,57 @@ function Project() {
         }}
       >
         <div className={style.mainContainer}>
-          <div className={style.mainContainerText}>
-            <h2>{currentProject.case_study || "Заголовок"}</h2>
-          </div>
+          <ScrollAnimation animationProps={{ delay: 0.2 }}>
+            <div className={style.mainContainerText}>
+              <h2>{currentProject.case_study || "Title of project"}</h2>
+            </div>
+          </ScrollAnimation>
         </div>
       </main>
+
       <section className={`gray-bg ${style.back}`}>
-        <div className={`${style.backContainer}`} onClick={() => handleClick('/projects')}>
-          <img className={style.arrow} src="src/assets/back.svg" alt="" />
-          <p className="black-color">All projects</p>
-        </div>
+        <ScrollAnimation animationProps={{ delay: 0.3 }}>
+          <div
+            className={`${style.backContainer}`}
+            onClick={() => handleClick("/projects")}
+          >
+            <img className={style.arrow} src="src/assets/back.svg" alt="" />
+            <p className="black-color">All projects</p>
+          </div>
+        </ScrollAnimation>
       </section>
       <section className={`white-bg ${style.case}`}>
         <div className={style.caseContainer}>
-          <div className={style.caseItem}>
-            <h5>Client:</h5>
-            <p className="black-color">{currentProject.client}</p>
-          </div>
-          <div className={style.caseItem}>
-            <h5>Challenge:</h5>
-            <p className="black-color">{currentProject.challenge}</p>
-          </div>
-          <div className={style.caseItem}>
-            <h5>Approach:</h5>
-            <p className="black-color">{currentProject.approach}</p>
-          </div>
-          <div className={style.caseItem}>
-            <h5>Value:</h5>
-            <p className="black-color">{currentProject.value}</p>
-          </div>
-          <div className={style.caseItem}>
-            <h5>Outcome:</h5>
-            <p className="black-color">{currentProject.outcome}</p>
-          </div>
+          <ScrollAnimation animationProps={{ delay: 0.2 }}>
+            <div className={style.caseItem}>
+              <h5>Client:</h5>
+              <p className="black-color">{currentProject.client}</p>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <div className={style.caseItem}>
+              <h5>Challenge:</h5>
+              <p className="black-color">{currentProject.challenge}</p>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <div className={style.caseItem}>
+              <h5>Approach:</h5>
+              <p className="black-color">{currentProject.approach}</p>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <div className={style.caseItem}>
+              <h5>Value:</h5>
+              <p className="black-color">{currentProject.value}</p>
+            </div>
+          </ScrollAnimation>
+          <ScrollAnimation animationProps={{ delay: 0.1 }}>
+            <div className={style.caseItem}>
+              <h5>Outcome:</h5>
+              <p className="black-color">{currentProject.outcome}</p>
+            </div>
+          </ScrollAnimation>
         </div>
       </section>
       <Together />

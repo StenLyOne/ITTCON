@@ -142,10 +142,38 @@ a {
   text-decoration: none;
 }
 
+a p {
+  transition: all 0.3s ease;
+}
+
+a p:hover {
+  color: #28a745; /* Меняем цвет текста при заливке */
+  transition: all 0.3s ease;
+}
+
+a {
+  display: inline-block; /* Убирает лишние отступы */
+  line-height: 0; /* Убирает пустое пространство от текстовой линии */
+  padding: 0; /* Убирает внутренние отступы */
+  margin: 0; /* Убирает внешние отступы */
+  text-decoration: none; /* Если не нужно подчеркивание */
+}
 .damper {
   width: 100%;
   height: 3.287rem;
   background-color: #2d2c29;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.scroll-animation {
+  width: inherit;
+  height: inherit;
+}
+
+.no-scroll {
+  pointer-events: none;
 }
 
 @media screen and (max-width: 480px) {

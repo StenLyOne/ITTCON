@@ -3,11 +3,24 @@
   display: flex;
   flex-direction: column;
   gap: 2.283rem;
-  background-image: url(/src/assets/partners-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-
   padding: 6.849rem 0;
+  position: relative;
+}
+
+.partners::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/src/assets/partners-bg.png);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px); /* Применяем размытие */
+  z-index: -1; /* Отправляем за контент */
 }
 
 .partners-container {

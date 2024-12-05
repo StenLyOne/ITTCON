@@ -3,15 +3,13 @@ import Button from "../Button/Button";
 import { useEffect, useState } from "react";
 import { useProject } from "../../context/ProjectContext";
 import { useNavigate } from "react-router-dom";
+import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
+import Optimizing from "../../assets/Optimizing.png";
 
 function Portfolio({ selectedCategory }) {
   const navigate = useNavigate();
   const { selectedProjectIndex, setSelectedProjectIndex } = useProject();
   const [jsonData, setJsonData] = useState(null);
-
-  useEffect(() => {
-    console.log("Selected Project Index Updated:", selectedProjectIndex);
-  }, [selectedProjectIndex]);
 
   useEffect(() => {
     fetch("/src/json/works.json")
@@ -56,35 +54,41 @@ function Portfolio({ selectedCategory }) {
   // Функция для установки индекса проекта и перехода на страницу проекта
 
   const handleButtonClick = (index) => {
-    console.log("Мы внутри"); // Отладка нажатия кнопкиselected
-
     setSelectedProjectIndex(index);
     console.log(selectedProjectIndex); // Отладка нажатия кнопкиse
-    navigate("/project");
   };
+
+  let delay = 1; // Начальное значение
 
   return (
     <div className="portfolio-wrap">
       {selectedProjects.length > 0 ? (
-        selectedProjects.map((project, index) => (
-          <div
-            id={project.id}
-            className={`item item-${index + 1}`}
-            key={index}
-            style={{
-              backgroundImage: `url(${project.img})`,
-              backgroundSize: "cover",
-            }}
-          >
-            <p className="portfolio-p">{project.case_study}</p>
-            <div onClick={() => handleButtonClick(project.id)}>
-              <Button
-                text=""
-                // Передаем индекс в обработчик
-              />
-            </div>
-          </div>
-        ))
+        selectedProjects.map((project, index) => {
+          delay += 1; // Увеличиваем задержку
+
+          return (
+            <ScrollAnimation
+              key={index}
+              animationProps={{ delay: `0.${delay}` }}
+            >
+              <div className="item-wrap">
+                <div
+                  id={project.id}
+                  className={`item item-${index + 1}`}
+                  style={{
+                    backgroundImage: `url(${project.img})`,
+                    backgroundSize: "cover",
+                  }}
+                >
+                  <p className="portfolio-p">{project.case_study}</p>
+                  <div onClick={() => handleButtonClick(project.id)}>
+                    <Button path='/project' />
+                  </div>
+                </div>
+              </div>
+            </ScrollAnimation>
+          );
+        })
       ) : (
         <h5>No projects available</h5>
       )}

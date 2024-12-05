@@ -5,7 +5,8 @@
 
 @media screen and (max-width: 480px) {
   .charts {
-    width: 15.833rem;
-    height: 15.833rem;
+    margin: 0 auto;
+    width: 16.833rem;
+    height: 16.833rem;
   }
 }

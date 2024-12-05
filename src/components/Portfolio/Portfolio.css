@@ -5,13 +5,21 @@
   height: 70vh;
 }
 
+.item-wrap {
+  flex: 1;
+  transition: flex 0.8s ease;
+  &:hover {
+    flex: 2.5;
+  }
+}
+
 .item {
   flex: 1;
+  min-width: 25%;
   height: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: none;
-  transition: flex 0.8s ease;
 
   padding: 1.643rem 1.278rem;
   display: flex;
@@ -19,10 +27,6 @@
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-
-  &:hover {
-    flex: 7;
-  }
 }
 
 .portfolio-p {

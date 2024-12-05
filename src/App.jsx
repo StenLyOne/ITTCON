@@ -8,6 +8,7 @@ import Project from "./pages/Projects/Project";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ProjectProvider } from "./context/ProjectContext.jsx"; // Импортируйте контекст
 import Contact from "./pages/Contact/Contact.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ProjectProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router}>
+        <ScrollToTop />
+      </RouterProvider>
     </ProjectProvider>
   );
 }

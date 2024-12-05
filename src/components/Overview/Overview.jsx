@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import style from "./Overview.module.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollAnimation from "../ScrollAnimation/ScrollAnimation";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -26,10 +27,13 @@ function Overview({ data }) {
   }, []);
 
   useEffect(() => {
+    if (!market.current && !img1.current) return;
     // Инициализация изображений
-    gsap.set([img1.current, img2.current, img3.current, img4.current], { opacity: 0 });
+    gsap.set([img1.current, img2.current, img3.current, img4.current], {
+      opacity: 0,
+    });
     gsap.set(img1.current, { opacity: 1 });
-  
+
     const hideAllCharts = () => {
       gsap.to([img1.current, img2.current, img3.current, img4.current], {
         opacity: 0,
@@ -37,7 +41,7 @@ function Overview({ data }) {
         ease: "power2.inOut",
       });
     };
-  
+
     const showImage = (index) => {
       hideAllCharts();
       gsap.to([img1.current, img2.current, img3.current, img4.current][index], {
@@ -47,7 +51,7 @@ function Overview({ data }) {
       });
       setActiveImage(index);
     };
-  
+
     // Убедитесь, что ссылки существуют перед использованием
     if (market.current) {
       ScrollTrigger.create({
@@ -57,7 +61,7 @@ function Overview({ data }) {
         onEnterBack: () => showImage(0), // Добавляем обработку для скролла вверх
       });
     }
-  
+
     if (partner.current) {
       ScrollTrigger.create({
         trigger: partner.current,
@@ -66,7 +70,7 @@ function Overview({ data }) {
         onEnterBack: () => showImage(1), // Добавляем обработку для скролла вверх
       });
     }
-  
+
     if (trade.current) {
       ScrollTrigger.create({
         trigger: trade.current,
@@ -75,7 +79,7 @@ function Overview({ data }) {
         onEnterBack: () => showImage(2), // Добавляем обработку для скролла вверх
       });
     }
-  
+
     if (logistics.current) {
       ScrollTrigger.create({
         trigger: logistics.current,
@@ -84,7 +88,7 @@ function Overview({ data }) {
         onEnterBack: () => showImage(3), // Добавляем обработку для скролла вверх
       });
     }
-  
+
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
@@ -98,16 +102,30 @@ function Overview({ data }) {
           {Array.from({ length: 4 }).map((_, index) => (
             <div key={index} className={style.overviewMob}>
               <div className={style.overviewCard}>
-                <div>
-                  <img className={style.overviewCardIcon} src={data.indicators[`icon${index + 1}`]} alt="" />
-                </div>
+                <ScrollAnimation animationProps={{ delay: 0.1 }}>
+                  <div>
+                    <img
+                      className={style.overviewCardIcon}
+                      src={data.indicators[`icon${index + 1}`]}
+                      alt=""
+                    />
+                  </div>
+                </ScrollAnimation>
                 <div className={style.overviewCardText}>
-                  <h5>{data.indicators[`title${index + 1}`]}</h5>
-                  <p className='black-color'>{data.indicators[`description${index + 1}`]}</p>
+                  <ScrollAnimation animationProps={{ delay: 0.2 }}>
+                    <h5>{data.indicators[`title${index + 1}`]}</h5>
+                  </ScrollAnimation>
+                  <ScrollAnimation animationProps={{ delay: 0.3 }}>
+                    <p className="black-color">
+                      {data.indicators[`description${index + 1}`]}
+                    </p>
+                  </ScrollAnimation>
                 </div>
-                <div className={style.overviewCardImg}>
-                  <img src={data.indicators[`img${index + 1}`]} alt="" />
-                </div>
+                <ScrollAnimation animationProps={{ delay: 0.4 }}>
+                  <div className={style.overviewCardImg}>
+                    <img src={data.indicators[`img${index + 1}`]} alt="" />
+                  </div>
+                </ScrollAnimation>
               </div>
             </div>
           ))}

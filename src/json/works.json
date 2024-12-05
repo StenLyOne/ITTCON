@@ -9,7 +9,7 @@
         "approach": "ITTCON conducted an in-depth market analysis to uncover new opportunities and assess current market conditions. Leveraging our extensive network, we connected the client with key international partners and facilitated trade negotiations. We also managed the logistics, ensuring smooth, efficient transactions that complied with all international trade regulations.",
         "value": "With ITTCON’s support, the client optimized their supply chain, reduced operational costs, and secured long-term trade agreements that aligned with their sustainability goals. The comprehensive approach not only solved immediate challenges but also positioned the client for sustainable growth in the global market.",
         "outcome": "The client experienced a 20% reduction in logistics costs and a 30% increase in trade efficiency. ITTCON's strategic guidance led to a successful expansion into new international markets.",
-        "img": "/src/assets/Optimizing.jpg",
+        "img": "/src/assets/Optimizing.png",
         "category": "Agency and Brokerage"
       },
       {
@@ -31,7 +31,7 @@
         "approach": "ITTCON provided in-depth market research on South American biomass markets, including competitor analysis and regulatory frameworks. We leveraged our network to connect the client with reliable local suppliers and facilitated introductions with logistics providers for optimized supply chain solutions.",
         "value": "The client gained a solid foothold in South America with minimal initial investment and a 15% increase in quarterly revenue through new partnerships.",
         "outcome": "The client successfully penetrated the South American market and solidified strategic partnerships with two major biomass suppliers, boosting trade volume by 25%.",
-        "img": "https://img.freepik.com/free-photo/beautiful-view-trees-rain-forest-captured-foggy-weather_181624-9022.jpg?t=st=1730395511~exp=1730399111~hmac=910de4bab031ffb24314b1d52455548dde45658a3b2354c992d1cac3255a7a42&w=2000",
+        "img": "/src/assets/Expanding-into.png",
         "category": "Agency and Brokerage"
       },
       {
@@ -42,7 +42,7 @@
         "approach": "ITTCON conducted risk assessments and devised a tailored risk management framework. We also negotiated contract terms favorable to the client, incorporating flexible pricing mechanisms and compliance with European standards to mitigate potential liabilities.",
         "value": "The client avoided price instability risks and gained confidence from European buyers, resulting in stable long-term contracts.",
         "outcome": "Revenue increased by 20%, and customer retention improved due to ITTCON’s proactive risk management and contract solutions.",
-        "img": "https://img.freepik.com/free-photo/high-angle-shot-road-middle-autumn-forest-full-colorful-trees_181624-14224.jpg?t=st=1730396509~exp=1730400109~hmac=8b3f4a84bdb0c2796cca8137ef7b3af37db2816509c67c904b717f0425d5b9e7&w=2000",
+        "img": "/src/assets/Contract.png",
         "category": "Agency and Brokerage"
       }
     ],
@@ -55,7 +55,7 @@
         "approach": "ITTCON provided strategic planning and market analysis to position the project as a viable investment opportunity. We helped the client align their operations with ESG criteria and prepared comprehensive investment proposals that appealed to green investors.",
         "value": "The client successfully secured €10 million in green investments, allowing them to proceed with the wind energy project. ITTCON’s support also enhanced the client’s reputation in the renewable energy sector.",
         "outcome": "The project is now in its final stages of development, with an expected energy output capable of powering 50,000 homes annually.",
-        "img": "/src/assets/large-scale.jpg",
+        "img": "/src/assets/Securing.png",
         "category": "Green Investment"
       },
       {
@@ -66,7 +66,7 @@
         "approach": "ITTCON developed a strategic investment plan that highlighted the environmental and social impact of the project. We connected the organization with impact investors and positioned the project as both financially viable and socially responsible.",
         "value": "The organization secured €7 million in funding, enabling them to launch the reforestation project. ITTCON’s strategic approach ensured that the project was seen as a sustainable and impactful investment.",
         "outcome": "The project aims to reforest 1,000 hectares of land, significantly contributing to carbon sequestration and biodiversity conservation.",
-        "img": "/src/assets/Forestry.jpg",
+        "img": "/src/assets/Forestry.png",
         "category": "Green Investment"
       },
       {
@@ -77,7 +77,7 @@
         "approach": "ITTCON introduced geolocation-based tracking and satellite monitoring tools to verify source locations. We trained the client's team on compliance reporting and conducted regular audits to ensure continuous adherence.",
         "value": "The client met EUDR standards without disrupting its production timelines, gaining a strong compliance position in Europe.",
         "outcome": "The company achieved full compliance, safeguarding their access to European markets and improving brand reputation as an environmentally responsible manufacturer.",
-        "img": "https://img.freepik.com/free-photo/wooded-forest-trees-backlit-by-golden-sunlight-before-sunset-with-sun-rays-pouring-through-trees-forest-floor-illuminating-tree-branches-vintage-effect-style-pictures_1253-796.jpg?t=st=1730396562~exp=1730400162~hmac=c41e509b55fb24981dc43456ee68b3f97a759204105c0d13526ff210e1c2a931&w=2000",
+        "img": "/src/assets/Implementing.png",
         "category": "Green Investment"
       },
       {
@@ -88,7 +88,7 @@
         "approach": "ITTCON created a comprehensive risk assessment framework, categorizing suppliers by deforestation risk. We recommended sustainable sourcing alternatives and implemented ongoing monitoring systems.",
         "value": "The client reduced their environmental impact and positioned themselves as leaders in sustainable pulp production.",
         "outcome": "The client gained trust from investors, with a 30% boost in green funding access due to their reinforced sustainability measures.",
-        "img": "https://img.freepik.com/free-photo/beautiful-shot-leaves-forest-with-moss-growing-them-rainy-day_181624-2746.jpg?t=st=1730396598~exp=1730400198~hmac=7aeeca994f28c175b1a3bd18ecf01175d82eca0778394e219af0fe211a4dab71&w=1800",
+        "img": "/src/assets/Mitigating.png",
         "category": "Green Investment"
       }
     ],
@@ -101,7 +101,7 @@
         "approach": "ITTCON provided comprehensive market analysis and business development support. We helped the startup secure funding through strategic partnerships and advised on operational efficiency to support rapid growth.",
         "value": "The startup secured €2 million in funding and implemented ITTCON’s operational recommendations, leading to a 40% increase in production capacity.",
         "outcome": "Within 18 months, the startup expanded its market share by 15% and achieved profitability, establishing itself as a key player in the wood processing industry.",
-        "img": "/src/assets/Startup.jpg",
+        "img": "/src/assets/Startup.png",
         "category": "Startup Services"
       },
       {
@@ -112,7 +112,7 @@
         "approach": "ITTCON developed a go-to-market strategy, including market analysis, business development, and funding acquisition. We assisted in forming partnerships with local waste management companies and potential investors.",
         "value": "The startup secured initial funding and established key partnerships, allowing it to successfully launch its operations within six months.",
         "outcome": "The startup achieved operational success within the first year, converting 15,000 tons of waste into renewable energy and generating positive cash flow.",
-        "img": "https://img.freepik.com/free-photo/beautiful-shot-forest-with-tall-trees-bright-sun-rays-shining_181624-11053.jpg?t=st=1730396918~exp=1730400518~hmac=4f70a2ad74d50589c635864f0c5f18c9ffc44c08156400ecda218b185c91331d&w=2000",
+        "img": "/src/assets/Launching.png",
         "category": "Startup Services"
       },
       {
@@ -123,7 +123,7 @@
         "approach": "ITTCON provided legal consultation, ensuring compliance with all regulations. We helped the startup secure necessary permits and understand industry standards.",
         "value": "The client successfully navigated regulatory challenges, accelerating their time to market and ensuring compliance with all relevant laws.",
         "outcome": "The startup launched its first product on time and secured a significant client base within the first six months, establishing credibility in the industry.",
-        "img": "https://img.freepik.com/free-photo/vertical-aerial-shot-car-riding-through-road-forest-with-tall-green-dense-trees_181624-36495.jpg?t=st=1730396665~exp=1730400265~hmac=fbf92284a5cbf20c4e55b382e8ec5348d9a3ebf14c7b6d0bf3627c17b8519590&w=1060",
+        "img": "/src/assets/Providing.png",
         "category": "Startup Services"
       },
       {
@@ -134,7 +134,7 @@
         "approach": "ITTCON conducted a comprehensive analysis of the sustainable construction market, identifying trends and opportunities. We assisted in creating a detailed business plan and pitch deck for investors.",
         "value": "The startup secured €1.5 million in funding and gained recognition in the sustainable construction sector.",
         "outcome": "The client launched its operations within a year, establishing itself as a leader in sustainable construction practices.",
-        "img": "https://img.freepik.com/free-photo/aerial-shot-pathway-middle-forest-with-green-trees_181624-22005.jpg?t=st=1730396742~exp=1730400342~hmac=6a36c938f8f907aeeebdb2b853d6ad082cc19f714c0a4122a0045e2a5266fc82&w=1800",
+        "img": "/src/assets/Creating.png",
         "category": "Startup Services"
       }
     ],
@@ -147,7 +147,7 @@
         "approach": "ITTCON conducted a thorough assessment of the client's supply chain and implemented compliance measures, including supplier audits and risk assessments.",
         "value": "The client achieved EUDR compliance and improved supplier relationships, reducing potential disruptions in their supply chain.",
         "outcome": "The client successfully maintained market access in Europe, avoiding penalties and strengthening their brand reputation as a responsible importer.",
-        "img": "https://img.freepik.com/free-photo/tumalo-falls-waterfall-oregon-usa_181624-25560.jpg?t=st=1730396967~exp=1730400567~hmac=475453006ca89f15dfd860d5229a80c2847b51f78b9d44a0a11b4251f5cf91f7&w=1800",
+        "img": "/src/assets/Developing.png",
         "category": "EUDR and Sustainable Schemes"
       },
       {
@@ -158,7 +158,7 @@
         "approach": "ITTCON worked closely with the client to develop sourcing policies and practices that emphasized sustainability and compliance with EUDR regulations. We conducted supplier audits and provided training on responsible sourcing.",
         "value": "The retailer successfully implemented sustainable sourcing policies, enhancing their reputation and aligning with consumer demand for environmentally friendly products.",
         "outcome": "The client reported a 25% increase in consumer engagement and loyalty due to their commitment to sustainability.",
-        "img": "https://img.freepik.com/free-photo/breathtaking-shot-small-waterfall-forest-with-sun-shining-through-trees_181624-8392.jpg?t=st=1730396996~exp=1730400596~hmac=d4157b15e48af3f1b1080304156685769d149824875aba3833bfbd6c24a0842e&w=2000",
+        "img": "/src/assets/Creating-sustainable.png",
         "category": "EUDR and Sustainable Schemes"
       },
       {
@@ -169,7 +169,7 @@
         "approach": "ITTCON conducted a comprehensive sustainability audit of the supply chain, identifying areas for improvement. We developed a sustainability strategy and connected the client with eco-friendly suppliers.",
         "value": "The supplier enhanced its sustainability practices, reducing waste and improving supply chain transparency.",
         "outcome": "The client achieved EUDR compliance and reported a 30% reduction in waste production, significantly improving their sustainability credentials.",
-        "img": "https://img.freepik.com/free-photo/beautiful-forest-with-pine-trees-little-snow-left-after-winter_181624-897.jpg?t=st=1730396772~exp=1730400372~hmac=0c119790bb27e774ce03d2e43dcbcdeaf8b90e1082f174c46da15700d4e71f2d&w=2000",
+        "img": "/src/assets/Implementing-sustainable.png",
         "category": "EUDR and Sustainable Schemes"
       },
       {
@@ -180,7 +180,7 @@
         "approach": "ITTCON provided strategic advisory services, helping the firm understand the EUDR requirements and integrating compliance features into their software solutions.",
         "value": "The client’s software became a preferred solution for companies looking to ensure EUDR compliance in their timber supply chains.",
         "outcome": "The tech firm expanded its client base significantly, achieving a 40% increase in sales within the first year due to the demand for EUDR compliance solutions.",
-        "img": "https://img.freepik.com/free-photo/exotic-tree-field-grass-surrounded-by-trees-with-cloudy-sky_181624-7102.jpg?t=st=1730396798~exp=1730400398~hmac=bab04bb80b0d60e6d7514239b1d40a90fefaac849b5d81ea791b29d49e0ebc4b&w=2000",
+        "img": "/src/assets/Advising.png",
         "category": "EUDR and Sustainable Schemes"
       }
     ]

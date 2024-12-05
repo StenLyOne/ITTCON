@@ -29,7 +29,7 @@ function AboutUsNumbersContainer() {
 
     ScrollTrigger.create({
       trigger: container,
-      start: "top bottom",
+      start: "top 70%",
       onEnter: () => {
         itemsRef.current.forEach((item) => {
           if (!item) return;
@@ -54,7 +54,7 @@ function AboutUsNumbersContainer() {
               value: numericValue,
               duration: 2,
               ease: "power2.out",
-              onUpdate: function () {
+              onUpdate: function() {
                 const currentValue = Math.round(this.targets()[0].value);
                 numberElement.textContent = `${prefix}${currentValue.toLocaleString()}${suffix}`;
               },

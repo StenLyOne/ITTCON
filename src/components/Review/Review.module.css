@@ -1,0 +1,67 @@
+.carouselContainer {
+  width: 100%;
+  padding: 6.849rem 10.913rem;
+}
+
+.slick-slider {
+  width: 100%;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+
+.reviewItem {
+  display: flex;
+  flex-direction: column; /* Вертикальная компоновка */
+  justify-content: space-between; /* Распределение пространства между h3 и .seoInf */
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Убедитесь, что высота позволяет space-between работать */
+  gap: 2.5rem; /* Уберите gap, если он используется */
+}
+
+.seoInf {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.seoImg img {
+  max-width: 7rem;
+  max-height: 7rem;
+  object-fit: contain;
+}
+
+.seoName {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -2.5rem;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+  .carouselContainer {
+    padding: 5.416rem 1.041rem;
+    text-align: left;
+  }
+
+  .seoImg img {
+    max-width: 4rem;
+    max-height: 4rem;
+    object-fit: contain;
+  }
+}

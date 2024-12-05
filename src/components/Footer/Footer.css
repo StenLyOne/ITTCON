@@ -51,7 +51,9 @@
   gap: 0.913rem;
 }
 
-.x, .f, .in {
+.x,
+.f,
+.in {
   width: 2.739rem;
   height: 2.739rem;
   border: 1px solid black;
@@ -82,6 +84,29 @@
   display: none;
 }
 
+.footer-logo {
+  width: 17rem;
+}
+
+.x svg {
+  width: 1.5rem;
+}
+
+.in svg {
+  width: 100%;
+  height: 40%;
+}
+
+.footer-container h5{
+  transition: all 0.3s ease;
+}
+
+.footer-container h5:hover {
+  color: #28a745; /* Меняем цвет текста при заливке */
+  transition: all 0.3s ease;
+}
+
+
 @media screen and (max-width: 480px) {
   .footer {
     width: 100%;
@@ -104,13 +129,13 @@
     flex-direction: column;
     gap: 0.625rem;
   }
-  
+
   .footer-contact-container-mob {
     display: flex;
     flex-direction: column;
     gap: 0.416rem;
   }
-  
+
   .footer-container-mob {
     display: flex;
     justify-content: space-between;
