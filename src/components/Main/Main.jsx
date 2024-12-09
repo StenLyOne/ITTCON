@@ -16,11 +16,14 @@ function Main() {
   const [isPaused, setIsPaused] = useState(false);
   const buttons = [0, 1, 2, 3]; // Индексы кнопок
   const width = window.innerWidth;
+  const [autoPlay, setAutoPlay] = useState(0);
 
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || width <= 480) {
+      return;
+    }
 
-    if (width <= 480) {
+    if (autoPlay > 4) {
       setHoveredIndex(-1);
       return;
     }
@@ -29,13 +32,15 @@ function Main() {
 
     const timer = setInterval(() => {
       setHoveredIndex((prevIndex) => {
-        currentIndex = prevIndex >= buttons.length - 1 ? 0 : prevIndex + 1; // Переход к следующему индексу
+        currentIndex = prevIndex >= buttons.length - 1 ? 0 : prevIndex + 1;
         return currentIndex;
       });
-    }, 4000 + 1000); // Меняем каждые 5 секунд
 
-    return () => clearInterval(timer); // Очищаем интервал при размонтировании
-  }, [buttons.length, isPaused]);
+      setAutoPlay((prevState) => prevState + 1);
+    }, 4000); // Таймер срабатывает каждые 100ms
+
+    return () => clearInterval(timer); // Очищаем таймер при размонтировании
+  }, [buttons.length, isPaused, autoPlay]); // Обновляем `useEffect`, если изменяется `autoPlay`
 
   const handleMouseEnter = (index) => {
     setIsPaused(true); // Останавливаем таймер
@@ -43,7 +48,6 @@ function Main() {
   };
 
   const handleMouseLeave = () => {
-    setIsPaused(false); // Возобновляем таймер
     setHoveredIndex(-1); // Деактивируем кнопку
   };
 

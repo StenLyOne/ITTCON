@@ -1,25 +1,9 @@
 import React, { useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import axios from "axios";
 import style from "./Contact.module.css";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Button from "../../components/button/Button";
-
-// Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAi20YDokgTRPNUJPU0eMNpsUugN8MJD94",
-  authDomain: "ittcon-80dd8.firebaseapp.com",
-  projectId: "ittcon-80dd8",
-  storageBucket: "ittcon-80dd8.appspot.com",
-  messagingSenderId: "288418880714",
-  appId: "1:288418880714:web:5e9c21de03190259186833",
-  measurementId: "G-M46JJVNQE6"
-};
-
-// Initialize Firebase and Firestore
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -63,15 +47,15 @@ function Contact() {
     e.preventDefault();
     if (validate()) {
       try {
-        // Сохраняем данные в Firestore
-        await addDoc(collection(db, "contacts"), formData);
+        // Отправка данных на ваш сервер
+        const response = await axios.post("https://serverittcon.onrender.com/api/contacts", formData);
         setIsSubmitted(true);
-        console.log("Данные успешно сохранены в Firestore:", formData);
+        console.log("Данные успешно отправлены на сервер:", response.data);
       } catch (error) {
-        console.error("Ошибка при сохранении данных в Firestore:", error);
+        console.error("Ошибка при отправке данных на сервер:", error);
       }
     }
-  };
+  };;
 
   return (
     <div>
@@ -92,7 +76,9 @@ function Contact() {
             </p>
           </div>
           {isSubmitted ? (
-            <p className="black-color success-message">Thank you! Your form has been submitted.</p>
+            <p className="black-color success-message">
+              Thank you! Your form has been submitted.
+            </p>
           ) : (
             <form className={style.contactForm} onSubmit={handleSubmit}>
               <div className={style.formRow}>
