@@ -1,6 +1,7 @@
 html {
   font-size: calc(0.002442996742671122rem + 1.1400651465798044vw);
   scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 :root {
@@ -34,6 +35,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overscroll-behavior: none;
 }
 
 h1 {

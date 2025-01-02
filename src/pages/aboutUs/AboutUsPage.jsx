@@ -295,7 +295,7 @@ function AboutUs() {
             <div>
               <img
                 className={style.seoImg}
-                src="src\assets\unsplash_C7FB7H-sXJs.png"
+                src="src\assets\Stefan.jpg"
                 alt=""
               />
             </div>
@@ -303,8 +303,9 @@ function AboutUs() {
           <div className={style.seoText}>
             <ScrollAnimation animationProps={{ delay: 0.2 }}>
               <h3>
-                “The trajectory of agriculture in the coming years is in our
-                hands, and it will be shaped by the decisions we make today.”
+                “The future of sustainable forestry and timber trade is shaped
+                by the decisions we make today, guiding our industry toward
+                resilience and responsibility.”
               </h3>
             </ScrollAnimation>
             <div>

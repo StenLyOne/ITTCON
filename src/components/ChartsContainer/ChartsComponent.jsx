@@ -127,35 +127,35 @@ const ChartsComponent = () => {
                 name: "Project Kickoff",
                 value: 10,
                 xAxis: "Initiation",
-                yAxis: 0,
+                yAxis: 10,
                 itemStyle: { color: "#FF6347" },
               },
               {
                 name: "Strategy Approved",
                 value: 30,
                 xAxis: "Planning",
-                yAxis: 20,
+                yAxis: 30,
                 itemStyle: { color: "#4682B4" },
               },
               {
                 name: "First Milestone",
                 value: 50,
                 xAxis: "Execution",
-                yAxis: 40,
+                yAxis: 50,
                 itemStyle: { color: "#3CB371" },
               },
               {
                 name: "Mid-Project Review",
                 value: 70,
                 xAxis: "Monitoring",
-                yAxis: 60,
+                yAxis: 70,
                 itemStyle: { color: "#FFD700" },
               },
               {
                 name: "Project Completed",
                 value: 100,
                 xAxis: "Completion",
-                yAxis: 90,
+                yAxis: 100,
                 itemStyle: { color: "#8B4513" },
               },
             ],
@@ -470,28 +470,48 @@ const ChartsComponent = () => {
         <div
           className={style.ChartsImpact}
           ref={chartsImpactRef}
-          style={{ display: "none", width: "100%", height: "70vh" }}
+          style={{
+            display: "none",
+            width: "100%",
+            height: "70vh",
+            padding: "15px",
+          }}
         >
           {/* График Partnerships будет рендериться здесь */}
         </div>
         <div
           className={style.ChartPartnerships}
           ref={chartPartnershipsRef}
-          style={{ display: "none", width: "100%", height: "70vh" }}
+          style={{
+            display: "none",
+            width: "100%",
+            height: "70vh",
+            padding: "15px",
+          }}
         >
           {/* График Investments будет рендериться здесь */}
         </div>
         <div
           className={style.ChartsInvestment}
           ref={chartsInvestmentRef}
-          style={{ display: "none", width: "100%", height: "70vh" }}
+          style={{
+            display: "none",
+            width: "100%",
+            height: "70vh",
+            padding: "15px",
+          }}
         >
           {/* График Impact будет рендериться здесь */}
         </div>
         <div
           className={style.ChartsSuccess}
           ref={chartsSuccessRef}
-          style={{ display: "none", width: "100%", height: "70vh" }}
+          style={{
+            display: "none",
+            width: "100%",
+            height: "70vh",
+            padding: "15px",
+          }}
         >
           {/* График Success будет рендериться здесь */}
         </div>

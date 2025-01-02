@@ -74,7 +74,7 @@ function Servises() {
         "At ITTCON, we excel in facilitating seamless international trade in forestry and bioenergy products. Our Agency and Brokerage services are tailored to simplify the complexities of global markets, ensuring your operations are efficient, reliable, and aligned with sustainable growth.",
       descriptionSecond:
         "By leveraging deep market insights and strategic partnerships, we secure valuable deals and optimize trade operations, empowering your business to thrive in today’s competitive landscape.",
-      url: "/src/assets/servis-agency.png",
+      url: "/src/assets/strategic-Agency.jpg",
       indicators: {
         title1: "Market research & analysis",
         description1:
@@ -115,7 +115,7 @@ function Servises() {
         "We connect investors with diverse opportunities in the green economy, spanning renewable energy, environmental restoration, and sustainable technology projects.",
       descriptionSecond:
         "Green Investment services are designed to align financial success with a commitment to environmental stewardship, ensuring that every investment supports a healthier planet and a thriving future.",
-      url: "/src/assets/servis-green.png",
+      url: "/src/assets/green-Investments.jpg",
       indicators: {
         title1: "Targeted Green Investment Opportunities",
         description1:
@@ -153,10 +153,10 @@ function Servises() {
       name: "Startup Services",
       title: "Supporting Innovation and Growth for Startups",
       description:
-        "Our Startup Services are tailored to help new businesses navigate the challenges of establishing and growing in today’s dynamic market environment.",
+        "Our Startup Services are designed to help new businesses navigate the challenges of launching and growing in today’s fast-paced market. From securing funding to building a strong market presence, we provide tailored solutions to meet your unique needs.",
       descriptionSecond:
-        "We provide expert advice, resources, and connections to accelerate your startup’s success.",
-      url: "/src/assets/servis-startup.png",
+        "With expert advice, strategic resources, and access to a network of investors and mentors, we empower startups to scale effectively and sustainably. Let us help you turn your vision into a thriving reality.",
+      url: "/src/assets/supporting -Startup.jpg",
       indicators: {
         title1: "Market Entry Strategies",
         description1:
@@ -197,7 +197,7 @@ function Servises() {
         "We provide a comprehensive approach to navigating the complexities of European Union Deforestation Regulation (EUDR) and implementing sustainable schemes. Our services are designed to ensure your business not only complies with regulatory requirements but also strengthens its commitment to sustainability.",
       descriptionSecond:
         "With a focus on strategic guidance, risk assessment, and continuous improvement, we help you meet the highest standards of environmental stewardship.",
-      url: "/src/assets/servis-EUDR.png",
+      url: "/src/assets/Mastering-EUDR.jpg",
       indicators: {
         title1: "Detailed Guidance on EUDR Compliance",
         description1:
@@ -292,7 +292,7 @@ function Servises() {
                     servicesIndex === 0 ? style.activ : ""
                   }`}
                 >
-                  Agency and Brokerage
+                  Timber Trade
                 </h5>
                 <span
                   className={`${style.servisesSpan} ${
@@ -308,7 +308,7 @@ function Servises() {
                     servicesIndex === 1 ? style.activ : ""
                   }`}
                 >
-                  Green Investment
+                  Investment
                 </h5>
                 <span
                   className={`${style.servisesSpan} ${
@@ -324,7 +324,7 @@ function Servises() {
                     servicesIndex === 2 ? style.activ : ""
                   }`}
                 >
-                  Startup Services
+                  Startups
                 </h5>
                 <span
                   className={`${style.servisesSpan} ${
@@ -340,8 +340,8 @@ function Servises() {
                     servicesIndex === 3 ? style.activ : ""
                   }`}
                 >
-                  EUDR and <br />
-                  Sustainable Schemes
+                  Compliance & <br />
+                  Sustainability BRICS
                 </h5>
                 <span
                   className={`${style.servisesSpan} ${
