@@ -178,6 +178,11 @@ a {
   pointer-events: none;
 }
 
+textarea,
+input {
+  background-color: #fff;
+}
+
 @media screen and (max-width: 480px) {
   html {
     font-size: calc(-0.00628930817610085rem + 5.031446540880504vw);

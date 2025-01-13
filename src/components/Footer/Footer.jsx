@@ -139,7 +139,7 @@ function Footer() {
               <h5>Contact</h5>
               <div className="footer-contact-container-mob">
                 <a href="mailto:ittcon@gmail.com">
-                  <p className="black-color">ittcon@gmail.com</p>
+                  <p className="black-color">info@ittcon.eu</p>
                 </a>
                 <a href="tel:+491733724083">
                   <p className="black-color">+49 173 3724083</p>

@@ -48,14 +48,17 @@ function Contact() {
     if (validate()) {
       try {
         // Отправка данных на ваш сервер
-        const response = await axios.post("https://serverittcon.onrender.com/api/contacts", formData);
+        const response = await axios.post(
+          "https://serverittcon.onrender.com/api/contacts",
+          formData
+        );
         setIsSubmitted(true);
         console.log("Данные успешно отправлены на сервер:", response.data);
       } catch (error) {
         console.error("Ошибка при отправке данных на сервер:", error);
       }
     }
-  };;
+  };
 
   return (
     <div>
@@ -97,6 +100,7 @@ function Contact() {
                 <div className={`${style.formGroup} ${style.formGroupShort}`}>
                   <label className="black-color">Last name*</label>
                   <input
+                    
                     type="text"
                     name="lastName"
                     value={formData.lastName}

@@ -420,26 +420,26 @@ const ChartsComponent = () => {
     });
 
     // GSAP анимация для Impact
-    ScrollTrigger.create({
-      trigger: impact.current,
-      start: "top center",
-      onEnter: () => {
-        hideAllCharts();
-        gsap.set(chartsImpactRef.current, { display: "block" });
-        renderChart(chartsImpactRef, impactOption);
-      },
-    });
+    // ScrollTrigger.create({
+    //   trigger: impact.current,
+    //   start: "top center",
+    //   onEnter: () => {
+    //     hideAllCharts();
+    //     gsap.set(chartsImpactRef.current, { display: "block" });
+    //     renderChart(chartsImpactRef, impactOption);
+    //   },
+    // });
 
-    ScrollTrigger.create({
-      trigger: impact.current,
-      start: "center top", // Точка входа при прокрутке наверх
+    // ScrollTrigger.create({
+    //   trigger: impact.current,
+    //   start: "center top", // Точка входа при прокрутке наверх
 
-      onEnterBack: () => {
-        hideAllCharts();
-        gsap.set(chartsImpactRef.current, { display: "block" });
-        renderChart(chartsImpactRef, impactOption);
-      },
-    });
+    //   onEnterBack: () => {
+    //     hideAllCharts();
+    //     gsap.set(chartsImpactRef.current, { display: "block" });
+    //     renderChart(chartsImpactRef, impactOption);
+    //   },
+    // });
 
     // GSAP анимация для Success
     ScrollTrigger.create({
@@ -518,7 +518,7 @@ const ChartsComponent = () => {
       </div>
 
       <div>
-        <div className={style.chartsItem}>
+        {/* <div className={style.chartsItem}>
           <h3 className="black-color" ref={impact}>
             Strategic Investment Focus
           </h3>
@@ -529,7 +529,7 @@ const ChartsComponent = () => {
             strategic directions ITTCON is dedicated to pursuing as we continue
             to build a sustainable future.
           </p>
-        </div>
+        </div> */}
         <div className={style.chartsItem}>
           <h3 className="black-color" ref={partnerships}>
             Client Partnerships: <br />

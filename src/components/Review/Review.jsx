@@ -67,37 +67,37 @@ function Review() {
   const reviews = [
     {
       quote:
-        "We were thrilled to partner with Regrow, whose expertise made the entire process seamless and results-driven. Their dedication to sustainability is remarkable.",
-      name: "Jessica Lee",
-      position: "Founder, Stora Enso",
+        "The expertise provided by ITTCON transformed our sustainable timber production approach. Their guidance was crucial in navigating regulations and securing long-term trade agreements—a partner we deeply trust.",
+      name: "Sarah M.",
+      position: "Forestry Manager",
       img: ittconImg,
     },
     {
       quote:
-        "Regrow delivered results beyond our expectations. Their innovative strategies helped transform our business operations for the better.",
-      name: "Maria Anders",
-      position: "COO, GreenWorld Ltd",
+        "Securing our first round of green investments was pivotal, and ITTCON played a critical role. Their strategic insights and commitment to sustainability put us on the path to success.",
+      name: "Michael T.",
+      position: "CEO of Green Energy Corp",
       img: greenWorldImg,
     },
     {
       quote:
-        "The collaboration with Regrow proved invaluable. Their professional approach and solutions exceeded our goals and set new standards.",
-      name: "John Smith",
-      position: "Manager, EcoSolutions",
+        "We couldn’t have scaled so quickly without their support. From market analysis to venture capital acquisition, ITTCON was instrumental in our startup’s rapid growth.",
+      name: "Emma L.",
+      position: "Bioenergy Startup Founder",
       img: ecoSolutionsImg,
     },
     {
       quote:
-        "Working with Regrow was an outstanding experience. Their expertise, innovation, and attention to detail are truly unmatched.",
-      name: "Emily White",
-      position: "Head of Strategy, EnviroTech",
+        "Expanding our market presence globally was made possible by ITTCON’s deep industry knowledge and global reach. Their tailored solutions led to a 25% increase in our export volume.",
+      name: "John D.",
+      position: "International Trade Director",
       img: enviroTechImg,
     },
     {
       quote:
-        "Regrow’s innovative solutions and unwavering support were game-changing for us. Their impact on our operations has been extraordinary.",
-      name: "Michael Brown",
-      position: "Founder, Sustainability Inc",
+        "It was a game-changer working with ITTCON. Their meticulous attention to the complexities of international trade ensured our operations were seamless.",
+      name: "Alice R.",
+      position: "Supply Chain Manager",
       img: sustainabilityImg,
     },
   ];
@@ -115,9 +115,9 @@ function Review() {
             <div className={style.reviewItem}>
               <h3 className={style.quote}>{`"${review.quote}"`}</h3>
               <div className={style.seoInf}>
-                <div className={style.seoImg}>
+                {/* <div className={style.seoImg}>
                   <img src={review.img} alt="" />
-                </div>
+                </div> */}
                 <div className={style.seoName}>
                   <h5>{review.name}</h5>
                   <p className="black-color">{review.position}</p>

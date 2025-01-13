@@ -7,8 +7,8 @@ import "./Portfolio.css";
 import "./News.css";
 import Main from "../../components/Main/Main";
 import AboutUsImg from "../../assets/aboutUs.png";
-import logoPartners1 from "../../assets/logo-partners1.png";
-import logoPartners2 from "../../assets/logo-partners2.svg";
+import logoPartners1 from "../../assets/b copy.png";
+import logoPartners2 from "../../assets/vsl.png";
 import logoPartners3 from "../../assets/logo-partners3.svg";
 import logoPartners4 from "../../assets/logo-partners4.svg";
 import servisAgency from "../../assets/strategic-Agency.jpg";
@@ -103,7 +103,7 @@ function HomePage() {
             </ScrollAnimation>
             <ScrollAnimation animationProps={{ delay: 0.2 }} blur={35}>
               <div className="partners-item-wraper">
-                <PartnersItem text="Blockchain-driven logistics">
+                <PartnersItem text="VSL Converge">
                   <img
                     className="partners-item-logo"
                     src={logoPartners2}
