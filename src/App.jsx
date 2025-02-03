@@ -11,13 +11,14 @@ import Contact from "./pages/Contact/Contact.jsx";
 import ScrollToTop from "./components/ScrollToTop.jsx";
 import Loading from "./components/Loading/Loading.jsx";
 import Error from "./components/error/Error.jsx";
+import CookieConsent from "./components/CookieConsent/CookieConsent.jsx";
+import CookiePolicy from "./components/CookiePolicy/CookiePolicy.jsx";
 
 function AppContent() {
-  const location = useLocation(); // Теперь `useLocation` работает корректно
+  const location = useLocation();
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Google Analytics Tracking
     window.gtag("config", "G-0BWDV7G139", {
       page_path: location.pathname,
     });
@@ -65,6 +66,7 @@ function AppContent() {
   return (
     <>
       <ScrollToTop />
+      <CookieConsent /> {/* Баннер появляется на всех страницах */}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/aboutus" element={<AboutUs />} />
@@ -72,11 +74,13 @@ function AppContent() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/project" element={<Project />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </>
   );
 }
+
 
 function App() {
   return (
